@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #222;
+}
+
+.logo {
+    width: 120px;
+    border-radius: 10px;
+}
+
+.intro, .qr-section {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.feature {
+    background: #1d1d1d;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+.qr {
+    width: 180px;
+    margin-top: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000;
+    margin-top: 30px;
+}
