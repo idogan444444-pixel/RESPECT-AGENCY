@@ -21,7 +21,56 @@
    <h3>📱 7/24 Profesyonel Destek</h3>
 <p>Yayın sürecinizin her anında yanınızdayız ve tüm sorularınızı anında çözüyoruz.</p>
 </section>
+<div class="feature">
+    <h3>📨 Yayıncı Başvuru Formu</h3>
+    
+    <form id="basvuruFormu" onsubmit="gonderWhatsApp(); return false;">
+        <label>Ad Soyad:</label>
+        <input type="text" id="isim" required placeholder="Adınızı girin">
 
+        <label>Telefon Numaranız:</label>
+        <input type="text" id="telefon" required placeholder="Telefon numaranız">
+
+        <button type="submit" class="apply-button">Başvuru Gönder</button>
+    </form>
+</div>
+
+<script>
+function gonderWhatsApp() {
+    var isim = document.getElementById("isim").value;
+    var telefon = document.getElementById("telefon").value;
+
+    var mesaj = "Yeni Yayıncı Başvurusu:%0A" +
+                "Ad: " + isim + "%0A" +
+                "Telefon: " + telefon + "%0A";
+
+    var whatsappURL = "https://wa.me/4917613428278?text=" + mesaj;
+
+    window.open(whatsappURL, "_blank");
+}
+</script>
+
+<style>
+#basvuruFormu input {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.apply-button {
+    width: 100%;
+    padding: 12px;
+    background: gold;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+</style>
 <section class="features">
     <div class="feature">
        
