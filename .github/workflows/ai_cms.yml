@@ -1,0 +1,36 @@
+name: AI CMS
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+
+    - name: Install OpenAI library
+      run: pip install openai
+
+    - name: Run AI CMS
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        ISSUE_BODY: ${{ github.event.issue.body }}
+        ISSUE_TITLE: ${{ github.event.issue.title }}
+      run: python ai_cms.py
+
+    - name: Commit and push AI updates
+      run: |
+        git config --global user.name "AI CMS"
+        git config --global user.email "ai@cms.com"
+        git add .
+        git commit -m "AI CMS update" || echo "No changes to commit"
+        git push
