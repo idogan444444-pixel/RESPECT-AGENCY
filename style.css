@@ -120,3 +120,9 @@ footer {
     drop-shadow(0 0 38px #ff5500)
     drop-shadow(0 0 55px #ff1100);
 }
+.gold-title {
+    background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
