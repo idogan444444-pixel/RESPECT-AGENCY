@@ -126,3 +126,25 @@ footer {
     -webkit-text-fill-color: transparent;
     font-weight: 700;
 }
+.apply-box {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.apply-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #f7d36e, #e2a300);
+    color: black;
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(255, 200, 0, 0.8);
+    transition: 0.3s ease;
+}
+
+.apply-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 220, 0, 1);
+}
