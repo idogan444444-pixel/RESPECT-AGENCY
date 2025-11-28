@@ -6,23 +6,25 @@ from openai import OpenAI
 # OpenAI Client
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-command = os.getenv("ISSUE_BODY") or ""
-title = os.getenv("ISSUE_TITLE") or ""def read(path: str) -> str:
+ command = os.getenv("ISSUE_BODY") or ""
+title = os.getenv("ISSUE_TITLE") or ""
+
+def read(path: str) -> str:
     return open(path, "r", encoding="utf-8").read() if os.path.exists(path) else ""
 
-
-# Bestehende Dateien einlesen (falls schon vorhanden)
+# Bestehende Dateien einlesen (falls vorhanden)
 files = {
     "index.html": read("index.html"),
     "style.css": read("style.css"),
     "script.js": read("script.js"),
-}def generate_image(prompt: str, file_path: str):
+}
+
+def generate_image(prompt: str, file_path: str):
     print(f"Generating image: {file_path} | Prompt: {prompt}")
     response = client.images.generate(
         model="gpt-image-1",
         prompt=prompt,
-        size="1024x1024"
-    )
+        size="1024x1024")
 
     image_base64 = response.data[0].b64_json
     image_bytes = base64.b64decode(image_base64)
