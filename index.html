@@ -1,124 +1,531 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RESPECT AGENCY – BIGO Live</title>
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<title>Respect Ajans – Resmi Yayıncı | Premium</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --bg:#050509;
+  --bg-soft:#11121a;
+  --gold:#f5c542;
+  --gold-soft:#b8943c;
+  --accent:#ff8c00;
+  --text:#f7f7f7;
+  --muted:#b0b0b5;
+}
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  font-family:Arial,system-ui,-apple-system,sans-serif;
+  background:radial-gradient(circle at top,#1b1825,#050509);
+  color:var(--text);
+}
+
+/* HEADER / NAV */
+header{
+  padding:10px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-bottom:1px solid rgba(245,197,66,0.25);
+  background:linear-gradient(90deg,rgba(0,0,0,0.9),rgba(20,15,5,0.95));
+  position:sticky;
+  top:0;
+  z-index:60;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.brand-logo{
+  width:56px;
+  height:56px;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 0 16px rgba(245,197,66,0.7);
+  flex-shrink:0;
+}
+.brand-logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.brand-text{
+  display:flex;
+  flex-direction:column;
+}
+.brand-title{
+  font-size:20px;
+  letter-spacing:2px;
+  font-weight:bold;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+.brand-sub{
+  font-size:11px;
+  color:var(--muted);
+}
+
+/* FLAGS */
+.flags{
+  display:flex;
+  gap:6px;
+  align-items:center;
+}
+.flag-btn{
+  font-size:20px;
+  padding:4px 6px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.15);
+  cursor:pointer;
+  transition:transform .1s, box-shadow .1s, border-color .1s;
+  background:rgba(0,0,0,0.35);
+}
+.flag-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 0 8px rgba(245,197,66,0.6);
+  border-color:var(--gold);
+}
+
+/* LAYOUT */
+main{
+  max-width:1100px;
+  margin:0 auto;
+  padding:16px 16px 120px;
+}
+section{
+  margin:18px 0;
+  padding:16px 14px;
+  border-radius:16px;
+  background:linear-gradient(145deg,rgba(10,10,16,0.9),rgba(15,12,25,0.9));
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow:0 14px 40px rgba(0,0,0,0.65);
+}
+.section-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:8px;
+}
+.section-title{
+  font-size:16px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--gold);
+}
+.badge{
+  font-size:11px;
+  padding:3px 8px;
+  border-radius:999px;
+  border:1px solid rgba(245,197,66,0.5);
+  color:var(--muted);
+}
+p{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* HERO / INFO */
+#hero-title{
+  font-size:18px;
+  font-weight:bold;
+  margin:0 0 4px;
+}
+#hero-sub{
+  font-size:13px;
+  color:var(--muted);
+}
+
+/* MUSIC */
+audio{
+  margin-top:8px;
+  width:100%;
+}
+
+/* FORM */
+form{
+  margin-top:10px;
+}
+form input, form button{
+  width:100%;
+  padding:10px 12px;
+  margin-top:8px;
+  border-radius:999px;
+  border:none;
+  font-size:14px;
+}
+form input{
+  background:#0c0e16;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.16);
+}
+form input::placeholder{
+  color:#6f6f7a;
+}
+form button{
+  background:linear-gradient(135deg,var(--accent),var(--gold));
+  color:#000;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(245,197,66,0.5);
+  text-transform:uppercase;
+}
+form button:hover{
+  filter:brightness(1.06);
+}
+
+/* SOCIAL FLOATING BUTTONS */
+.floating-btn{
+  position:fixed;
+  right:20px;
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 18px rgba(245,197,66,0.65);
+  cursor:pointer;
+  z-index:52;
+  background:radial-gradient(circle at 30% 20%,#fff7c5,#b8943c);
+}
+#wa-btn{ bottom:210px; }
+#ig-btn{ bottom:140px; }
+.icon{
+  font-size:26px;
+  color:#151515;
+}
+
+/* CHATBOT */
+#chatbot{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:320px;
+  max-width:92vw;
+  background:#050608;
+  color:#fdfdfd;
+  border-radius:18px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.85);
+  overflow:hidden;
+  z-index:51;
+  border:1px solid rgba(245,197,66,0.4);
+}
+#chat-header{
+  background:radial-gradient(circle at 10% 0%,#fff4c0,#b8943c);
+  color:#151515;
+  padding:8px 10px;
+  font-size:13px;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+#chat-header span.icon-bot{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:#151515;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:13px;
+  color:var(--gold);
+}
+#chat-window{
+  height:230px;
+  overflow-y:auto;
+  padding:10px;
+  background:linear-gradient(180deg,#0b0c14,#050509);
+}
+#chat-messages div{margin-bottom:8px;font-size:12px;}
+#chat-messages .user{text-align:right;color:#e1e1e6;}
+#chat-messages .bot{text-align:left;color:#f3d46e;}
+#chat-input{
+  display:flex;
+  border-top:1px solid rgba(255,255,255,0.08);
+  background:#070814;
+}
+#chat-input input{
+  flex:1;
+  padding:9px 10px;
+  border:none;
+  background:transparent;
+  color:#f7f7f7;
+  font-size:12px;
+}
+#chat-input input::placeholder{color:#6a6a77;}
+#send-btn{
+  padding:0 12px;
+  border:none;
+  background:var(--accent);
+  color:#151515;
+  font-weight:bold;
+  font-size:11px;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width:600px){
+  .brand-title{font-size:18px;}
+  #hero-title{font-size:16px;}
+}
+</style>
 </head>
 <body>
 
 <header>
-    <img src="logo.png" alt="RESPECT AGENCY Logo" class="logo">
-    
-    <h1 class="gold-title">RESPECT AGENCY</h1>
-<p>Profesyonel BIGO Live ajansınız.</p>
-
-<p class="hero-promo">⭐ 18 yaşını doldurduysan ve günde en az 1 saat ayırabiliyorsan, BIGO Live’da para kazanma fırsatın var!</p>
+  <div class="brand">
+    <div class="brand-logo">
+      <!-- Dein Logo im gleichen Ordner als logo.png ablegen -->
+      <img src="logo.png" alt="Respect Agency Logo">
+    </div>
+    <div class="brand-text">
+      <div class="brand-title" id="brand-title">RESPECT AGENCY</div>
+      <div class="brand-sub" id="brand-sub">Resmi yayıncı ajansı · Black & Gold Edition</div>
+    </div>
+  </div>
+  <div class="flags">
+    <span class="flag-btn" onclick="setLang('tr')">🇹🇷</span>
+    <span class="flag-btn" onclick="setLang('de')">🇩🇪</span>
+    <span class="flag-btn" onclick="setLang('az')">🇦🇿</span>
+    <span class="flag-btn" onclick="setLang('at')">🇦🇹</span>
+    <span class="flag-btn" onclick="setLang('ch')">🇨🇭</span>
+    <span class="flag-btn" onclick="setLang('en')">🇬🇧</span>
+  </div>
 </header>
 
-<section class="intro">
-   <h3>📱 7/24 Profesyonel Destek</h3>
-<p>Yayın sürecinizin her anında yanınızdayız ve tüm sorularınızı anında çözüyoruz.</p>
-</section><div class="feature">
-    <h3>📩 Yayıncı Başvuru Formu</h3>
+<main>
 
-    <form id="basvuruFormu" onsubmit="gonderWhatsApp(); return false;">
-        <label>Ad Soyad:</label>
-        <input type="text" id="isim" required>
-
-        <label>Telefon Numaranız:</label>
-        <input type="text" id="telefon" required>
-
-        <button type="submit" class="btn">Başvuru Gönder</button>
-    </form>
-</div>
-
-<script>
-function gonderWhatsApp() {
-    var isim = document.getElementById("isim").value;
-    var telefon = document.getElementById("telefon").value;
-
-    var mesaj = "Yeni Yayıncı Başvurusu%0A"
-              + "Ad: " + isim + "%0A"
-              + "Telefon: " + telefon;
-
-    var whatsappURL = "https://wa.me/4917613428278?text=" + mesaj;
-
-    window.open(whatsappURL, "_blank");
-}
-</script>
-<script>
-function gonderWhatsApp() {
-    var isim = document.getElementById("isim").value;
-    var telefon = document.getElementById("telefon").value;
-
-    var mesaj = "Yeni Yayıncı Başvurusu:%0A" +
-                "Ad: " + isim + "%0A" +
-                "Telefon: " + telefon + "%0A";
-
-    var whatsappURL = "https://wa.me/4917613428278?text=" + mesaj;
-
-    window.open(whatsappURL, "_blank");
-}
-</script>
-
-<style>
-#basvuruFormu input {
-    width: 100%;
-    padding: 10px;
-    margin: 6px 0;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-}
-
-.apply-button {
-    width: 100%;
-    padding: 12px;
-    background: gold;
-    color: black;
-    font-weight: bold;
-    border-radius: 10px;
-    border: none;
-    margin-top: 10px;
-    cursor: pointer;
-}
-</style>
-<section class="features">
-    <div class="feature">
-       
-
-    <div class="feature">
-        
-<div class="feature">
-    <h3>💰 Adil Ödeme</h3>
-    <p>Kazancınız doğrudan BIGO Live’dan yatar, gecikme ya da sorun olmaz.</p>
-    <p>Ödemeler %100 güvenilir ve şeffaftır.</p>
-</div>
-    <div class="feature">
-        <h3>🎥 Creator Coaching</h3>
-<p>Başarılı bir yayıncı olmanız için gerekli tüm bilgileri ve desteği size eksiksiz sunuyoruz.</p>
+  <section>
+    <div class="section-header">
+      <div class="section-title" id="hero-label">Ajans Bilgileri</div>
+      <div class="badge" id="hero-badge">Canlı & Premium</div>
     </div>
-</section>
+    <h2 id="hero-title">Resmi yayıncı olmak için doğru yerdesin.</h2>
+    <p id="hero-sub">
+      Respect Ajans, profesyonel canlı yayıncılar, içerik üreticileri ve uluslararası topluluklar
+      için kurulmuş resmi bir ajanstır. Hedefimiz; güven, saygı ve kaliteyi aynı çatı altında toplamak.
+      Aşağıdan müziğimizi dinleyebilir, başvuru formunu doldurabilir ve her şeyi WhatsApp üzerinden
+      tek tıkla bize ulaştırabilirsin.
+    </p>
+  </section>
 
-<section class="qr-section">
- <h2>QR Kodunu Tara</h2>
-<p>Hemen başvurmak veya bizimle direkt iletişime geçmek için aşağıdaki QR kodu kullanabilirsin.</p>   
-    <img src="qrcode.png" alt="QR Code" class="qr">
-</section>
+  <section>
+    <div class="section-header">
+      <div class="section-title" id="music-title-label">Ajans Müziği</div>
+      <div class="badge" id="music-badge">Yansıma – Respect Ajans</div>
+    </div>
+    <h3 id="song-heading">Yansıma – Resmi Ajans Parçası</h3>
+    <audio controls>
+      <source src="yansima.mp3" type="audio/mpeg">
+      Tarayıcınız ses dosyasını desteklemiyor.
+    </audio>
+    <p id="music-text">
+      Bu parça, Respect Ajans'ın resmi atmosferini yansıtır. Yayınlarında arka planda çalabilir,
+      kendini ajans ruhuna daha yakın hissedebilirsin.
+    </p>
+  </section>
 
-<footer>
-    <p>© 2025 RESPECT AGENCY – Tüm hakları saklıdır.</p>
-</footer>
-<div class="social-row">
+  <section>
+    <div class="section-header">
+      <div class="section-title" id="form-title-label">Resmi Yayıncı Başvurusu</div>
+      <div class="badge" id="form-badge">WhatsApp’a direkt gönderim</div>
+    </div>
+    <p id="form-text">
+      Lütfen aşağıdaki bilgileri doldur. "Başvuruyu Gönder" butonuna bastığında başvurun
+      direkt olarak WhatsApp üzerinden ajans hattımıza gönderilecektir.
+    </p>
+    <form onsubmit="sendApplication();return false;">
+      <input id="isim" placeholder="İsminiz" required>
+      <input id="yas" placeholder="Yaşınız" required>
+      <input id="tel" placeholder="Telefon Numaranız" required>
+      <button type="submit" id="form-button">Başvuruyu Gönder</button>
+    </form>
+  </section>
 
-    <a href="https://instagram.com/respect.agencyy
-        <img src="Instagram.png" alt="Instagram">
-    </a>
-    <a href="https://api.whatsapp.com/send/?phone=4917613428278&app_absent=0">
-    <img src="whatsapp.png" alt="WhatsApp Business">
-    </a>
+</main>
 
+<a id="wa-btn" class="floating-btn" href="https://wa.me/4917613428278" target="_blank">
+  <div class="icon">🟢</div>
+</a>
+<a id="ig-btn" class="floating-btn" href="https://instagram.com/respect.agencyy" target="_blank">
+  <div class="icon">📸</div>
+</a>
+
+<div id="chatbot">
+  <div id="chat-header">
+    <span class="icon-bot">RA</span>
+    <span id="chat-title">Respect Ajans Chatbot</span>
+  </div>
+  <div id="chat-window">
+    <div id="chat-messages"></div>
+  </div>
+  <div id="chat-input">
+    <input id="user-input" placeholder="Mesaj yaz...">
+    <button id="send-btn">Gönder</button>
+  </div>
 </div>
+
+<script>
+// statische Übersetzungen
+const translations = {
+  tr: {
+    brandTitle: "RESPECT AGENCY",
+    brandSub: "Resmi yayıncı ajansı · Black & Gold Edition",
+    heroLabel: "Ajans Bilgileri",
+    heroBadge: "Canlı & Premium",
+    heroTitle: "Resmi yayıncı olmak için doğru yerdesin.",
+    heroSub: "Respect Ajans, profesyonel canlı yayıncılar, içerik üreticileri ve uluslararası topluluklar için kurulmuş resmi bir ajanstır. Hedefimiz; güven, saygı ve kaliteyi aynı çatı altında toplamak. Aşağıdan müziğimizi dinleyebilir, başvuru formunu doldurabilir ve her şeyi WhatsApp üzerinden tek tıkla bize ulaştırabilirsin.",
+    musicTitleLabel: "Ajans Müziği",
+    musicBadge: "Yansıma – Respect Ajans",
+    songHeading: "Yansıma – Resmi Ajans Parçası",
+    musicText: "Bu parça, Respect Ajans'ın resmi atmosferini yansıtır. Yayınlarında arka planda çalabilir, kendini ajans ruhuna daha yakın hissedebilirsin.",
+    formTitleLabel: "Resmi Yayıncı Başvurusu",
+    formBadge: "WhatsApp’a direkt gönderim",
+    formText: "Lütfen aşağıdaki bilgileri doldur. \"Başvuruyu Gönder\" butonuna bastığında başvurun direkt olarak WhatsApp üzerinden ajans hattımıza gönderilecektir.",
+    formButton: "Başvuruyu Gönder",
+    inputName: "İsminiz",
+    inputAge: "Yaşınız",
+    inputPhone: "Telefon Numaranız",
+    chatTitle: "Respect Ajans Chatbot",
+    chatPlaceholder: "Mesaj yaz..."
+  },
+  de: {
+    brandTitle: "RESPECT AGENCY",
+    brandSub: "Offizielle Streaming-Agentur · Black & Gold Edition",
+    heroLabel: "Agentur-Infos",
+    heroBadge: "Live & Premium",
+    heroTitle: "Du bist hier richtig, um offizieller Streamer zu werden.",
+    heroSub: "Respect Agency ist eine offizielle Agentur für professionelle Streamer, Content Creator und internationale Communitys. Unser Ziel: Vertrauen, Respekt und Qualität in einer starken Marke zu vereinen. Höre unten unseren offiziellen Track, fülle das Bewerbungsformular aus und sende alles mit einem Klick per WhatsApp.",
+    musicTitleLabel: "Agentur-Musik",
+    musicBadge: "Yansıma – Respect Agency",
+    songHeading: "Yansıma – Offizieller Agentur-Track",
+    musicText: "Dieser Track spiegelt die Atmosphäre der Respect Agency wider. Du kannst ihn in deinen Shows im Hintergrund laufen lassen und so den Agentur-Vibe verstärken.",
+    formTitleLabel: "Bewerbung als offizieller Streamer",
+    formBadge: "Direktversand über WhatsApp",
+    formText: "Bitte fülle die Felder unten aus. Wenn du auf \"Bewerbung senden\" klickst, werden deine Daten direkt über WhatsApp an unsere Agentur gesendet.",
+    formButton: "Bewerbung senden",
+    inputName: "Dein Name",
+    inputAge: "Dein Alter",
+    inputPhone: "Deine Telefonnummer",
+    chatTitle: "Respect Agency Chatbot",
+    chatPlaceholder: "Nachricht schreiben..."
+  },
+  en: {
+    brandTitle: "RESPECT AGENCY",
+    brandSub: "Official streaming agency · Black & Gold Edition",
+    heroLabel: "Agency Info",
+    heroBadge: "Live & Premium",
+    heroTitle: "You’re in the right place to become an official streamer.",
+    heroSub: "Respect Agency is an official home for professional streamers, creators and international communities. Our mission: combine trust, respect and top-level quality in one brand. Listen to our official track below, fill out the application form and send everything to us via WhatsApp with one tap.",
+    musicTitleLabel: "Agency Music",
+    musicBadge: "Yansıma – Respect Agency",
+    songHeading: "Yansıma – Official Agency Track",
+    musicText: "This track reflects the unique atmosphere of Respect Agency. Use it in the background of your shows to share the agency vibe with your audience.",
+    formTitleLabel: "Official Streamer Application",
+    formBadge: "Direct WhatsApp delivery",
+    formText: "Please fill in the fields below. When you click \"Send application\", your information will be sent directly to the agency WhatsApp number.",
+    formButton: "Send application",
+    inputName: "Your name",
+    inputAge: "Your age",
+    inputPhone: "Your phone number",
+    chatTitle: "Respect Agency Chatbot",
+    chatPlaceholder: "Type a message..."
+  }
+};
+
+function applyLang(lang){
+  const t = translations[lang] || translations.tr;
+  document.getElementById("brand-title").innerText = t.brandTitle;
+  document.getElementById("brand-sub").innerText = t.brandSub;
+  document.getElementById("hero-label").innerText = t.heroLabel;
+  document.getElementById("hero-badge").innerText = t.heroBadge;
+  document.getElementById("hero-title").innerText = t.heroTitle;
+  document.getElementById("hero-sub").innerText = t.heroSub;
+  document.getElementById("music-title-label").innerText = t.musicTitleLabel;
+  document.getElementById("music-badge").innerText = t.musicBadge;
+  document.getElementById("song-heading").innerText = t.songHeading;
+  document.getElementById("music-text").innerText = t.musicText;
+  document.getElementById("form-title-label").innerText = t.formTitleLabel;
+  document.getElementById("form-badge").innerText = t.formBadge;
+  document.getElementById("form-text").innerText = t.formText;
+  document.getElementById("form-button").innerText = t.formButton;
+  document.getElementById("isim").placeholder = t.inputName;
+  document.getElementById("yas").placeholder = t.inputAge;
+  document.getElementById("tel").placeholder = t.inputPhone;
+  document.getElementById("chat-title").innerText = t.chatTitle;
+  document.getElementById("user-input").placeholder = t.chatPlaceholder;
+}
+
+function setLang(lang){
+  applyLang(lang);
+}
+
+// WhatsApp-Bewerbung
+function sendApplication(){
+  let isim=document.getElementById('isim').value;
+  let yas=document.getElementById('yas').value;
+  let tel=document.getElementById('tel').value;
+
+  let msg="📌 RESMİ YAYINCI BAŞVURU\\n👤 İsim: "+isim+"\\n🎂 Yaş: "+yas+"\\n📞 Tel: "+tel;
+  let url="https://wa.me/4917613428278?text="+encodeURIComponent(msg);
+  window.location.href=url;
+}
+
+// Chatbot
+const sendBtn=document.getElementById('send-btn');
+const userInput=document.getElementById('user-input');
+const chatMessages=document.getElementById('chat-messages');
+
+async function sendMessage(){
+  const message=userInput.value.trim();
+  if(!message)return;
+
+  const u=document.createElement('div');
+  u.className='user';
+  u.textContent=message;
+  chatMessages.appendChild(u);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  userInput.value='';
+
+  const b=document.createElement('div');
+  b.className='bot';
+  b.textContent='...';
+  chatMessages.appendChild(b);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  try{
+    const r=await fetch("https://api.openai.com/v1/chat/completions",{
+      method:"POST",
+      headers:{
+        "Content-Type":"application/json",
+        "Authorization":"Bearer YOUR_OPENAI_API_KEY"
+      },
+      body:JSON.stringify({
+        model:"gpt-4o-mini",
+        messages:[{role:"user",content:message}]
+      })
+    });
+    const d=await r.json();
+    b.textContent=d.choices?.[0]?.message?.content || "Hata!";
+  }catch(e){
+    b.textContent="Bağlantı hatası!";
+  }
+}
+
+sendBtn.onclick=sendMessage;
+userInput.addEventListener("keypress",e=>{if(e.key==="Enter")sendMessage();});
+
+// Start: Türkisch
+applyLang('tr');
+</script>
+
 </body>
 </html>
