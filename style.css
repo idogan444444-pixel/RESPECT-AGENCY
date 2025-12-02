@@ -1,0 +1,156 @@
+/* GENEL SAYFA STİLİ */
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    font-family: Arial, sans-serif;
+    color: #ffcc33;
+    text-align: center;
+}
+
+/* ÜST BAŞLIK - BIGO LIVE */
+.bigo-title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #f4d35e;
+    text-shadow: 0 0 20px #ffcc33;
+}
+
+/* DRAGONLAR */
+.dragons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.dragon {
+    width: 140px;
+    animation: pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.97); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* RESPECT AGENCY BAŞLIK */
+.respect-title {
+    font-size: 65px;
+    line-height: 55px;
+    margin-top: -20px;
+    font-weight: bold;
+    color: red;
+    text-shadow: 
+        0 0 10px #ffcc33,
+        0 0 20px #ffcc33,
+        0 0 40px #ffcc33;
+}
+
+/* ALTYAZI */
+.subtitle {
+    margin-top: 15px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* SOSYAL MEDYA */
+.social-row {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.social-icon {
+    width: 90px;
+}
+
+/* ÖZELLİKLER */
+.features {
+    width: 88%;
+    margin: 30px auto;
+    text-align: left;
+    font-size: 23px;
+    line-height: 33px;
+}
+
+/* BAŞVURU FORMU */
+.form-title {
+    font-size: 34px;
+    margin-top: 40px;
+    text-shadow: 0 0 20px #ffcc33;
+}
+
+.form-box {
+    width: 88%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid #ffcc33;
+    background: black;
+    color: white;
+}
+
+textarea {
+    height: 110px;
+    resize: none;
+}
+
+/* GÖNDER BUTONU */
+.send-btn {
+    width: 60%;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #ffcc33, #cc9900);
+    color: black;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 15px #ffcc33;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ffcc33;
+}
+
+/* QR ALANI */
+.qr-area {
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.qr {
+    width: 260px;
+}
+
+/* MOBİL UYUMLU */
+@media (max-width: 600px) {
+    .dragon {
+        width: 120px;
+    }
+
+    .respect-title {
+        font-size: 50px;
+    }
+
+    .social-icon {
+        width: 75px;
+    }
+
+    .send-btn {
+        width: 80%;
+    }
+}
