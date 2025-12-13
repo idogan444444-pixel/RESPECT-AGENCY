@@ -1,74 +1,75 @@
+
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Respect Agency - BIGO Live</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RESPECT AGENCY – BIGO Live</title>
 
-<body>
+  <!-- Icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- ÜST BÖLÜM -->
-    <div class="top-section">
-        <h1 class="bigo-title">BIGO LIVE</h1>
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f5f5f5;
+      color:#111;
+    }
 
-        <div class="dragons">
-            <img src="dragon_left.png" class="dragon left">
-            <img src="dragon_right.png" class="dragon right">
-        </div>
+    .container{
+      max-width:460px;
+      margin:auto;
+      padding:22px;
+      text-align:center;
+    }
 
-        <h1 class="respect-title">RESPECT<br>AGENCY</h1>
-    </div>
+    /* Flags */
+    .lang-bar{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin-top:18px;
+      margin-bottom:18px;
+    }
+    .flag-btn{
+      width:46px;
+      height:34px;
+      border-radius:10px;
+      border:1px solid #e6e6e6;
+      background:#fff;
+      cursor:pointer;
+      box-shadow:0 8px 18px rgba(0,0,0,.10);
+      font-size:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:transform .15s ease, opacity .15s ease;
+      user-select:none;
+    }
+    .flag-btn:hover{ transform: translateY(-1px); opacity:.95; }
+    .flag-btn.active{ outline:2px solid #111; }
 
-    <!-- ALT BAŞLIK -->
-    <h2 class="subtitle">Profesyonel BIGO Live ajansınız.</h2>
+    h1{
+      margin:10px 0 10px;
+      letter-spacing:2px;
+      font-size:32px;
+    }
 
-    <!-- SOSYAL MEDYA -->
-    <div class="social-row">
-        <img src="instagram.png" class="social-icon">
-        <img src="whatsapp.png" class="social-icon">
-    </div>
-
-    <!-- ÖZELLİKLER -->
-    <div class="features">
-
-        <p class="feature">
-            ⭐ 18 yaşını doldurduysan ve günde en az 1 saat ayırabiliyorsan, BIGO Live’da para kazanma fırsatın var!
-        </p>
-
-        <p class="feature">
-            📱 7/24 Profesyonel Destek – Yayın sürecinizin her anında yanınızdayız ve tüm sorularınızı anında çözüyoruz.
-        </p>
-
-        <p class="feature">
-            🔔 Adil Ödeme – Kazancınız doğrudan BIGO Live’dan gecikme ya da sorun olmadan yatar.
-        </p>
-
-        <p class="feature">
-            💡 Creator Coaching – Başarılı bir yayıncı olmanız için gerekli tüm bilgi ve desteği eksiksiz sunuyoruz.
-        </p>
-
-    </div>
-
-    <!-- BAŞVURU FORMU -->
-    <h2 class="form-title">Başvuru Formu</h2>
-
-    <div class="form-box">
-
-        <input type="text" id="name" placeholder="isminiz">
-        <input type="text" id="phone" placeholder="Telefon numaranız">
-        <textarea id="message" placeholder="Sorularınız / iletmek istedikleriniz"></textarea>
-
-        <button onclick="sendToWhatsApp()" class="send-btn">Gönder</button>
-    </div>
-
-
-    <!-- QR KOD -->
-    <div class="qr-area">
-        <img src="qrcode.png" class="qr">
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    /* Social buttons under title */
+    .social-top{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      margin:12px 0 22px;
+    }
+    .social-top a{
+      width:56px;
+      height:56px;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#fff;
+      box-shadow:0 10px 25px rgba(0,0
