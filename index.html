@@ -7,187 +7,170 @@
 
 <style>
 :root{
-  --gold:#ffd36a;
-  --gold-strong:#ffb300;
-  --red:#ff1a1a;
-  --bg:#0b0b12;
-  --glass:rgba(255,255,255,.08);
-  --border:rgba(255,255,255,.15);
-  --text:#f1f1f6;
+  --gold:#FFD700;
+  --gold2:#FFB300;
+  --red:#FF1A1A;
+  --bg:#0a0a0f;
 }
 
-*{box-sizing:border-box}
+*{box-sizing:border-box;}
+
 body{
   margin:0;
-  min-height:100vh;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:
-    radial-gradient(800px 400px at 50% 0%, #2a1a1a 0%, transparent 60%),
-    linear-gradient(180deg,#050509,#0b0b12);
+  background:radial-gradient(circle at top,#241a10,#050507 70%);
+  color:#fff;
   display:flex;
   justify-content:center;
-  align-items:center;
   padding:20px;
-  color:var(--text);
 }
 
 .container{
-  width:min(980px,100%);
-  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
-  border:1px solid var(--border);
-  border-radius:24px;
-  padding:28px 18px 26px;
-  box-shadow:0 25px 80px rgba(0,0,0,.6);
-  position:relative;
-  overflow:hidden;
+  width:100%;
+  max-width:900px;
+  background:rgba(0,0,0,.55);
+  border-radius:26px;
+  padding:30px 18px 40px;
+  box-shadow:0 0 60px rgba(255,215,0,.15);
 }
 
-/* ---------- FLAGS ---------- */
-.lang-box{
-  text-align:center;
-  margin-bottom:8px;
-}
+/* ===== Language ===== */
 .lang-title{
-  font-size:14px;
+  text-align:center;
+  font-weight:700;
   letter-spacing:1px;
-  opacity:.8;
   margin-bottom:8px;
+  color:#ddd;
 }
+
 .flags{
   display:flex;
   justify-content:center;
-  gap:14px;
+  gap:16px;
+  margin-bottom:18px;
 }
+
 .flag{
-  width:60px;
-  height:40px;
-  border-radius:12px;
-  font-size:26px;
-  background:var(--glass);
-  border:1px solid var(--border);
+  font-size:34px;
   cursor:pointer;
+  padding:8px 14px;
+  border-radius:14px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.15);
   transition:.2s;
 }
 .flag:hover{
-  transform:translateY(-3px) scale(1.05);
-  background:rgba(255,255,255,.15);
+  transform:scale(1.08);
+  background:rgba(255,255,255,.12);
 }
 
-/* ---------- TITLE ---------- */
+/* ===== Title ===== */
 .title{
   text-align:center;
-  margin:12px 0 10px;
-  font-size:clamp(42px,6vw,76px);
+  font-size:clamp(42px,7vw,78px);
   font-weight:900;
   letter-spacing:3px;
   color:var(--red);
   -webkit-text-stroke:4px var(--gold);
   text-shadow:
-    0 0 12px rgba(255,26,26,.9),
-    0 0 24px rgba(255,26,26,.6),
-    0 0 28px rgba(255,211,106,.8),
-    0 0 40px rgba(255,179,0,.6),
-    0 15px 40px rgba(0,0,0,.7);
+    0 0 12px rgba(255,0,0,.9),
+    0 0 22px rgba(255,215,0,.9),
+    0 0 40px rgba(255,215,0,.6);
+  margin-bottom:14px;
 }
 
-/* GOLD LINE */
+/* Gold line */
 .gold-line{
-  width:70%;
-  height:4px;
-  margin:12px auto 18px;
-  border-radius:999px;
-  background:linear-gradient(90deg,transparent, var(--gold), var(--gold-strong), var(--gold), transparent);
-  box-shadow:0 0 18px rgba(255,211,106,.8);
-  position:relative;
-  overflow:hidden;
-}
-.gold-line::after{
-  content:"";
-  position:absolute;
-  top:-15px;
-  left:-40%;
-  width:40%;
-  height:40px;
-  background:radial-gradient(circle,rgba(255,255,255,.8),transparent 60%);
-  filter:blur(4px);
-  animation:shine 2.8s linear infinite;
-}
-@keyframes shine{
-  0%{left:-40%}
-  100%{left:120%}
+  height:3px;
+  width:85%;
+  margin:0 auto 22px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  box-shadow:0 0 20px var(--gold);
 }
 
-/* ---------- BUTTONS ---------- */
+/* ===== Buttons ===== */
 .buttons{
   display:flex;
-  justify-content:center;
-  gap:16px;
   flex-wrap:wrap;
+  justify-content:center;
+  gap:18px;
+  margin-bottom:26px;
 }
+
 .btn{
-  min-width:220px;
-  padding:16px 18px;
+  min-width:240px;
+  padding:16px 20px;
   border-radius:18px;
-  background:var(--glass);
-  border:1px solid var(--border);
-  color:#fff;
-  font-size:18px;
+  font-size:20px;
   font-weight:800;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
+  gap:14px;
   text-decoration:none;
+  color:#fff;
   position:relative;
-  animation:pulse 2.5s ease-in-out infinite;
+  animation:pulse 2.6s infinite;
 }
-.btn:hover{animation:none; transform:translateY(-3px)}
+
 @keyframes pulse{
   0%,100%{transform:scale(1)}
-  50%{transform:scale(1.04)}
+  50%{transform:scale(1.03)}
 }
-.btn::after{
-  content:"";
-  position:absolute;
-  inset:-6px;
-  border-radius:20px;
-  background:radial-gradient(circle,rgba(255,211,106,.25),transparent 60%);
-  filter:blur(8px);
-}
-.wa{border-color:#25d366}
-.ig{border-color:#dd2a7b}
 
-/* ---------- TEXT ---------- */
-.desc{
-  margin:18px auto 0;
-  max-width:860px;
-  padding:16px;
-  text-align:center;
-  background:rgba(0,0,0,.35);
-  border:1px solid var(--border);
+.whatsapp{
+  background:linear-gradient(135deg,#25D366,#1EBE5D);
+  box-shadow:0 0 25px rgba(37,211,102,.7);
+}
+
+.instagram{
+  background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF,#515BD4);
+  box-shadow:0 0 25px rgba(221,42,123,.7);
+}
+
+.btn svg{
+  width:28px;
+  height:28px;
+}
+
+/* ===== Text Box ===== */
+.textbox{
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.15);
   border-radius:18px;
-  font-size:18px;
+  padding:20px;
+  font-size:17px;
+  line-height:1.6;
+  text-align:center;
+  margin-bottom:20px;
 }
 
-/* ---------- INFO ---------- */
+/* ===== Info ===== */
 .info{
-  margin-top:16px;
   display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
+  flex-direction:column;
+  gap:10px;
+  align-items:center;
 }
-.pill{
-  background:var(--glass);
-  border:1px solid var(--border);
-  padding:10px 14px;
+
+.info div{
+  background:rgba(255,255,255,.06);
+  padding:12px 18px;
   border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
   font-weight:700;
 }
 
-/* MOBILE */
+footer{
+  text-align:center;
+  margin-top:20px;
+  font-size:13px;
+  opacity:.6;
+}
+
+/* Mobile */
 @media(max-width:480px){
-  .btn{min-width:100%}
+  .btn{min-width:100%;}
 }
 </style>
 </head>
@@ -195,43 +178,44 @@ body{
 <body>
 <div class="container">
 
-  <div class="lang-box">
-    <div class="lang-title">Çeviri / Language</div>
-    <div class="flags">
-      <button class="flag" onclick="setLang('tr')">🇹🇷</button>
-      <button class="flag" onclick="setLang('de')">🇩🇪</button>
-      <button class="flag" onclick="setLang('en')">🇬🇧</button>
-    </div>
+  <div class="lang-title">Dil Seçimi / Language</div>
+  <div class="flags">
+    <div class="flag">🇹🇷</div>
+    <div class="flag">🇩🇪</div>
+    <div class="flag">🇬🇧</div>
   </div>
 
   <div class="title">RESPECT AGENCY</div>
   <div class="gold-line"></div>
 
   <div class="buttons">
-    <a class="btn wa" href="https://wa.me/4917613428278" target="_blank">WhatsApp</a>
-    <a class="btn ig" href="https://instagram.com/respect.agencyy" target="_blank">Instagram</a>
+    <a class="btn whatsapp" href="https://wa.me/4917613428278" target="_blank">
+      <!-- WhatsApp -->
+      <svg viewBox="0 0 32 32"><path fill="#fff" d="M19.11 17.33c-.28-.14-1.64-.81-1.89-.9-.25-.09-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.21-.6.07-.28-.14-1.17-.43-2.22-1.38-.82-.73-1.37-1.64-1.53-1.92-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.5-.07-.14-.61-1.47-.84-2.01-.22-.53-.44-.46-.61-.46h-.52c-.18 0-.46.07-.7.35-.25.28-.93.9-.93 2.2s.95 2.55 1.08 2.73c.14.18 1.86 2.84 4.51 3.98z"/></svg>
+      WhatsApp
+    </a>
+
+    <a class="btn instagram" href="https://instagram.com/respect.agencyy" target="_blank">
+      <!-- Instagram -->
+      <svg viewBox="0 0 32 32"><path fill="#fff" d="M22.7 3H9.3C5.82 3 3 5.82 3 9.3v13.4C3 26.18 5.82 29 9.3 29h13.4c3.48 0 6.3-2.82 6.3-6.3V9.3C29 5.82 26.18 3 22.7 3z"/></svg>
+      Instagram
+    </a>
   </div>
 
-  <div class="desc" id="desc">
-    RESPECT AJANS 10 senedir BIGO LIVE ile çalışan deneyimli bir ajanstır ve size her konuda BIGO LIVE’da yanınızda olacaktır !!
+  <div class="textbox">
+    <strong>18 yaşından büyüksen</strong> ve <strong>günde sadece 1 saat</strong> ayırma imkanın varsa,<br><br>
+    <strong>BIGO LIVE</strong> üzerinden <strong>300 – 8.000 USD</strong> arası gelir elde etme fırsatın var.<br><br>
+    RESPECT AGENCY olarak seni adım adım destekliyor,  
+    yayıncılık sürecinde her konuda yanında oluyoruz.
   </div>
 
   <div class="info">
-    <div class="pill">📞 +49 176 13428278</div>
-    <div class="pill">📷 respect.agencyy</div>
+    <div>📞 Telefon: +49 176 13428278</div>
+    <div>📷 Instagram: respect.agencyy</div>
   </div>
 
-</div>
+  <footer>© RESPECT AGENCY — BIGO LIVE Support & Agency</footer>
 
-<script>
-function setLang(l){
-  const d={
-    tr:"RESPECT AJANS 10 senedir BIGO LIVE ile çalışan deneyimli bir ajanstır ve size her konuda BIGO LIVE’da yanınızda olacaktır !!",
-    de:"RESPECT AGENCY ist seit 10 Jahren eine erfahrene Agentur und unterstützt dich in allen BIGO LIVE Fragen!!",
-    en:"RESPECT AGENCY has been working with BIGO LIVE for 10 years and supports you in everything on BIGO LIVE!!"
-  };
-  document.getElementById("desc").innerText=d[l];
-}
-</script>
+</div>
 </body>
 </html>
