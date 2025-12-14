@@ -1,183 +1,221 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>RESPECT AGENCY | BIGO LIVE Resmi Ajans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RESPECT AGENCY | BIGO LIVE Agency</title>
 
   <!-- SEO -->
-  <meta name="description" content="RESPECT AGENCY – BIGO LIVE resmi ajansı. 18 yaşından büyükler için BIGO LIVE’da aylık 300$ – 8.000$ arası kazanç imkanı.">
-  <meta name="keywords" content="Respect Agency, Bigo Live Ajans, Bigo Live Kazanç, Canlı Yayın Para Kazanma">
+  <meta name="description" content="RESPECT AGENCY – Seit über 10 Jahren erfahrene BIGO LIVE Agentur. Starte von zuhause aus und verdiene online Geld.">
+  <meta name="keywords" content="Respect Agency, BIGO Live, Streaming Agentur, Online Geld verdienen, Influencer Agentur">
   <meta name="author" content="RESPECT AGENCY">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968841.png">
 
   <style>
-    body{
-      margin:0;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
-      background:#050507;
-      color:#fff;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      min-height:100vh;
     }
 
-    .container{
-      max-width:900px;
-      width:100%;
-      padding:25px;
-      text-align:center;
-      background:rgba(255,255,255,0.03);
-      border-radius:22px;
-      box-shadow:0 0 40px rgba(0,0,0,0.7);
+    body {
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
     }
 
-    /* Dil */
-    .lang-title{
-      font-size:14px;
-      color:#ccc;
-      margin-bottom:6px;
-      letter-spacing:1px;
+    /* HEADER */
+    header {
+      margin-top: 30px;
     }
 
-    .flags{
-      display:flex;
-      justify-content:center;
-      gap:14px;
-      margin-bottom:14px;
+    .logo {
+      font-size: 3.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: red;
+      -webkit-text-stroke: 2px gold;
+      animation: glowRotate 4s infinite linear;
+      display: inline-block;
     }
 
-    .flag{
-      font-size:34px;
-      cursor:pointer;
-      transition:transform 0.2s;
-    }
-    .flag:hover{ transform:scale(1.2); }
-
-    /* LOGO */
-    .logo{
-      font-size:52px;
-      font-weight:900;
-      letter-spacing:2px;
-      color:#ff0000;
-      -webkit-text-stroke:2px #ffd36a;
-      text-shadow:
-        0 0 8px rgba(255,0,0,0.6),
-        0 0 18px rgba(255,211,106,0.5);
-      position:relative;
-      margin-bottom:14px;
-      animation: shine 4s linear infinite;
+    @keyframes glowRotate {
+      0% { filter: drop-shadow(0 0 5px gold); }
+      50% { filter: drop-shadow(0 0 20px red); }
+      100% { filter: drop-shadow(0 0 5px gold); }
     }
 
-    @keyframes shine{
-      0%{ background-position:-200%; }
-      100%{ background-position:200%; }
+    .subtitle {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    /* Sosyal Butonlar */
-    .socials{
-      display:flex;
-      justify-content:center;
-      gap:14px;
-      margin-bottom:10px;
-      flex-wrap:wrap;
+    /* LANGUAGE */
+    .lang {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      align-items: center;
+      font-size: 0.9rem;
+      opacity: 0.9;
     }
 
-    .btn{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 18px;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,0.3);
-      text-decoration:none;
-      color:white;
-      font-weight:700;
-      background:rgba(255,255,255,0.05);
-      animation:pulse 1.8s infinite;
+    .lang img {
+      width: 26px;
+      cursor: pointer;
     }
 
-    @keyframes pulse{
-      0%{ transform:scale(1); }
-      50%{ transform:scale(1.05); }
-      100%{ transform:scale(1); }
+    /* SOCIAL */
+    .social {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
 
-    .btn i{
-      font-size:20px;
+    .social a img {
+      width: 50px;
+      animation: pulse 1.6s infinite;
     }
 
-    .wa{ border-color:#25D366; }
-    .ig{ border-color:#E1306C; }
-
-    /* Metin */
-    .info{
-      margin-top:14px;
-      font-size:16px;
-      line-height:1.6;
-      color:#f1f1f1;
-      background:rgba(0,0,0,0.4);
-      padding:14px;
-      border-radius:14px;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
-    .highlight{
-      color:#ffd36a;
-      font-weight:800;
+    /* INFO TEXT */
+    .info {
+      margin-top: 30px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    footer{
-      margin-top:16px;
-      font-size:12px;
-      color:#aaa;
+    /* UPLOAD */
+    .upload {
+      margin-top: 40px;
+      background: rgba(255,255,255,0.05);
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 0 25px rgba(255,215,0,0.15);
     }
 
-    /* Mobil */
-    @media(max-width:600px){
-      .logo{ font-size:42px; }
-      .btn{ width:100%; justify-content:center; }
+    .upload h2 {
+      color: gold;
+      margin-bottom: 15px;
+    }
+
+    .upload input {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .upload button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, gold, red);
+      border: none;
+      border-radius: 10px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 50px;
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+
+    /* LIGHT SWEEP */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,215,0,0.08), transparent);
+      animation: sweep 6s infinite;
+    }
+
+    @keyframes sweep {
+      0% { left: -100%; }
+      50% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 2.4rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
 
-    <div class="lang-title">Dil Seçimi</div>
-    <div class="flags">
-      <div class="flag">🇹🇷</div>
-      <div class="flag">🇩🇪</div>
-      <div class="flag">🇬🇧</div>
-    </div>
+<header>
+  <div class="logo">RESPECT AGENCY</div>
 
-    <div class="logo">RESPECT AGENCY</div>
-
-    <div class="socials">
-      <a href="https://wa.me/4917613428278" target="_blank" class="btn wa">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-      <a href="https://instagram.com/respect.agencyy" target="_blank" class="btn ig">
-        <i class="fa-brands fa-instagram"></i> Instagram
-      </a>
-    </div>
-
-    <div class="info">
-      <span class="highlight">18 yaşından büyük</span> isen ve  
-      <span class="highlight">günde sadece 1 saat</span> ayırabiliyorsan,  
-      <br><br>
-      <span class="highlight">BIGO LIVE</span> üzerinden  
-      <span class="highlight">aylık 300$ – 8.000$</span> arası  
-      <br>
-      <b>gelir elde etme imkânın var.</b>
-    </div>
-
-    <footer>
-      © RESPECT AGENCY — BIGO LIVE Resmi Ajans
-    </footer>
-
+  <div class="subtitle">
+    RESPECT AJANS ist seit über <b>10 Jahren</b> eine erfahrene <b>BIGO LIVE Agentur</b>  
+    und steht dir bei jedem Schritt professionell zur Seite.
   </div>
+
+  <div class="lang">
+    <span>TRANSLATOR</span>
+    <img src="https://flagcdn.com/w40/de.png">
+    <img src="https://flagcdn.com/w40/tr.png">
+    <img src="https://flagcdn.com/w40/gb.png">
+  </div>
+
+  <div class="social">
+    <a href="https://wa.me/4917613428278" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+    </a>
+    <a href="https://instagram.com/respect.agencyy" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+    </a>
+  </div>
+</header>
+
+<div class="info">
+  Wenn du dir <b>1 Stunde Zeit</b> nimmst und  
+  <b>von zuhause aus Geld verdienen möchtest</b>,  
+  dann kontaktiere uns über <b>WhatsApp oder Instagram</b>.
+</div>
+
+<div class="upload">
+  <h2>🎥 BIGO Bewerbungsbereich</h2>
+  <input type="text" placeholder="BIGO ID">
+  <input type="file" accept="video/*">
+  <button>Absenden</button>
+</div>
+
+<footer>
+  © 2025 RESPECT AGENCY – BIGO LIVE Official Partner
+</footer>
+
 </body>
 </html>
