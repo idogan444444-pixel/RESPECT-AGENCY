@@ -1,221 +1,431 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RESPECT AGENCY | BIGO LIVE Agency</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RESPECT AGENCY | BIGO LIVE Ajansı</title>
 
-  <!-- SEO -->
-  <meta name="description" content="RESPECT AGENCY – Seit über 10 Jahren erfahrene BIGO LIVE Agentur. Starte von zuhause aus und verdiene online Geld.">
-  <meta name="keywords" content="Respect Agency, BIGO Live, Streaming Agentur, Online Geld verdienen, Influencer Agentur">
-  <meta name="author" content="RESPECT AGENCY">
-
-  <!-- Icons -->
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968841.png">
+  <!-- SEO (Türkçe) -->
+  <meta name="description" content="RESPECT AGENCY – 10+ yıldır BIGO LIVE ile çalışan deneyimli ajans. Evden başlayıp online para kazanmaya adım at!" />
+  <meta name="keywords" content="Respect Agency, BIGO Live, ajans, yayıncı, evden para kazan, influencer ajansı" />
+  <meta name="author" content="RESPECT AGENCY" />
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
+    :root{
+      --bg1:#141414;
+      --bg2:#000000;
+
+      --gold:#d4af37;       /* altın */
+      --goldDark:#7a5a0a;   /* koyu altın */
+      --red1:#ff2b2b;       /* parlak kırmızı */
+      --red2:#b30000;       /* koyu kırmızı */
+      --card:rgba(255,255,255,0.06);
+      --text:#ffffff;
+      --muted:rgba(255,255,255,0.88);
     }
 
-    body {
-      background: radial-gradient(circle at top, #1a1a1a, #000);
-      color: #fff;
-      text-align: center;
-      padding: 20px;
+    *{ margin:0; padding:0; box-sizing:border-box; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+
+    body{
+      min-height:100vh;
+      background: radial-gradient(circle at top, var(--bg1), var(--bg2));
+      color:var(--text);
+      text-align:center;
+      padding: 22px 16px 46px;
+      overflow-x:hidden;
     }
 
-    /* HEADER */
-    header {
-      margin-top: 30px;
+    /* Çok hafif enine ışık geçişi */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      left:-120%;
+      background: linear-gradient(120deg, transparent, rgba(212,175,55,0.08), transparent);
+      animation: sweep 6.2s infinite;
+      pointer-events:none;
+    }
+    @keyframes sweep{
+      0%{ left:-120%; }
+      40%{ left:120%; }
+      100%{ left:120%; }
     }
 
-    .logo {
-      font-size: 3.2rem;
-      font-weight: 900;
+    header{ margin-top:18px; }
+
+    /* LOGO ÇERÇEVESİ (koyu altın + parlayan) */
+    .logo-frame{
+      display:inline-block;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 3px solid var(--goldDark);
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+      box-shadow:
+        0 0 14px rgba(212,175,55,0.28),
+        0 0 40px rgba(212,175,55,0.16),
+        inset 0 0 18px rgba(0,0,0,0.60);
+      animation: frameGlow 2.6s infinite ease-in-out;
+    }
+    @keyframes frameGlow{
+      0%,100%{
+        box-shadow:
+          0 0 12px rgba(212,175,55,0.24),
+          0 0 32px rgba(212,175,55,0.14),
+          inset 0 0 18px rgba(0,0,0,0.60);
+      }
+      50%{
+        box-shadow:
+          0 0 20px rgba(212,175,55,0.42),
+          0 0 54px rgba(212,175,55,0.22),
+          inset 0 0 18px rgba(0,0,0,0.60);
+      }
+    }
+
+    /* RESPECT AGENCY: dışı koyu altın kontur, içi ayna gibi parlayan kırmızı */
+    .logo{
+      position:relative;
+      font-weight: 1000;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      color: red;
-      -webkit-text-stroke: 2px gold;
-      animation: glowRotate 4s infinite linear;
-      display: inline-block;
+      font-size: 3.05rem;
+      line-height: 1.05;
+
+      /* kırmızı "ayna" gradient */
+      background: linear-gradient(90deg, var(--red2), var(--red1), #ff7b7b, var(--red1), var(--red2));
+      background-size: 260% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      /* dış kontur */
+      -webkit-text-stroke: 2px var(--goldDark);
+
+      /* parıltı + hafif dönüş */
+      display:inline-block;
+      animation: textShine 2.3s infinite linear, softSpin 6s infinite ease-in-out;
+      filter: drop-shadow(0 0 10px rgba(255,0,0,0.18)) drop-shadow(0 0 10px rgba(212,175,55,0.22));
     }
 
-    @keyframes glowRotate {
-      0% { filter: drop-shadow(0 0 5px gold); }
-      50% { filter: drop-shadow(0 0 20px red); }
-      100% { filter: drop-shadow(0 0 5px gold); }
+    /* yazının üstünden parlayan şerit (ayna efekti) */
+    .logo::after{
+      content:"";
+      position:absolute;
+      inset:-6px -18px;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.30), transparent);
+      transform: skewX(-18deg);
+      animation: mirrorSweep 2.8s infinite;
+      mix-blend-mode: screen;
+      pointer-events:none;
+    }
+    @keyframes mirrorSweep{
+      0%{ transform: translateX(-120%) skewX(-18deg); opacity:0; }
+      15%{ opacity:1; }
+      45%{ transform: translateX(120%) skewX(-18deg); opacity:0.95; }
+      100%{ transform: translateX(120%) skewX(-18deg); opacity:0; }
     }
 
-    .subtitle {
-      margin-top: 15px;
-      font-size: 1.1rem;
-      opacity: 0.9;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+    @keyframes textShine{
+      0%{ background-position: 0% 50%; }
+      100%{ background-position: 100% 50%; }
+    }
+    @keyframes softSpin{
+      0%,100%{ transform: rotate(-0.6deg); }
+      50%{ transform: rotate(0.6deg); }
     }
 
-    /* LANGUAGE */
-    .lang {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      align-items: center;
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    .lang img {
-      width: 26px;
-      cursor: pointer;
-    }
-
-    /* SOCIAL */
-    .social {
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .social a img {
-      width: 50px;
-      animation: pulse 1.6s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-
-    /* INFO TEXT */
-    .info {
-      margin-top: 30px;
+    .subtitle{
+      margin: 16px auto 0;
+      max-width: 820px;
       font-size: 1.05rem;
-      line-height: 1.6;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      line-height: 1.7;
+      color: var(--muted);
+      padding: 0 6px;
     }
 
-    /* UPLOAD */
-    .upload {
-      margin-top: 40px;
-      background: rgba(255,255,255,0.05);
-      padding: 25px;
-      border-radius: 15px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 0 25px rgba(255,215,0,0.15);
+    /* BAYRAKLAR (tıklanınca gerçekten çalışır) */
+    .lang{
+      margin-top: 14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 12px;
+      font-size: 0.92rem;
+      opacity: 0.95;
+      user-select:none;
     }
-
-    .upload h2 {
-      color: gold;
-      margin-bottom: 15px;
-    }
-
-    .upload input {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 8px;
-      border: none;
-    }
-
-    .upload button {
-      margin-top: 10px;
-      width: 100%;
-      padding: 12px;
-      background: linear-gradient(90deg, gold, red);
-      border: none;
+    .lang .label{
+      padding: 6px 10px;
       border-radius: 10px;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .flags{ display:flex; gap:10px; }
+
+    .flag-btn{
+      width: 34px;
+      height: 24px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 0 12px rgba(0,0,0,0.35);
+      cursor:pointer;
+      transition: transform .15s ease;
+      overflow:hidden;
+      background: rgba(255,255,255,0.04);
+    }
+    .flag-btn:hover{ transform: translateY(-2px); }
+    .flag-btn.active{
+      outline: 2px solid rgba(212,175,55,0.7);
+      box-shadow: 0 0 18px rgba(212,175,55,0.18);
+    }
+    .flag-btn img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* SOSYAL */
+    .social{
+      margin-top: 22px;
+      display:flex;
+      justify-content:center;
+      gap: 18px;
+    }
+    .social a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 0 20px rgba(0,0,0,0.35);
+      text-decoration:none;
+    }
+    .social a img{
+      width: 40px;
+      height: 40px;
+      animation: pulse 1.25s infinite;
+    }
+    @keyframes pulse{
+      0%{ transform: scale(1); }
+      50%{ transform: scale(1.12); }
+      100%{ transform: scale(1); }
     }
 
-    /* FOOTER */
-    footer {
-      margin-top: 50px;
+    .info{
+      margin: 22px auto 0;
+      max-width: 860px;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.92);
+      padding: 0 6px;
+    }
+
+    /* FORM */
+    .upload{
+      margin: 34px auto 0;
+      max-width: 560px;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 0 26px rgba(212,175,55,0.14);
+      text-align:left;
+    }
+    .upload h2{
+      text-align:center;
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-size: 1.35rem;
+      letter-spacing: .4px;
+    }
+    .field{ margin: 10px 0; }
+    .field label{
+      display:block;
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 6px;
+    }
+    .upload input{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.28);
+      color: #fff;
+      outline:none;
+    }
+    .upload button{
+      margin-top: 12px;
+      width:100%;
+      padding: 13px 12px;
+      border-radius: 12px;
+      border:none;
+      cursor:pointer;
+      font-weight: 900;
+      letter-spacing: .3px;
+      background: linear-gradient(90deg, var(--gold), var(--red1));
+      color:#0b0b0b;
+      box-shadow: 0 0 18px rgba(212,175,55,0.16);
+    }
+
+    .hint{
+      margin-top: 10px;
+      font-size: 0.9rem;
+      opacity: 0.75;
+      text-align:center;
+    }
+
+    footer{
+      margin-top: 34px;
       font-size: 0.85rem;
       opacity: 0.6;
     }
 
-    /* LIGHT SWEEP */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,215,0,0.08), transparent);
-      animation: sweep 6s infinite;
-    }
-
-    @keyframes sweep {
-      0% { left: -100%; }
-      50% { left: 100%; }
-      100% { left: 100%; }
-    }
-
-    @media (max-width: 600px) {
-      .logo {
-        font-size: 2.4rem;
-      }
+    @media (max-width: 560px){
+      .logo{ font-size: 2.25rem; -webkit-text-stroke: 1.6px var(--goldDark); }
+      .logo-frame{ padding: 14px 14px; border-radius: 16px; }
+      .social a{ width: 52px; height: 52px; }
+      .social a img{ width: 38px; height: 38px; }
+      .upload{ padding: 18px; }
     }
   </style>
 </head>
 
 <body>
+  <header>
+    <div class="logo-frame">
+      <div class="logo">RESPECT AGENCY</div>
+    </div>
 
-<header>
-  <div class="logo">RESPECT AGENCY</div>
+    <!-- TÜRKÇE -->
+    <p class="subtitle" id="subtitle">
+      RESPECT AGENCY, BIGO LIVE alanında <b>10+ yıllık</b> deneyime sahip profesyonel bir ajanstır.
+      Yayın hayatına başlarken ve ilerlerken her adımda yanında olur.
+    </p>
 
-  <div class="subtitle">
-    RESPECT AJANS ist seit über <b>10 Jahren</b> eine erfahrene <b>BIGO LIVE Agentur</b>  
-    und steht dir bei jedem Schritt professionell zur Seite.
+    <!-- BAYRAKLAR (Tıklanınca çalışır) -->
+    <div class="lang" aria-label="Dil Seçimi">
+      <div class="label">ÇEVİRİCİ</div>
+      <div class="flags">
+        <button class="flag-btn active" type="button" data-lang="tr" aria-label="Türkçe">
+          <img src="https://flagcdn.com/w80/tr.png" alt="TR" />
+        </button>
+        <button class="flag-btn" type="button" data-lang="de" aria-label="Deutsch">
+          <img src="https://flagcdn.com/w80/de.png" alt="DE" />
+        </button>
+        <button class="flag-btn" type="button" data-lang="en" aria-label="English">
+          <img src="https://flagcdn.com/w80/gb.png" alt="EN" />
+        </button>
+      </div>
+    </div>
+
+    <div class="social" aria-label="İletişim">
+      <a href="https://wa.me/4917613428278" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
+      </a>
+      <a href="https://instagram.com/respect.agencyy" target="_blank" rel="noopener" aria-label="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" />
+      </a>
+    </div>
+  </header>
+
+  <div class="info" id="info">
+    Eğer sen de evde günde <b>1 saat</b> zaman ayırarak <b>para kazanmak</b> istiyorsan,
+    WhatsApp veya Instagram üzerinden bizimle iletişime geç.
   </div>
 
-  <div class="lang">
-    <span>TRANSLATOR</span>
-    <img src="https://flagcdn.com/w40/de.png">
-    <img src="https://flagcdn.com/w40/tr.png">
-    <img src="https://flagcdn.com/w40/gb.png">
-  </div>
+  <section class="upload" aria-label="BIGO Başvuru Alanı">
+    <h2 id="formTitle">🎥 BIGO Başvuru Alanı</h2>
 
-  <div class="social">
-    <a href="https://wa.me/4917613428278" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-    </a>
-    <a href="https://instagram.com/respect.agencyy" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
-    </a>
-  </div>
-</header>
+    <div class="field">
+      <label for="bigoId" id="bigoLabel">BIGO ID</label>
+      <input id="bigoId" type="text" placeholder="Örn: 123456789" />
+    </div>
 
-<div class="info">
-  Wenn du dir <b>1 Stunde Zeit</b> nimmst und  
-  <b>von zuhause aus Geld verdienen möchtest</b>,  
-  dann kontaktiere uns über <b>WhatsApp oder Instagram</b>.
-</div>
+    <div class="field">
+      <label for="videoFile" id="videoLabel">Videonu Yükle</label>
+      <input id="videoFile" type="file" accept="video/*" />
+    </div>
 
-<div class="upload">
-  <h2>🎥 BIGO Bewerbungsbereich</h2>
-  <input type="text" placeholder="BIGO ID">
-  <input type="file" accept="video/*">
-  <button>Absenden</button>
-</div>
+    <button type="button" id="submitBtn" onclick="demoGonder()">Gönder</button>
 
-<footer>
-  © 2025 RESPECT AGENCY – BIGO LIVE Official Partner
-</footer>
+    <div class="hint" id="hint">
+      Not: Bu tasarım örneğidir. “Gönder” butonunu istersen WhatsApp’a veya e-posta’ya bağlarız.
+    </div>
+  </section>
 
+  <footer id="footer">
+    © 2025 RESPECT AGENCY – BIGO LIVE Ajansı
+  </footer>
+
+  <script>
+    // Bayraklar tıklanınca gerçekten çeviri yapan (offline) sistem
+    const metinler = {
+      tr: {
+        subtitle: 'RESPECT AGENCY, BIGO LIVE alanında <b>10+ yıllık</b> deneyime sahip profesyonel bir ajanstır. Yayın hayatına başlarken ve ilerlerken her adımda yanında olur.',
+        info: 'Eğer sen de evde günde <b>1 saat</b> zaman ayırarak <b>para kazanmak</b> istiyorsan, WhatsApp veya Instagram üzerinden bizimle iletişime geç.',
+        formTitle: '🎥 BIGO Başvuru Alanı',
+        bigoLabel: 'BIGO ID',
+        videoLabel: 'Videonu Yükle',
+        submitBtn: 'Gönder',
+        hint: 'Not: Bu tasarım örneğidir. “Gönder” butonunu istersen WhatsApp’a veya e-posta’ya bağlarız.',
+        footer: '© 2025 RESPECT AGENCY – BIGO LIVE Ajansı'
+      },
+      de: {
+        subtitle: 'RESPECT AGENCY ist eine professionelle BIGO LIVE Agentur mit <b>10+ Jahren</b> Erfahrung und begleitet dich bei jedem Schritt.',
+        info: 'Wenn du auch zuhause <b>1 Stunde</b> Zeit investieren und <b>Geld verdienen</b> möchtest, kontaktiere uns über WhatsApp oder Instagram.',
+        formTitle: '🎥 BIGO Bewerbungsbereich',
+        bigoLabel: 'BIGO ID',
+        videoLabel: 'Video hochladen',
+        submitBtn: 'Senden',
+        hint: 'Hinweis: Das ist ein Design-Beispiel. Auf Wunsch verbinden wir “Senden” mit WhatsApp oder E-Mail.',
+        footer: '© 2025 RESPECT AGENCY – BIGO LIVE Agentur'
+      },
+      en: {
+        subtitle: 'RESPECT AGENCY is a professional BIGO LIVE agency with <b>10+ years</b> of experience, supporting you every step of the way.',
+        info: 'If you want to spend <b>1 hour</b> a day from home and <b>earn money</b>, contact us via WhatsApp or Instagram.',
+        formTitle: '🎥 BIGO Application Area',
+        bigoLabel: 'BIGO ID',
+        videoLabel: 'Upload your video',
+        submitBtn: 'Submit',
+        hint: 'Note: This is a design demo. If you want, we can connect “Submit” to WhatsApp or email.',
+        footer: '© 2025 RESPECT AGENCY – BIGO LIVE Agency'
+      }
+    };
+
+    function dilDegistir(dil){
+      const d = metinler[dil] || metinler.tr;
+
+      document.getElementById("subtitle").innerHTML = d.subtitle;
+      document.getElementById("info").innerHTML = d.info;
+      document.getElementById("formTitle").innerHTML = d.formTitle;
+      document.getElementById("bigoLabel").innerHTML = d.bigoLabel;
+      document.getElementById("videoLabel").innerHTML = d.videoLabel;
+      document.getElementById("submitBtn").innerHTML = d.submitBtn;
+      document.getElementById("hint").innerHTML = d.hint;
+      document.getElementById("footer").innerHTML = d.footer;
+
+      document.querySelectorAll(".flag-btn").forEach(btn=>{
+        btn.classList.toggle("active", btn.dataset.lang === dil);
+      });
+
+      localStorage.setItem("respect_lang", dil);
+    }
+
+    // İlk açılış: Türkçe (istersen son dili hatırlar)
+    const kayitliDil = localStorage.getItem("respect_lang") || "tr";
+    dilDegistir(kayitliDil);
+
+    document.querySelectorAll(".flag-btn").forEach(btn=>{
+      btn.addEventListener("click", ()=> dilDegistir(btn.dataset.lang));
+    });
+
+    function demoGonder(){
+      const id = document.getElementById("bigoId").value.trim();
+      if(!id){
+        alert("Lütfen BIGO ID giriniz.");
+        return;
+      }
+      alert("Başvurun alındı (demo). İstersen bunu WhatsApp’a otomatik mesaj olarak yönlendirebilirim.");
+    }
+  </script>
 </body>
 </html>
