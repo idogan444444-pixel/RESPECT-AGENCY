@@ -56,8 +56,6 @@ body::before{
     0 0 46px rgba(241,194,50,0.55),
     inset 0 0 12px rgba(0,0,0,0.85);
 }
-
-/* LOGO RESMİ */
 .logo-image{
   max-width:220px;
   width:100%;
@@ -101,58 +99,85 @@ body::before{
   line-height:1.7;
 }
 
-/* ===== SOSYAL BUTONLAR (YANIP SÖNEN) ===== */
+/* ===== SOSYAL BUTONLAR (SARI+KIRMIZI ÇERÇEVE + KIRMIZI GLOW) ===== */
 .social{
-  margin-top:14px; /* ⬅ yukarı alındı */
+  margin-top:14px;
   display:flex;
   justify-content:center;
   gap:18px;
 }
 
+/* Kalın çerçeve: sarı-kırmızı gradient */
 .social a{
   width:58px;
   height:58px;
   border-radius:16px;
-  background:#0b0b0b;
+  position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
-  border:2px solid #f1c232;
-  animation:pulseGold 1.8s infinite;
+  text-decoration:none;
+  background:#0b0b0b;
+  /* İç kısım */
   box-shadow:
-    0 0 10px rgba(241,194,50,0.6),
-    0 0 22px rgba(241,194,50,0.4);
+    0 0 10px rgba(241,194,50,0.45),
+    0 0 16px rgba(255,0,0,0.35);
+  animation:pulseBorder 1.7s infinite;
   transition:transform .2s ease, box-shadow .2s ease;
 }
 
-.social a:hover{
-  transform:scale(1.08);
-  box-shadow:
-    0 0 20px rgba(241,194,50,0.95),
-    0 0 45px rgba(241,194,50,0.7);
+/* Çerçeveyi gradient yapmak için pseudo element */
+.social a::before{
+  content:"";
+  position:absolute;
+  inset:-3px;                 /* ⬅ çerçeve kalınlığı */
+  border-radius:18px;
+  background:linear-gradient(90deg,#f1c232,#ff2b2b,#f1c232);
+  z-index:0;
+  filter: drop-shadow(0 0 10px rgba(255,0,0,0.55))
+          drop-shadow(0 0 10px rgba(241,194,50,0.45));
 }
 
-.social img{
+/* İç arka planı tekrar koy (frame inside) */
+.social a::after{
+  content:"";
+  position:absolute;
+  inset:3px;                  /* ⬅ iç boşluk */
+  border-radius:14px;
+  background:#0b0b0b;
+  z-index:1;
+}
+
+/* İkon üstte kalsın */
+.social a img{
   width:34px;
   height:34px;
+  position:relative;
+  z-index:2;
 }
 
-/* Yanıp sönme animasyonu */
-@keyframes pulseGold{
+/* Hover: daha güçlü sarı + kırmızı glow */
+.social a:hover{
+  transform:scale(1.10);
+  box-shadow:
+    0 0 20px rgba(241,194,50,0.70),
+    0 0 35px rgba(255,0,0,0.75),
+    0 0 55px rgba(255,0,0,0.45);
+}
+
+/* Yanıp sönme: hem sarı hem kırmızı */
+@keyframes pulseBorder{
   0%{
-    box-shadow:
-      0 0 8px rgba(241,194,50,0.4),
-      0 0 18px rgba(241,194,50,0.25);
+    filter: none;
   }
   50%{
-    box-shadow:
-      0 0 18px rgba(241,194,50,0.9),
-      0 0 40px rgba(241,194,50,0.6);
+    filter:
+      drop-shadow(0 0 10px rgba(241,194,50,0.55))
+      drop-shadow(0 0 14px rgba(255,0,0,0.60))
+      drop-shadow(0 0 24px rgba(255,0,0,0.35));
   }
   100%{
-    box-shadow:
-      0 0 8px rgba(241,194,50,0.4),
-      0 0 18px rgba(241,194,50,0.25);
+    filter: none;
   }
 }
 
@@ -176,7 +201,9 @@ footer{
 @media(max-width:600px){
   .logo-image{max-width:180px;}
   .logo-frame{padding:10px 24px;}
-  .social a{width:52px;height:52px;}
+  .social a{width:52px;height:52px;border-radius:14px;}
+  .social a::before{inset:-3px;border-radius:16px;}
+  .social a::after{inset:3px;border-radius:12px;}
 }
 </style>
 </head>
@@ -184,16 +211,18 @@ footer{
 <body>
 
 <header>
+  <!-- LOGO (RESİM) -->
   <div class="logo-frame">
     <img src="logo.png" alt="RESPECT AGENCY Logo" class="logo-image">
   </div>
 
+  <!-- ÇEVİRİ / TRANSLATOR -->
   <div class="translator">
     <div class="label">ÇEVİRİ / TRANSLATOR</div>
     <div class="flags">
-      <button class="flag-btn active" data-lang="tr"><img src="https://flagcdn.com/w80/tr.png"></button>
-      <button class="flag-btn" data-lang="de"><img src="https://flagcdn.com/w80/de.png"></button>
-      <button class="flag-btn" data-lang="en"><img src="https://flagcdn.com/w80/gb.png"></button>
+      <button class="flag-btn active" data-lang="tr"><img src="https://flagcdn.com/w80/tr.png" alt="TR"></button>
+      <button class="flag-btn" data-lang="de"><img src="https://flagcdn.com/w80/de.png" alt="DE"></button>
+      <button class="flag-btn" data-lang="en"><img src="https://flagcdn.com/w80/gb.png" alt="EN"></button>
     </div>
   </div>
 
@@ -203,12 +232,13 @@ footer{
     Detaylı bilgi için <b>WhatsApp’tan bize yaz.</b>
   </div>
 
-  <div class="social">
-    <a href="https://wa.me/4917613428278" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+  <!-- SOSYAL BUTONLAR -->
+  <div class="social" aria-label="İletişim">
+    <a href="https://wa.me/4917613428278" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
     </a>
-    <a href="https://instagram.com/respect.agencyy" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png">
+    <a href="https://instagram.com/respect.agencyy" target="_blank" rel="noopener" aria-label="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
     </a>
   </div>
 </header>
