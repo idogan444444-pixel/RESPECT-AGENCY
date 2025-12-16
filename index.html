@@ -8,10 +8,6 @@
   <meta name="description" content="RESPECT AGENCY – BIGO LIVE yayıncı ajansı. Günde 3 saat ayırarak evden gelir fırsatları.">
   <meta name="author" content="RESPECT AGENCY">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
-
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
 
@@ -34,7 +30,7 @@
       color:var(--text);
       font-family: Arial, sans-serif;
       text-align:center;
-      padding:16px 12px 28px;
+      padding:14px 12px 24px;
       overflow-x:hidden;
     }
 
@@ -60,7 +56,7 @@
       margin: 0 auto;
       position:relative;
       border-radius:28px;
-      padding:18px 16px 20px;
+      padding:16px 16px 18px;
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.10);
       backdrop-filter: blur(12px);
@@ -111,64 +107,9 @@
       display:block;
     }
 
-    /* Title (bigger + sharper) */
-    .titleWrap{margin-top:12px; display:flex; justify-content:center;}
-    .title3d{
-      position:relative;
-      display:inline-block;
-      padding:14px 18px;
-      border-radius:20px;
-      background: rgba(0,0,0,.28);
-      border:1px solid rgba(241,194,50,.30);
-      box-shadow: inset 0 0 0 1px rgba(255,43,43,.10), 0 20px 60px rgba(0,0,0,.45);
-      overflow:hidden;
-      width: min(760px, 100%);
-    }
-    .title3d .t{
-      font-family: "Cinzel", serif;
-      font-size: clamp(36px, 8vw, 64px);
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      color: #ff2b2b;
-      text-shadow:
-        0 2px 0 rgba(0,0,0,.55),
-        0 5px 0 rgba(0,0,0,.28),
-        0 0 18px rgba(255,43,43,.55),
-        0 0 42px rgba(255,43,43,.22);
-      position:relative;
-      z-index:2;
-    }
-    .title3d .outline{
-      position:absolute; inset:0;
-      display:flex; align-items:center; justify-content:center;
-      pointer-events:none;
-      z-index:1;
-      color:transparent;
-      -webkit-text-stroke: 3.2px rgba(241,194,50,.98);
-      text-shadow:
-        0 0 16px rgba(241,194,50,.60),
-        0 0 48px rgba(241,194,50,.25);
-      filter: drop-shadow(0 0 16px rgba(241,194,50,.28));
-    }
-    .title3d .shine{
-      position:absolute; inset:-55% -75%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.20), transparent);
-      transform: rotate(12deg);
-      animation: shine 4.8s ease-in-out infinite;
-      opacity:.65;
-      pointer-events:none;
-      z-index:3;
-    }
-    @keyframes shine{
-      0%{transform:translateX(-35%) rotate(12deg); opacity:.12}
-      50%{opacity:.65}
-      100%{transform:translateX(35%) rotate(12deg); opacity:.12}
-    }
-
-    /* Translator bigger */
+    /* Translator (yukarı daha yakın) */
     .translator{
-      margin-top:12px;
+      margin-top:10px;
       display:flex;
       justify-content:center;
       align-items:center;
@@ -208,7 +149,7 @@
       padding:0 6px;
     }
 
-    /* BIG buttons on mobile (stack) */
+    /* BIG buttons */
     .social{
       margin-top:16px;
       display:flex;
@@ -289,7 +230,7 @@
       font-size:1.12rem;
     }
 
-    /* Trust bigger */
+    /* Trust */
     .trust{
       margin:16px auto 0;
       max-width:900px;
@@ -309,15 +250,13 @@
       opacity:.7;
     }
 
-    /* Extra mobile boost */
     @media(max-width:420px){
       html{font-size:17px;}
-      body{padding:14px 10px 24px;}
+      body{padding:12px 10px 22px;}
       .shell{width: calc(100vw - 20px);}
       .logo-image{max-width:190px;}
       .logo-frame{padding:10px 22px;}
       .plateBtn{padding:16px 16px;}
-      .title3d{padding:14px 14px;}
     }
   </style>
 </head>
@@ -329,13 +268,7 @@
         <img src="logo.png" alt="RESPECT AGENCY Logo" class="logo-image">
       </div>
 
-      <div class="titleWrap">
-        <div class="title3d" aria-label="RESPECT AGENCY">
-          <div class="outline" aria-hidden="true"><div class="t">RESPECT AGENCY</div></div>
-          <div class="t">RESPECT AGENCY</div>
-          <div class="shine" aria-hidden="true"></div>
-        </div>
-      </div>
+      <!-- (SİLİNDİ) Gereksiz RESPECT AGENCY yazısı kaldırıldı -->
 
       <div class="translator">
         <div class="label">ÇEVİRİ / TRANSLATOR</div>
