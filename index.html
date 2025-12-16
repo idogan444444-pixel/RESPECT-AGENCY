@@ -10,6 +10,7 @@
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
+
     :root{
       --gold:#f1c232;
       --red:#ff2b2b;
@@ -33,56 +34,19 @@
       overflow-x:hidden;
     }
 
-    body::before{
-      content:"";
-      position:fixed; inset:-30% -60%;
-      background: linear-gradient(90deg, transparent, rgba(241,194,50,.10), transparent);
-      transform: rotate(12deg);
-      animation: sweep 7s linear infinite;
-      pointer-events:none;
-      opacity:.9;
-    }
-    @keyframes sweep{
-      0%{transform:translateX(-35%) rotate(12deg)}
-      100%{transform:translateX(35%) rotate(12deg)}
-    }
-
     .shell{
       width: calc(100vw - 20px);
       max-width: 980px;
       margin: 0 auto;
       position:relative;
       border-radius:28px;
-      padding:16px 16px 18px;
+      padding:16px;
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.10);
       backdrop-filter: blur(12px);
       box-shadow: 0 28px 90px rgba(0,0,0,.62);
       overflow:hidden;
     }
-    .shell::before{
-      content:"";
-      position:absolute; inset:-2px;
-      border-radius:30px;
-      padding:2px;
-      background: linear-gradient(135deg, rgba(241,194,50,.85), rgba(255,43,43,.35), rgba(241,194,50,.35));
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity:.85;
-      pointer-events:none;
-    }
-    .shell::after{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        radial-gradient(900px 320px at 20% 0%, rgba(241,194,50,.12), transparent 60%),
-        radial-gradient(900px 320px at 80% 0%, rgba(255,43,43,.10), transparent 60%);
-      opacity:.95;
-      pointer-events:none;
-    }
-
-    header{position:relative; z-index:1;}
 
     .logo-frame{
       display:inline-block;
@@ -92,10 +56,9 @@
       border:2px solid rgba(241,194,50,.55);
       box-shadow:
         0 0 18px rgba(241,194,50,.35),
-        0 0 36px rgba(255,43,43,.12),
         inset 0 0 18px rgba(0,0,0,.75);
-      margin-top:2px;
     }
+
     .logo-image{
       max-width:190px;
       width:100%;
@@ -103,8 +66,9 @@
       display:block;
     }
 
+    /* TRANSLATOR */
     .translator{
-      margin-top:10px;
+      margin-top:12px;
       display:flex;
       justify-content:center;
       align-items:center;
@@ -116,10 +80,9 @@
       border-radius:14px;
       background:rgba(0,0,0,.25);
       border:1px solid rgba(255,255,255,0.12);
-      font-size:1.0rem;
-      box-shadow: inset 0 0 18px rgba(0,0,0,.6);
+      font-size:1rem;
     }
-    .flags{display:flex;gap:10px; align-items:center;}
+    .flags{display:flex;gap:10px;}
     .flag-btn{
       width:42px;height:30px;
       border-radius:12px;
@@ -127,113 +90,71 @@
       background:#111;
       cursor:pointer;
       overflow:hidden;
-      transition:.15s transform ease, .15s box-shadow ease;
     }
-    .flag-btn:hover{transform:translateY(-2px); box-shadow: 0 0 0 3px rgba(241,194,50,.10);}
     .flag-btn.active{outline:2px solid var(--gold);}
     .flag-btn img{width:100%;height:100%;object-fit:cover;}
 
-    .subtitle{
+    /* INFO BOX (RAHMEN) */
+    .info-box{
       margin:14px auto 0;
       max-width:900px;
-      font-size: clamp(1.05rem, 3.8vw, 1.25rem);
-      line-height:1.8;
-      color: rgba(255,255,255,.94);
-      text-shadow: 0 2px 14px rgba(0,0,0,.45);
-      padding:0 6px;
+      padding:16px 14px;
+      border-radius:18px;
+      background: linear-gradient(
+        180deg,
+        rgba(20,20,26,.95),
+        rgba(8,8,12,.95)
+      );
+      border:1px solid rgba(241,194,50,.55);
+      box-shadow:
+        0 0 18px rgba(241,194,50,.25),
+        inset 0 0 18px rgba(0,0,0,.6);
     }
 
+    .subtitle{
+      margin:0;
+      font-size: clamp(1.05rem, 3.8vw, 1.25rem);
+      line-height:1.8;
+      color: rgba(255,255,255,.96);
+    }
+
+    /* BUTTONS */
     .social{
       margin-top:16px;
       display:flex;
-      justify-content:center;
       gap:12px;
       flex-wrap:wrap;
+      justify-content:center;
     }
+
     .plateBtn{
-      position:relative;
-      display:inline-flex;
+      width: min(720px, 100%);
+      padding:16px;
+      border-radius:18px;
+      display:flex;
       align-items:center;
       justify-content:center;
       gap:12px;
-      width: min(720px, 100%);
-      padding:16px 16px;
-      border-radius:18px;
-      text-decoration:none;
       font-weight:900;
+      text-decoration:none;
       color:#fff;
-      letter-spacing:.2px;
-      background: linear-gradient(180deg, rgba(30,30,36,.92), rgba(10,10,14,.92));
+      background: linear-gradient(180deg, #1e1e24, #08080c);
       border:1px solid rgba(255,255,255,.12);
-      box-shadow:
-        0 18px 55px rgba(0,0,0,.55),
-        inset 0 1px 0 rgba(255,255,255,.10),
-        inset 0 -10px 22px rgba(0,0,0,.55);
-      overflow:hidden;
-      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+      box-shadow: 0 18px 55px rgba(0,0,0,.55);
     }
-    .plateBtn::before{
-      content:"";
-      position:absolute; inset:-3px;
-      border-radius:20px;
-      background: linear-gradient(90deg, rgba(241,194,50,.95), rgba(255,43,43,.55), rgba(241,194,50,.70));
-      filter: drop-shadow(0 0 16px rgba(241,194,50,.28)) drop-shadow(0 0 20px rgba(255,43,43,.18));
-      opacity:.9;
-      z-index:0;
-    }
-    .plateBtn::after{
-      content:"";
-      position:absolute; inset:3px;
-      border-radius:16px;
-      background: linear-gradient(180deg, rgba(20,20,26,.95), rgba(8,8,12,.95));
-      z-index:1;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
-    }
-    .plateBtn .gloss{
-      position:absolute; inset:-50% -70%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.16), transparent);
-      transform: rotate(12deg);
-      animation: btnShine 5.4s ease-in-out infinite;
-      opacity:.55;
-      z-index:2;
-      pointer-events:none;
-    }
-    @keyframes btnShine{
-      0%{transform:translateX(-35%) rotate(12deg); opacity:.10}
-      50%{opacity:.55}
-      100%{transform:translateX(35%) rotate(12deg); opacity:.10}
-    }
-    .plateBtn:hover{
-      transform: translateY(-2px);
-      border-color: rgba(241,194,50,.40);
-      box-shadow:
-        0 24px 75px rgba(0,0,0,.62),
-        0 0 0 3px rgba(241,194,50,.10),
-        0 0 38px rgba(255,43,43,.10),
-        inset 0 1px 0 rgba(255,255,255,.10),
-        inset 0 -10px 22px rgba(0,0,0,.55);
-    }
-    .plateBtn .icon{
-      width:32px; height:32px;
-      position:relative; z-index:3;
-      filter: drop-shadow(0 0 10px rgba(0,0,0,.35));
-    }
-    .plateBtn .label{
-      position:relative; z-index:3;
-      font-size:1.12rem;
+
+    .plateBtn img{
+      width:32px;
+      height:32px;
     }
 
     .trust{
       margin:16px auto 0;
-      max-width:900px;
-      padding:16px 14px;
+      padding:14px;
+      border-radius:18px;
       background: rgba(0,0,0,.22);
       border:1px solid rgba(255,255,255,.10);
-      border-radius:18px;
-      opacity:.97;
-      box-shadow: 0 14px 45px rgba(0,0,0,.35);
       font-size:1.02rem;
-      line-height:1.55;
     }
 
     footer{
@@ -254,88 +175,41 @@
       <div class="translator">
         <div class="label">ÇEVİRİ / TRANSLATOR</div>
         <div class="flags">
-          <button class="flag-btn active" data-lang="tr"><img src="https://flagcdn.com/w80/tr.png" alt="TR"></button>
-          <button class="flag-btn" data-lang="de"><img src="https://flagcdn.com/w80/de.png" alt="DE"></button>
-          <button class="flag-btn" data-lang="en"><img src="https://flagcdn.com/w80/gb.png" alt="EN"></button>
+          <button class="flag-btn active"><img src="https://flagcdn.com/w80/tr.png"></button>
+          <button class="flag-btn"><img src="https://flagcdn.com/w80/de.png"></button>
+          <button class="flag-btn"><img src="https://flagcdn.com/w80/gb.png"></button>
         </div>
       </div>
 
-      <div class="subtitle" id="subtitle">
-        <b>Günde sadece 3 saat ayırarak</b> evden gelir elde etmek ister misin?<br>
-        BIGO LIVE yayıncıları için <b>300$ – 8.000$ arası kazanç fırsatları</b> sunuyoruz.<br>
-        Detaylı bilgi için <b>WhatsApp’tan bize yaz.</b>
+      <!-- INFO BOX -->
+      <div class="info-box">
+        <div class="subtitle">
+          <b>Günde sadece 3 saat ayırarak</b> evden gelir elde etmek ister misin?<br>
+          BIGO LIVE yayıncıları için <b>300$ – 8.000$ arası kazanç fırsatları</b> sunuyoruz.<br>
+          Detaylı bilgi için <b>WhatsApp’tan bize yaz.</b>
+        </div>
       </div>
 
-      <div class="social" aria-label="İletişim">
-        <a class="plateBtn" href="https://wa.me/4917613428278" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <span class="gloss" aria-hidden="true"></span>
-          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">
-          <span class="label">WhatsApp</span>
+      <div class="social">
+        <a class="plateBtn" href="https://wa.me/4917613428278">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp
         </a>
-
-        <a class="plateBtn" href="https://instagram.com/respect.agencyy" target="_blank" rel="noopener" aria-label="Instagram">
-          <span class="gloss" aria-hidden="true"></span>
-          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="">
-          <span class="label">Instagram</span>
+        <a class="plateBtn" href="https://instagram.com/respect.agencyy">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"> Instagram
         </a>
-
-        <a class="plateBtn" href="https://t.me/RESPECT_44" target="_blank" rel="noopener" aria-label="Telegram">
-          <span class="gloss" aria-hidden="true"></span>
-          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="">
-          <span class="label">Telegram</span>
+        <a class="plateBtn" href="https://t.me/RESPECT_44">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"> Telegram
         </a>
       </div>
     </header>
 
-    <div class="trust" id="trust">
+    <div class="trust">
       <b>RESPECT AGENCY</b>, BIGO LIVE alanında <b>10 yıllık deneyime</b> sahip profesyonel bir ajanstır.
     </div>
 
-    <footer id="footer">
+    <footer>
       © 2025 RESPECT AGENCY – BIGO LIVE Ajansı
     </footer>
   </div>
-
-  <script>
-    const texts={
-      tr:{
-        subtitle:`<b>Günde sadece 3 saat ayırarak</b> evden gelir elde etmek ister misin?<br>
-        BIGO LIVE yayıncıları için <b>300$ – 8.000$ arası kazanç fırsatları</b> sunuyoruz.<br>
-        Detaylı bilgi için <b>WhatsApp’tan bize yaz.</b>`,
-        trust:`<b>RESPECT AGENCY</b>, BIGO LIVE alanında <b>10 yıllık deneyime</b> sahip profesyonel bir ajanstır.`,
-        footer:`© 2025 RESPECT AGENCY – BIGO LIVE Ajansı`
-      },
-      de:{
-        subtitle:`<b>Wenn du nur 3 Stunden am Tag investierst</b>, möchtest du von zuhause aus Geld verdienen?<br>
-        Für BIGO LIVE Creator bieten wir <b>300$ – 8.000$ Verdienstmöglichkeiten</b>.<br>
-        Für Details <b>schreib uns auf WhatsApp.</b>`,
-        trust:`<b>RESPECT AGENCY</b> ist eine professionelle BIGO LIVE Agentur mit <b>10 Jahren Erfahrung</b>.`,
-        footer:`© 2025 RESPECT AGENCY – BIGO LIVE Agentur`
-      },
-      en:{
-        subtitle:`<b>If you invest just 3 hours a day</b>, do you want to earn money from home?<br>
-        We offer BIGO LIVE creators <b>$300 – $8,000 earning opportunities</b>.<br>
-        For details, <b>message us on WhatsApp.</b>`,
-        trust:`<b>RESPECT AGENCY</b> is a professional BIGO LIVE agency with <b>10 years of experience</b>.`,
-        footer:`© 2025 RESPECT AGENCY – BIGO LIVE Agency`
-      }
-    };
-
-    const subtitle = document.getElementById("subtitle");
-    const trust = document.getElementById("trust");
-    const footer = document.getElementById("footer");
-
-    document.querySelectorAll(".flag-btn").forEach(btn=>{
-      btn.onclick=()=>{
-        document.querySelectorAll(".flag-btn").forEach(b=>b.classList.remove("active"));
-        btn.classList.add("active");
-        const t=texts[btn.dataset.lang];
-        subtitle.innerHTML=t.subtitle;
-        trust.innerHTML=t.trust;
-        footer.innerHTML=t.footer;
-        document.documentElement.lang = btn.dataset.lang;
-      };
-    });
-  </script>
 </body>
 </html>
