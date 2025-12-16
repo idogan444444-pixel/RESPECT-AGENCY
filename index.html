@@ -8,27 +8,35 @@
   <meta name="description" content="RESPECT AGENCY – BIGO LIVE yayıncı ajansı. Günde 3 saat ayırarak evden gelir fırsatları.">
   <meta name="author" content="RESPECT AGENCY">
 
+  <!-- Premium font for headline -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
 
     :root{
-      --bg1:#06050a;
-      --bg2:#0c0010;
-
       --gold:#f1c232;
       --gold2:#b98a11;
+      --gold3:#fff2b0;
       --red:#ff2b2b;
+      --red2:#b10000;
 
-      --text:#fff;
-      --card:rgba(255,255,255,.06);
+      --bg1:#05040a;
+      --bg2:#0b0010;
+
+      --panel:rgba(12,10,16,.72);
       --stroke:rgba(255,255,255,.12);
-      --shadow: 0 22px 70px rgba(0,0,0,.62);
+      --text:#fff;
     }
 
     body{
+      min-height:100vh;
       background:
-        radial-gradient(1200px 700px at 50% -10%, rgba(255,64,64,.14), transparent 60%),
-        radial-gradient(900px 600px at 20% 10%, rgba(241,194,50,.14), transparent 60%),
+        radial-gradient(1200px 650px at 50% -10%, rgba(255,43,43,.18), transparent 60%),
+        radial-gradient(900px 650px at 15% 10%, rgba(241,194,50,.18), transparent 62%),
+        radial-gradient(800px 650px at 85% 22%, rgba(241,194,50,.10), transparent 65%),
         linear-gradient(180deg, var(--bg1), var(--bg2));
       color:var(--text);
       font-family: Arial, sans-serif;
@@ -37,80 +45,70 @@
       overflow-x:hidden;
     }
 
-    /* Hafif ışık geçişi */
+    /* subtle shimmer sweep */
     body::before{
       content:"";
-      position:fixed;
-      inset:0;
-      left:-120%;
-      background:linear-gradient(120deg,transparent,rgba(241,194,50,0.08),transparent);
-      animation:sweep 6s infinite;
+      position:fixed; inset:-30% -60%;
+      background: linear-gradient(90deg, transparent, rgba(241,194,50,.10), transparent);
+      transform: rotate(12deg);
+      animation: sweep 7s linear infinite;
       pointer-events:none;
+      opacity:.9;
     }
     @keyframes sweep{
-      0%{left:-120%;}
-      40%{left:120%;}
-      100%{left:120%;}
+      0%{transform:translateX(-35%) rotate(12deg)}
+      100%{transform:translateX(35%) rotate(12deg)}
     }
 
-    /* Premium panel (Bild 1 vibe) */
-    .panel{
+    /* ====== MAIN PREMIUM FRAME (Bild 1 vibe) ====== */
+    .shell{
       width:min(980px, 100%);
       margin:0 auto;
       position:relative;
-      border-radius:26px;
-      padding:20px 16px 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.04));
+      border-radius:28px;
+      padding:18px 16px 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.10);
-      box-shadow: var(--shadow);
       backdrop-filter: blur(12px);
+      box-shadow: 0 28px 90px rgba(0,0,0,.62);
       overflow:hidden;
     }
-    .panel::before{
+    .shell::before{
       content:"";
       position:absolute; inset:-2px;
-      border-radius:28px;
+      border-radius:30px;
       padding:2px;
-      background: linear-gradient(135deg, rgba(241,194,50,.60), rgba(255,43,43,.35), rgba(241,194,50,.25));
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
+      background: linear-gradient(135deg, rgba(241,194,50,.85), rgba(255,43,43,.35), rgba(241,194,50,.35));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
-      opacity:.78;
+      opacity:.85;
       pointer-events:none;
     }
-    .panel::after{
+    .shell::after{
       content:"";
       position:absolute; inset:0;
       background:
-        radial-gradient(800px 260px at 20% 0%, rgba(241,194,50,.10), transparent 60%),
-        radial-gradient(800px 260px at 80% 0%, rgba(255,43,43,.08), transparent 60%);
+        radial-gradient(800px 260px at 20% 0%, rgba(241,194,50,.12), transparent 60%),
+        radial-gradient(800px 260px at 80% 0%, rgba(255,43,43,.10), transparent 60%),
+        radial-gradient(900px 500px at 50% 55%, rgba(255,255,255,.04), transparent 60%);
+      opacity:.95;
       pointer-events:none;
-      opacity:.85;
     }
 
     header{position:relative; z-index:1;}
 
-    /* ===== LOGO ÇERÇEVE (kalsın) ===== */
+    /* ===== LOGO FRAME ===== */
     .logo-frame{
       display:inline-block;
       padding:12px 34px;
-      border:3px solid rgba(241,194,50,.75);
-      border-radius:16px;
-      background:rgba(0,0,0,.18);
+      border-radius:18px;
+      background: rgba(0,0,0,.35);
+      border:2px solid rgba(241,194,50,.55);
       box-shadow:
-        0 0 12px rgba(241,194,50,0.35),
-        0 0 26px rgba(241,194,50,0.20),
-        inset 0 0 12px rgba(0,0,0,0.85);
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-    .logo-frame:hover{
-      transform:scale(1.02);
-      box-shadow:
-        0 0 20px rgba(241,194,50,0.55),
-        0 0 46px rgba(241,194,50,0.32),
-        inset 0 0 12px rgba(0,0,0,0.85);
+        0 0 18px rgba(241,194,50,.35),
+        0 0 36px rgba(255,43,43,.12),
+        inset 0 0 18px rgba(0,0,0,.75);
     }
     .logo-image{
       max-width:220px;
@@ -119,62 +117,72 @@
       display:block;
     }
 
-    /* ===== RESPECT AGENCY SCHRIFT (Bild 2: 3D/Neon) ===== */
+    /* ===== TITLE (Bild 2) - 3D/Bevel + gold outline + shine ===== */
+    .titleWrap{margin-top:14px; display:flex; justify-content:center;}
     .title3d{
-      margin:16px auto 0;
-      display:inline-block;
       position:relative;
-      padding:10px 14px;
-      border-radius:18px;
-      border:1px solid rgba(241,194,50,.22);
-      background: rgba(0,0,0,.18);
+      display:inline-block;
+      padding:14px 18px;
+      border-radius:20px;
+      background: rgba(0,0,0,.28);
+      border:1px solid rgba(241,194,50,.28);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,43,43,.10),
+        0 20px 60px rgba(0,0,0,.45);
       overflow:hidden;
+    }
+    .title3d .t{
+      font-family: "Cinzel", serif;
+      font-size: clamp(34px, 5.2vw, 62px);
+      font-weight: 800;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      line-height:1.05;
-      box-shadow: 0 0 0 1px rgba(255,0,0,.08) inset;
-    }
-    .title3d .text{
-      font-size: clamp(34px, 4.8vw, 60px);
-      font-weight: 1000;
-      display:block;
-      color: var(--red);
+
+      /* red fill */
+      color: #ff2b2b;
+
+      /* 3D depth layers */
       text-shadow:
-        0 1px 0 rgba(0,0,0,.45),
-        0 0 12px rgba(255,43,43,.62),
-        0 0 28px rgba(255,43,43,.35);
+        0 2px 0 rgba(0,0,0,.55),
+        0 4px 0 rgba(0,0,0,.35),
+        0 0 18px rgba(255,43,43,.55),
+        0 0 40px rgba(255,43,43,.22);
+      position:relative;
+      z-index:2;
     }
+
+    /* gold outline (hard) */
     .title3d .outline{
       position:absolute; inset:0;
       display:flex; align-items:center; justify-content:center;
       pointer-events:none;
+      z-index:1;
       color:transparent;
-      -webkit-text-stroke: 2.6px rgba(241,194,50,.98);
+      -webkit-text-stroke: 3px rgba(241,194,50,.98);
       text-shadow:
-        0 0 14px rgba(241,194,50,.60),
-        0 0 36px rgba(241,194,50,.25);
-      filter: drop-shadow(0 0 14px rgba(241,194,50,.32));
-      animation: outlineFlicker 3.8s ease-in-out infinite;
+        0 0 16px rgba(241,194,50,.60),
+        0 0 44px rgba(241,194,50,.25);
+      filter: drop-shadow(0 0 16px rgba(241,194,50,.28));
+      opacity:.98;
     }
+
+    /* shine sweep */
     .title3d .shine{
-      position:absolute; inset:-50% -70%;
+      position:absolute; inset:-55% -75%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,.20), transparent);
       transform: rotate(12deg);
-      animation: shine 4.6s ease-in-out infinite;
+      animation: shine 4.8s ease-in-out infinite;
+      opacity:.65;
       pointer-events:none;
-      opacity:.60;
+      z-index:3;
     }
     @keyframes shine{
       0%{transform:translateX(-35%) rotate(12deg); opacity:.12}
-      50%{opacity:.60}
+      50%{opacity:.65}
       100%{transform:translateX(35%) rotate(12deg); opacity:.12}
     }
-    @keyframes outlineFlicker{
-      0%,100%{opacity:1}
-      50%{opacity:.78}
-    }
 
-    /* ===== TRANSLATOR (kalsın) ===== */
+    /* ===== TRANSLATOR ===== */
     .translator{
       margin-top:14px;
       display:flex;
@@ -184,155 +192,172 @@
       flex-wrap:wrap;
     }
     .translator .label{
-      padding:6px 10px;
-      border-radius:12px;
-      background:rgba(255,255,255,0.06);
+      padding:8px 12px;
+      border-radius:14px;
+      background:rgba(0,0,0,.25);
       border:1px solid rgba(255,255,255,0.12);
-      font-size:.9rem;
+      font-size:.95rem;
+      box-shadow: inset 0 0 18px rgba(0,0,0,.6);
     }
-    .flags{display:flex;gap:10px;}
+    .flags{display:flex;gap:10px; align-items:center;}
     .flag-btn{
-      width:34px;height:24px;
-      border-radius:8px;
+      width:36px;height:26px;
+      border-radius:10px;
       border:1px solid rgba(255,255,255,0.18);
       background:#111;
       cursor:pointer;
       overflow:hidden;
-      transition:.15s transform ease;
+      transition:.15s transform ease, .15s box-shadow ease;
     }
-    .flag-btn:hover{transform:translateY(-2px)}
+    .flag-btn:hover{transform:translateY(-2px); box-shadow: 0 0 0 3px rgba(241,194,50,.10);}
     .flag-btn.active{outline:2px solid var(--gold);}
     .flag-btn img{width:100%;height:100%;object-fit:cover;}
 
-    /* ===== METİN (kalsın) ===== */
+    /* ===== TEXT ===== */
     .subtitle{
       margin:16px auto 0;
-      max-width:880px;
-      font-size:1.05rem;
-      line-height:1.7;
+      max-width:900px;
+      font-size:1.08rem;
+      line-height:1.75;
+      color: rgba(255,255,255,.92);
+      text-shadow: 0 2px 14px rgba(0,0,0,.45);
+      padding:0 4px;
     }
 
-    /* ===== PREMIUM BUTONLAR (Bild 1) ===== */
+    /* ===== BUTTONS (Bild 1: metal plates) ===== */
     .social{
-      margin-top:16px;
+      margin-top:18px;
       display:flex;
       justify-content:center;
       gap:14px;
       flex-wrap:wrap;
     }
 
-    .btnPremium{
+    .plateBtn{
       position:relative;
       display:inline-flex;
       align-items:center;
-      gap:10px;
-      padding:12px 16px;
+      justify-content:center;
+      gap:12px;
+      min-width: 260px;
+      padding:14px 18px;
       border-radius:16px;
       text-decoration:none;
-      color:#fff;
       font-weight:900;
+      color:#fff;
       letter-spacing:.2px;
-      background: rgba(0,0,0,.25);
+      background: linear-gradient(180deg, rgba(30,30,36,.92), rgba(10,10,14,.92));
       border:1px solid rgba(255,255,255,.12);
       box-shadow:
-        0 14px 45px rgba(0,0,0,.45),
-        0 0 0 1px rgba(241,194,50,.10) inset;
-      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+        0 18px 55px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.10),
+        inset 0 -10px 22px rgba(0,0,0,.55);
       overflow:hidden;
-      min-width: 190px;
-      justify-content:center;
+      transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
     }
-    .btnPremium::before{
+
+    /* gold/red frame like mockup */
+    .plateBtn::before{
       content:"";
-      position:absolute; inset:-2px;
+      position:absolute; inset:-3px;
       border-radius:18px;
-      padding:2px;
-      background: linear-gradient(135deg, rgba(241,194,50,.75), rgba(255,43,43,.22), rgba(241,194,50,.35));
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity:.70;
-      pointer-events:none;
+      background: linear-gradient(90deg, rgba(241,194,50,.95), rgba(255,43,43,.55), rgba(241,194,50,.70));
+      filter: drop-shadow(0 0 16px rgba(241,194,50,.28)) drop-shadow(0 0 20px rgba(255,43,43,.18));
+      opacity:.9;
+      z-index:0;
     }
-    .btnPremium::after{
+    .plateBtn::after{
       content:"";
-      position:absolute; inset:-60% -80%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);
+      position:absolute; inset:3px;
+      border-radius:14px;
+      background: linear-gradient(180deg, rgba(20,20,26,.95), rgba(8,8,12,.95));
+      z-index:1;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
+    }
+
+    /* glossy highlight */
+    .plateBtn .gloss{
+      position:absolute; inset:-50% -70%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.16), transparent);
       transform: rotate(12deg);
-      animation: btnShine 5.2s ease-in-out infinite;
-      pointer-events:none;
+      animation: btnShine 5.4s ease-in-out infinite;
       opacity:.55;
+      z-index:2;
+      pointer-events:none;
     }
     @keyframes btnShine{
       0%{transform:translateX(-35%) rotate(12deg); opacity:.10}
       50%{opacity:.55}
       100%{transform:translateX(35%) rotate(12deg); opacity:.10}
     }
-    .btnPremium:hover{
+
+    .plateBtn:hover{
       transform: translateY(-2px);
       border-color: rgba(241,194,50,.40);
       box-shadow:
-        0 18px 60px rgba(0,0,0,.55),
-        0 0 0 3px rgba(241,194,50,.12),
-        0 0 34px rgba(255,43,43,.10);
-    }
-    .btnPremium img{
-      width:22px;height:22px;
-      position:relative; z-index:1;
-    }
-    .btnPremium span{
-      position:relative; z-index:1;
-      display:inline-block;
+        0 24px 75px rgba(0,0,0,.62),
+        0 0 0 3px rgba(241,194,50,.10),
+        0 0 38px rgba(255,43,43,.10),
+        inset 0 1px 0 rgba(255,255,255,.10),
+        inset 0 -10px 22px rgba(0,0,0,.55);
     }
 
-    /* ===== ALT GÜVEN (kalsın, biraz premium) ===== */
+    .plateBtn .icon{
+      width:28px; height:28px;
+      position:relative; z-index:3;
+      filter: drop-shadow(0 0 10px rgba(0,0,0,.35));
+    }
+    .plateBtn .label{
+      position:relative; z-index:3;
+      font-size:1.05rem;
+    }
+
+    /* ===== TRUST ===== */
     .trust{
       margin:18px auto 0;
-      max-width:880px;
+      max-width:900px;
       padding:14px;
-      background:rgba(0,0,0,.22);
+      background: rgba(0,0,0,.22);
       border:1px solid rgba(255,255,255,.10);
-      border-radius:16px;
+      border-radius:18px;
       opacity:.95;
-      box-shadow: 0 10px 30px rgba(0,0,0,.28);
+      box-shadow: 0 14px 45px rgba(0,0,0,.35);
     }
 
     footer{
-      margin-top:22px;
+      margin-top:20px;
       font-size:.82rem;
       opacity:.65;
     }
 
-    /* MOBİL */
     @media(max-width:600px){
       .logo-image{max-width:180px;}
       .logo-frame{padding:10px 24px;}
-      .btnPremium{min-width: 100%;}
+      .plateBtn{min-width: 100%;}
     }
   </style>
 </head>
 
 <body>
-
-  <div class="panel">
+  <div class="shell">
     <header>
-      <!-- LOGO (RESİM) -->
+      <!-- LOGO -->
       <div class="logo-frame">
         <img src="logo.png" alt="RESPECT AGENCY Logo" class="logo-image">
       </div>
 
-      <!-- RESPECT AGENCY Yazısı (Bild 2 stil) -->
-      <h1 class="title3d" aria-label="RESPECT AGENCY">
-        <span class="outline" aria-hidden="true">
-          <span style="font-size: clamp(34px, 4.8vw, 60px); font-weight:1000;">RESPECT AGENCY</span>
-        </span>
-        <span class="text">RESPECT AGENCY</span>
-        <span class="shine" aria-hidden="true"></span>
-      </h1>
+      <!-- Premium Title -->
+      <div class="titleWrap">
+        <div class="title3d" aria-label="RESPECT AGENCY">
+          <div class="outline" aria-hidden="true">
+            <div class="t">RESPECT AGENCY</div>
+          </div>
+          <div class="t">RESPECT AGENCY</div>
+          <div class="shine" aria-hidden="true"></div>
+        </div>
+      </div>
 
-      <!-- ÇEVİRİ / TRANSLATOR -->
+      <!-- Translator -->
       <div class="translator">
         <div class="label">ÇEVİRİ / TRANSLATOR</div>
         <div class="flags">
@@ -348,21 +373,24 @@
         Detaylı bilgi için <b>WhatsApp’tan bize yaz.</b>
       </div>
 
-      <!-- SOSYAL BUTONLAR (WhatsApp / Instagram / Telegram) -->
+      <!-- Premium Buttons -->
       <div class="social" aria-label="İletişim">
-        <a class="btnPremium" href="https://wa.me/4917613428278" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-          <span>WhatsApp</span>
+        <a class="plateBtn" href="https://wa.me/4917613428278" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <span class="gloss" aria-hidden="true"></span>
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">
+          <span class="label">WhatsApp</span>
         </a>
 
-        <a class="btnPremium" href="https://instagram.com/respect.agencyy" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
-          <span>Instagram</span>
+        <a class="plateBtn" href="https://instagram.com/respect.agencyy" target="_blank" rel="noopener" aria-label="Instagram">
+          <span class="gloss" aria-hidden="true"></span>
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="">
+          <span class="label">Instagram</span>
         </a>
 
-        <a class="btnPremium" href="https://t.me/RESPECT_44" target="_blank" rel="noopener" aria-label="Telegram">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
-          <span>Telegram</span>
+        <a class="plateBtn" href="https://t.me/RESPECT_44" target="_blank" rel="noopener" aria-label="Telegram">
+          <span class="gloss" aria-hidden="true"></span>
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="">
+          <span class="label">Telegram</span>
         </a>
       </div>
     </header>
@@ -417,6 +445,5 @@
       };
     });
   </script>
-
 </body>
 </html>
