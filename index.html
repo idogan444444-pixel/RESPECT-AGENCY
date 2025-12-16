@@ -10,7 +10,6 @@
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
-
     :root{
       --gold:#f1c232;
       --red:#ff2b2b;
@@ -30,11 +29,10 @@
       color:var(--text);
       font-family: Arial, sans-serif;
       text-align:center;
-      padding:14px 12px 24px;
+      padding:12px 10px 22px;
       overflow-x:hidden;
     }
 
-    /* subtle shimmer */
     body::before{
       content:"";
       position:fixed; inset:-30% -60%;
@@ -49,9 +47,8 @@
       100%{transform:translateX(35%) rotate(12deg)}
     }
 
-    /* FULL WIDTH PANEL on mobile */
     .shell{
-      width: calc(100vw - 24px);
+      width: calc(100vw - 20px);
       max-width: 980px;
       margin: 0 auto;
       position:relative;
@@ -87,10 +84,9 @@
 
     header{position:relative; z-index:1;}
 
-    /* Logo */
     .logo-frame{
       display:inline-block;
-      padding:12px 30px;
+      padding:10px 22px;
       border-radius:18px;
       background: rgba(0,0,0,.35);
       border:2px solid rgba(241,194,50,.55);
@@ -101,13 +97,12 @@
       margin-top:2px;
     }
     .logo-image{
-      max-width:220px;
+      max-width:190px;
       width:100%;
       height:auto;
       display:block;
     }
 
-    /* Translator (yukarı daha yakın) */
     .translator{
       margin-top:10px;
       display:flex;
@@ -138,7 +133,6 @@
     .flag-btn.active{outline:2px solid var(--gold);}
     .flag-btn img{width:100%;height:100%;object-fit:cover;}
 
-    /* Text bigger */
     .subtitle{
       margin:14px auto 0;
       max-width:900px;
@@ -149,7 +143,6 @@
       padding:0 6px;
     }
 
-    /* BIG buttons */
     .social{
       margin-top:16px;
       display:flex;
@@ -164,7 +157,7 @@
       justify-content:center;
       gap:12px;
       width: min(720px, 100%);
-      padding:16px 18px;
+      padding:16px 16px;
       border-radius:18px;
       text-decoration:none;
       font-weight:900;
@@ -230,7 +223,6 @@
       font-size:1.12rem;
     }
 
-    /* Trust */
     .trust{
       margin:16px auto 0;
       max-width:900px;
@@ -249,15 +241,6 @@
       font-size:.9rem;
       opacity:.7;
     }
-
-    @media(max-width:420px){
-      html{font-size:17px;}
-      body{padding:12px 10px 22px;}
-      .shell{width: calc(100vw - 20px);}
-      .logo-image{max-width:190px;}
-      .logo-frame{padding:10px 22px;}
-      .plateBtn{padding:16px 16px;}
-    }
   </style>
 </head>
 
@@ -267,8 +250,6 @@
       <div class="logo-frame">
         <img src="logo.png" alt="RESPECT AGENCY Logo" class="logo-image">
       </div>
-
-      <!-- (SİLİNDİ) Gereksiz RESPECT AGENCY yazısı kaldırıldı -->
 
       <div class="translator">
         <div class="label">ÇEVİRİ / TRANSLATOR</div>
