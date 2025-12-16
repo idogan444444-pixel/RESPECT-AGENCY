@@ -1,235 +1,228 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>BIGO LIVE RESMİ AJANS | BIGO LIVE Ajansı</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BIGO LIVE RESMİ AJANS | BIGO LIVE Ajansı</title>
 
-  <meta name="description" content="BIGO LIVE RESMİ AJANS – BIGO LIVE yayıncı ajansı. Günde 3 saat ayırarak evden gelir fırsatları.">
-  <meta name="author" content="BIGO LIVE RESMİ AJANS">
+<meta name="description" content="BIGO LIVE RESMİ AJANS – BIGO LIVE yayıncı ajansı.">
+<meta name="author" content="BIGO LIVE RESMİ AJANS">
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-    :root{
-      --gold:#f1c232;
-      --red:#ff2b2b;
-      --bg1:#05040a;
-      --bg2:#0b0010;
-      --text:#fff;
-    }
+:root{
+  --gold:#f1c232;
+  --red:#ff2b2b;
+  --bg1:#05040a;
+  --bg2:#0b0010;
+  --text:#fff;
+}
 
-    body{
-      min-height:100vh;
-      background:
-        radial-gradient(1200px 650px at 50% -10%, rgba(255,43,43,.18), transparent 60%),
-        radial-gradient(900px 650px at 15% 10%, rgba(241,194,50,.18), transparent 62%),
-        linear-gradient(180deg, var(--bg1), var(--bg2));
-      color:var(--text);
-      font-family: Arial, sans-serif;
-      text-align:center;
-      padding:12px 10px 22px;
-      overflow-x:hidden;
-    }
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(1200px 650px at 50% -10%, rgba(255,43,43,.18), transparent 60%),
+    radial-gradient(900px 650px at 15% 10%, rgba(241,194,50,.18), transparent 62%),
+    linear-gradient(180deg, var(--bg1), var(--bg2));
+  color:var(--text);
+  font-family: Arial, sans-serif;
+  text-align:center;
+  padding:12px 10px 22px;
+}
 
-    .shell{
-      width:calc(100vw - 20px);
-      max-width:980px;
-      margin:0 auto;
-      border-radius:28px;
-      padding:16px;
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.10);
-      box-shadow:0 28px 90px rgba(0,0,0,.62);
-    }
+/* CONTAINER */
+.shell{
+  width:calc(100vw - 20px);
+  max-width:980px;
+  margin:0 auto;
+  border-radius:28px;
+  padding:16px;
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 28px 90px rgba(0,0,0,.62);
+}
 
-    /* LOGO */
-    .logo-frame{
-      display:inline-block;
-      padding:10px 22px;
-      border-radius:18px;
-      background:rgba(0,0,0,.35);
-      border:2px solid rgba(241,194,50,.55);
-      box-shadow:0 0 18px rgba(241,194,50,.35), inset 0 0 18px rgba(0,0,0,.75);
-    }
-    .logo-image{
-      max-width:190px;
-      width:100%;
-      height:auto;
-      display:block;
-    }
+/* LOGO */
+.logo-frame{
+  display:inline-block;
+  padding:10px 22px;
+  border-radius:18px;
+  background:rgba(0,0,0,.35);
+  border:2px solid rgba(241,194,50,.55);
+  box-shadow:0 0 18px rgba(241,194,50,.35), inset 0 0 18px rgba(0,0,0,.75);
+}
+.logo-image{max-width:190px;width:100%;}
 
-    /* ===== BIGO LIVE RESMİ AJANS (breiter & dünner Rahmen + Blinker) ===== */
-    .brand-frame{
-      margin:12px auto 0;
-      max-width:900px;
-      padding:10px 14px;
-      border-radius:22px;
-      background:rgba(0,0,0,.25);
-      border:1px solid rgba(241,194,50,.65);
-      box-shadow:
-        0 0 22px rgba(241,194,50,.22),
-        inset 0 0 16px rgba(0,0,0,.65);
-    }
+/* BRAND */
+.brand-frame{
+  margin:12px auto 0;
+  max-width:900px;
+  padding:10px 14px;
+  border-radius:22px;
+  background:rgba(0,0,0,.25);
+  border:1px solid rgba(241,194,50,.65);
+  box-shadow:0 0 22px rgba(241,194,50,.22), inset 0 0 16px rgba(0,0,0,.65);
+}
+.brand-text{
+  font-size:clamp(30px, 6.2vw, 44px);
+  font-weight:1000;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:var(--red);
+  text-shadow:0 0 10px rgba(255,43,43,.45),0 0 22px rgba(255,43,43,.20);
+  animation:blinkText 3s infinite;
+}
+@keyframes blinkText{
+  0%,42%{opacity:1}
+  50%{opacity:0}
+  58%{opacity:1}
+  100%{opacity:1}
+}
 
-    .brand-text{
-      font-size:clamp(30px, 6.2vw, 44px);
-      font-weight:1000;
-      letter-spacing:1.6px;
-      text-transform:uppercase;
-      color:var(--red);
-      text-shadow:
-        0 0 10px rgba(255,43,43,.45),
-        0 0 22px rgba(255,43,43,.20);
-      animation: blinkText 3.0s infinite;
-    }
+/* TRANSLATOR */
+.translator{
+  margin-top:12px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+}
+.translator .label{
+  padding:9px 12px;
+  border-radius:14px;
+  background:rgba(0,0,0,.25);
+  border:1px solid rgba(255,255,255,.12);
+}
+.flags{display:flex;gap:10px;}
+.flag-btn{
+  width:42px;height:30px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.18);
+  background:#111;
+  overflow:hidden;
+  cursor:pointer;
+}
+.flag-btn.active{outline:2px solid var(--gold);}
+.flag-btn img{width:100%;height:100%;object-fit:cover;}
 
-    @keyframes blinkText{
-      0%, 42%{opacity:1}
-      50%{opacity:0}
-      58%{opacity:1}
-      100%{opacity:1}
-    }
+/* INFO BOX */
+.info-box{
+  margin:14px auto 0;
+  max-width:900px;
+  padding:16px 14px;
+  border-radius:18px;
+  background:linear-gradient(180deg, rgba(20,20,26,.95), rgba(8,8,12,.95));
+  border:1px solid rgba(241,194,50,.55);
+}
+.subtitle{
+  font-size:clamp(1.05rem, 3.8vw, 1.25rem);
+  line-height:1.8;
+}
 
-    /* TRANSLATOR */
-    .translator{
-      margin-top:12px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
-    .translator .label{
-      padding:9px 12px;
-      border-radius:14px;
-      background:rgba(0,0,0,.25);
-      border:1px solid rgba(255,255,255,.12);
-      font-size:1rem;
-    }
-    .flags{display:flex;gap:10px;}
-    .flag-btn{
-      width:42px;height:30px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.18);
-      background:#111;
-      overflow:hidden;
-      cursor:pointer;
-    }
-    .flag-btn.active{outline:2px solid var(--gold);}
-    .flag-btn img{width:100%;height:100%;object-fit:cover;}
+/* BUTTONS */
+.social{
+  margin-top:16px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.plateBtn{
+  width:min(720px,100%);
+  padding:16px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  font-weight:900;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(180deg,#1e1e24,#08080c);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 18px 55px rgba(0,0,0,.55);
+}
+.plateBtn img{width:32px;height:32px;}
 
-    /* INFO BOX */
-    .info-box{
-      margin:14px auto 0;
-      max-width:900px;
-      padding:16px 14px;
-      border-radius:18px;
-      background:linear-gradient(180deg, rgba(20,20,26,.95), rgba(8,8,12,.95));
-      border:1px solid rgba(241,194,50,.55);
-      box-shadow:0 0 18px rgba(241,194,50,.25), inset 0 0 18px rgba(0,0,0,.6);
-    }
-    .subtitle{
-      font-size:clamp(1.05rem, 3.8vw, 1.25rem);
-      line-height:1.8;
-      color:rgba(255,255,255,.96);
-    }
-
-    /* BUTTONS */
-    .social{
-      margin-top:16px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-    .plateBtn{
-      width:min(720px,100%);
-      padding:16px;
-      border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:12px;
-      font-weight:900;
-      text-decoration:none;
-      color:#fff;
-      background:linear-gradient(180deg,#1e1e24,#08080c);
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 18px 55px rgba(0,0,0,.55);
-    }
-    .plateBtn img{width:32px;height:32px;}
-
-    .trust{
-      margin:16px auto 0;
-      padding:14px;
-      border-radius:18px;
-      background:rgba(0,0,0,.22);
-      border:1px solid rgba(255,255,255,.10);
-      font-size:1.02rem;
-    }
-
-    footer{
-      margin-top:16px;
-      font-size:.9rem;
-      opacity:.7;
-    }
-  </style>
+footer{margin-top:16px;font-size:.9rem;opacity:.7;}
+</style>
 </head>
 
 <body>
-  <div class="shell">
-    <header>
-      <!-- LOGO -->
-      <div class="logo-frame">
-        <img src="logo.png" alt="RESPECT AGENCY Logo" class="logo-image">
-      </div>
+<div class="shell">
+<header>
 
-      <!-- BIGO LIVE RESMİ AJANS -->
-      <div class="brand-frame" aria-label="BIGO LIVE RESMİ AJANS">
-        <div class="brand-text">BIGO LIVE RESMİ AJANS</div>
-      </div>
-
-      <!-- Translator -->
-      <div class="translator">
-        <div class="label">ÇEVİRİ / TRANSLATOR</div>
-        <div class="flags">
-          <button class="flag-btn active" data-lang="tr"><img src="https://flagcdn.com/w80/tr.png" alt="TR"></button>
-          <button class="flag-btn" data-lang="de"><img src="https://flagcdn.com/w80/de.png" alt="DE"></button>
-          <button class="flag-btn" data-lang="en"><img src="https://flagcdn.com/w80/gb.png" alt="EN"></button>
-        </div>
-      </div>
-
-      <!-- INFO BOX -->
-      <div class="info-box">
-        <div class="subtitle" id="subtitle">
-          <b>Günde sadece 3 saat ayırarak</b> evden gelir elde etmek ister misin?<br>
-          BIGO LIVE yayıncıları için <b>300$ – 8.000$ arası kazanç fırsatları</b> sunuyoruz.<br>
-          Detaylı bilgi için <b>WhatsApp’tan bize yaz.</b>
-        </div>
-      </div>
-
-      <!-- Buttons -->
-      <div class="social" aria-label="İletişim">
-        <a class="plateBtn" href="https://wa.me/4917613428278" target="_blank" rel="noopener">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp
-        </a>
-        <a class="plateBtn" href="https://instagram.com/respect.agencyy" target="_blank" rel="noopener">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"> Instagram
-        </a>
-        <a class="plateBtn" href="https://t.me/RESPECT_44" target="_blank" rel="noopener">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"> Telegram
-        </a>
-      </div>
-    </header>
-
-    <div class="trust">
-      <b>BIGO LIVE RESMİ AJANS</b>, BIGO LIVE alanında <b>10 yıllık deneyime</b> sahip profesyonel bir ajanstır.
-    </div>
-
-    <footer>
-      © 2025 BIGO LIVE RESMİ AJANS
-    </footer>
+  <div class="logo-frame">
+    <img src="logo.png" class="logo-image" alt="Logo">
   </div>
+
+  <div class="brand-frame">
+    <div class="brand-text" id="brandText">BIGO LIVE RESMİ AJANS</div>
+  </div>
+
+  <div class="translator">
+    <div class="label">ÇEVİRİ / TRANSLATOR</div>
+    <div class="flags">
+      <button class="flag-btn active" data-lang="tr"><img src="https://flagcdn.com/w80/tr.png"></button>
+      <button class="flag-btn" data-lang="de"><img src="https://flagcdn.com/w80/de.png"></button>
+      <button class="flag-btn" data-lang="en"><img src="https://flagcdn.com/w80/gb.png"></button>
+    </div>
+  </div>
+
+  <div class="info-box">
+    <div class="subtitle" id="subtitle"></div>
+  </div>
+
+  <div class="social">
+    <a class="plateBtn" href="https://wa.me/4917613428278"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp</a>
+    <a class="plateBtn" href="https://instagram.com/respect.agencyy"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"> Instagram</a>
+    <a class="plateBtn" href="https://t.me/RESPECT_44"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"> Telegram</a>
+  </div>
+
+</header>
+
+<footer id="footer"></footer>
+</div>
+
+<script>
+const texts={
+tr:{
+ subtitle:`<b>Günde sadece 3 saat ayırarak</b> evden gelir elde etmek ister misin?<br>
+ BIGO LIVE yayıncıları için <b>300$ – 8.000$</b> kazanç fırsatı.<br>
+ Detaylı bilgi için <b>WhatsApp’tan yaz.</b>`,
+ footer:`© 2025 BIGO LIVE RESMİ AJANS`
+},
+de:{
+ subtitle:`<b>Mit nur 3 Stunden täglich</b> von zuhause Geld verdienen?<br>
+ Für BIGO LIVE Creator <b>300$ – 8.000$</b> Verdienst.<br>
+ <b>Schreib uns auf WhatsApp.</b>`,
+ footer:`© 2025 BIGO LIVE OFFIZIELLE AGENTUR`
+},
+en:{
+ subtitle:`<b>Earn money from home with just 3 hours a day</b>.<br>
+ BIGO LIVE creators can earn <b>$300 – $8,000</b>.<br>
+ <b>Contact us on WhatsApp.</b>`,
+ footer:`© 2025 BIGO LIVE OFFICIAL AGENCY`
+}
+};
+
+const subtitle=document.getElementById("subtitle");
+const footer=document.getElementById("footer");
+
+function setLang(lang){
+ subtitle.innerHTML=texts[lang].subtitle;
+ footer.innerHTML=texts[lang].footer;
+ document.querySelectorAll(".flag-btn").forEach(b=>b.classList.remove("active"));
+ document.querySelector(`[data-lang="${lang}"]`).classList.add("active");
+}
+
+setLang("tr");
+
+document.querySelectorAll(".flag-btn").forEach(btn=>{
+ btn.onclick=()=>setLang(btn.dataset.lang);
+});
+</script>
+
 </body>
 </html>
