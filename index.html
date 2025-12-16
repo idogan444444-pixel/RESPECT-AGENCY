@@ -10,6 +10,7 @@
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
+
     :root{
       --gold:#f1c232;
       --red:#ff2b2b;
@@ -51,7 +52,45 @@
       border:2px solid rgba(241,194,50,.55);
       box-shadow:0 0 18px rgba(241,194,50,.35), inset 0 0 18px rgba(0,0,0,.75);
     }
-    .logo-image{max-width:190px;width:100%;}
+    .logo-image{
+      max-width:190px;
+      width:100%;
+      height:auto;
+      display:block;
+    }
+
+    /* ===== RESPECT AGENCY Rahmen (breiter aber dünner) + Blinker ===== */
+    .brand-frame{
+      margin:12px auto 0;
+      max-width:900px;
+      padding:10px 14px;             /* breit, aber flach */
+      border-radius:22px;
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(241,194,50,.65); /* dünner Rahmen */
+      box-shadow:
+        0 0 22px rgba(241,194,50,.22),
+        inset 0 0 16px rgba(0,0,0,.65);
+    }
+
+    .brand-text{
+      font-size:clamp(30px, 6.2vw, 44px); /* Größe bleibt in deinem Look */
+      font-weight:1000;
+      letter-spacing:1.6px;
+      text-transform:uppercase;
+      color:var(--red); /* Farbe bleibt rot */
+      text-shadow:
+        0 0 10px rgba(255,43,43,.45),
+        0 0 22px rgba(255,43,43,.20);
+      animation: blinkText 3.0s infinite;
+    }
+
+    /* Blinker: an -> kurz aus -> an (ruhig) */
+    @keyframes blinkText{
+      0%, 42%{opacity:1}
+      50%{opacity:0}
+      58%{opacity:1}
+      100%{opacity:1}
+    }
 
     /* TRANSLATOR */
     .translator{
@@ -76,10 +115,12 @@
       border:1px solid rgba(255,255,255,.18);
       background:#111;
       overflow:hidden;
+      cursor:pointer;
     }
+    .flag-btn.active{outline:2px solid var(--gold);}
     .flag-btn img{width:100%;height:100%;object-fit:cover;}
 
-    /* INFO BOX (RAHMEN UNTER FLAGGEN) */
+    /* INFO BOX (Rahmen unter Flaggen) */
     .info-box{
       margin:14px auto 0;
       max-width:900px;
@@ -120,6 +161,15 @@
     }
     .plateBtn img{width:32px;height:32px;}
 
+    .trust{
+      margin:16px auto 0;
+      padding:14px;
+      border-radius:18px;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.10);
+      font-size:1.02rem;
+    }
+
     footer{
       margin-top:16px;
       font-size:.9rem;
@@ -131,44 +181,63 @@
 <body>
   <div class="shell">
     <header>
+      <!-- LOGO -->
       <div class="logo-frame">
         <img src="logo.png" alt="RESPECT AGENCY Logo" class="logo-image">
       </div>
 
+      <!-- RESPECT AGENCY (breiter, dünner Rahmen + Blinker) -->
+      <div class="brand-frame" aria-label="RESPECT AGENCY">
+        <div class="brand-text">RESPECT AGENCY</div>
+      </div>
+
+      <!-- Translator -->
       <div class="translator">
         <div class="label">ÇEVİRİ / TRANSLATOR</div>
         <div class="flags">
-          <div class="flag-btn"><img src="https://flagcdn.com/w80/tr.png"></div>
-          <div class="flag-btn"><img src="https://flagcdn.com/w80/de.png"></div>
-          <div class="flag-btn"><img src="https://flagcdn.com/w80/gb.png"></div>
+          <button class="flag-btn active" data-lang="tr"><img src="https://flagcdn.com/w80/tr.png" alt="TR"></button>
+          <button class="flag-btn" data-lang="de"><img src="https://flagcdn.com/w80/de.png" alt="DE"></button>
+          <button class="flag-btn" data-lang="en"><img src="https://flagcdn.com/w80/gb.png" alt="EN"></button>
         </div>
       </div>
 
       <!-- INFO BOX -->
       <div class="info-box">
-        <div class="subtitle">
+        <div class="subtitle" id="subtitle">
           <b>Günde sadece 3 saat ayırarak</b> evden gelir elde etmek ister misin?<br>
           BIGO LIVE yayıncıları için <b>300$ – 8.000$ arası kazanç fırsatları</b> sunuyoruz.<br>
           Detaylı bilgi için <b>WhatsApp’tan bize yaz.</b>
         </div>
       </div>
 
-      <div class="social">
-        <a class="plateBtn" href="https://wa.me/4917613428278" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> WhatsApp
+      <!-- Buttons -->
+      <div class="social" aria-label="İletişim">
+        <a class="plateBtn" href="https://wa.me/4917613428278" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">
+          WhatsApp
         </a>
-        <a class="plateBtn" href="https://instagram.com/respect.agencyy" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png"> Instagram
+
+        <a class="plateBtn" href="https://instagram.com/respect.agencyy" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="">
+          Instagram
         </a>
-        <a class="plateBtn" href="https://t.me/RESPECT_44" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"> Telegram
+
+        <a class="plateBtn" href="https://t.me/RESPECT_44" target="_blank" rel="noopener" aria-label="Telegram">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="">
+          Telegram
         </a>
       </div>
     </header>
 
-    <footer>
+    <div class="trust" id="trust">
+      <b>RESPECT AGENCY</b>, BIGO LIVE alanında <b>10 yıllık deneyime</b> sahip profesyonel bir ajanstır.
+    </div>
+
+    <footer id="footer">
       © 2025 RESPECT AGENCY – BIGO LIVE Ajansı
     </footer>
   </div>
+
+  <!-- (Optional) Wenn du später wieder echte Text-Übersetzung willst, sag Bescheid. -->
 </body>
 </html>
