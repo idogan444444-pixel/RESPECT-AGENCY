@@ -2,14 +2,12 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport
-    " content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>RESPECT AGENCY | BIGO LIVE Ajansı</title>
 
   <meta name="description" content="RESPECT AGENCY – BIGO LIVE yayıncı ajansı. Günde 3 saat ayırarak evden gelir fırsatları.">
   <meta name="author" content="RESPECT AGENCY">
 
-  <!-- Premium font for headline -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
@@ -19,19 +17,13 @@
 
     :root{
       --gold:#f1c232;
-      --gold2:#b98a11;
-      --gold3:#fff2b0;
       --red:#ff2b2b;
-      --red2:#b10000;
-
       --bg1:#05040a;
       --bg2:#0b0010;
-
-      --panel:rgba(12,10,16,.72);
-      --stroke:rgba(255,255,255,.12);
       --text:#fff;
     }
 
+    html{font-size:16px;}
     body{
       min-height:100vh;
       background:
@@ -42,11 +34,11 @@
       color:var(--text);
       font-family: Arial, sans-serif;
       text-align:center;
-      padding:22px 14px 60px;
+      padding:16px 12px 28px;
       overflow-x:hidden;
     }
 
-    /* subtle shimmer sweep */
+    /* subtle shimmer */
     body::before{
       content:"";
       position:fixed; inset:-30% -60%;
@@ -61,13 +53,14 @@
       100%{transform:translateX(35%) rotate(12deg)}
     }
 
-    /* ====== MAIN PREMIUM FRAME (Bild 1 vibe) ====== */
+    /* FULL WIDTH PANEL on mobile */
     .shell{
-      width:min(980px, 100%);
-      margin:0 auto;
+      width: calc(100vw - 24px);
+      max-width: 980px;
+      margin: 0 auto;
       position:relative;
       border-radius:28px;
-      padding:18px 16px 22px;
+      padding:18px 16px 20px;
       background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
       border:1px solid rgba(255,255,255,.10);
       backdrop-filter: blur(12px);
@@ -90,19 +83,18 @@
       content:"";
       position:absolute; inset:0;
       background:
-        radial-gradient(800px 260px at 20% 0%, rgba(241,194,50,.12), transparent 60%),
-        radial-gradient(800px 260px at 80% 0%, rgba(255,43,43,.10), transparent 60%),
-        radial-gradient(900px 500px at 50% 55%, rgba(255,255,255,.04), transparent 60%);
+        radial-gradient(900px 320px at 20% 0%, rgba(241,194,50,.12), transparent 60%),
+        radial-gradient(900px 320px at 80% 0%, rgba(255,43,43,.10), transparent 60%);
       opacity:.95;
       pointer-events:none;
     }
 
     header{position:relative; z-index:1;}
 
-    /* ===== LOGO FRAME ===== */
+    /* Logo */
     .logo-frame{
       display:inline-block;
-      padding:12px 34px;
+      padding:12px 30px;
       border-radius:18px;
       background: rgba(0,0,0,.35);
       border:2px solid rgba(241,194,50,.55);
@@ -110,6 +102,7 @@
         0 0 18px rgba(241,194,50,.35),
         0 0 36px rgba(255,43,43,.12),
         inset 0 0 18px rgba(0,0,0,.75);
+      margin-top:2px;
     }
     .logo-image{
       max-width:220px;
@@ -118,56 +111,46 @@
       display:block;
     }
 
-    /* ===== TITLE (Bild 2) - 3D/Bevel + gold outline + shine ===== */
-    .titleWrap{margin-top:14px; display:flex; justify-content:center;}
+    /* Title (bigger + sharper) */
+    .titleWrap{margin-top:12px; display:flex; justify-content:center;}
     .title3d{
       position:relative;
       display:inline-block;
       padding:14px 18px;
       border-radius:20px;
       background: rgba(0,0,0,.28);
-      border:1px solid rgba(241,194,50,.28);
-      box-shadow:
-        inset 0 0 0 1px rgba(255,43,43,.10),
-        0 20px 60px rgba(0,0,0,.45);
+      border:1px solid rgba(241,194,50,.30);
+      box-shadow: inset 0 0 0 1px rgba(255,43,43,.10), 0 20px 60px rgba(0,0,0,.45);
       overflow:hidden;
+      width: min(760px, 100%);
     }
     .title3d .t{
       font-family: "Cinzel", serif;
-      font-size: clamp(34px, 5.2vw, 62px);
+      font-size: clamp(36px, 8vw, 64px);
       font-weight: 800;
       letter-spacing: 1.2px;
       text-transform: uppercase;
-
-      /* red fill */
       color: #ff2b2b;
-
-      /* 3D depth layers */
       text-shadow:
         0 2px 0 rgba(0,0,0,.55),
-        0 4px 0 rgba(0,0,0,.35),
+        0 5px 0 rgba(0,0,0,.28),
         0 0 18px rgba(255,43,43,.55),
-        0 0 40px rgba(255,43,43,.22);
+        0 0 42px rgba(255,43,43,.22);
       position:relative;
       z-index:2;
     }
-
-    /* gold outline (hard) */
     .title3d .outline{
       position:absolute; inset:0;
       display:flex; align-items:center; justify-content:center;
       pointer-events:none;
       z-index:1;
       color:transparent;
-      -webkit-text-stroke: 3px rgba(241,194,50,.98);
+      -webkit-text-stroke: 3.2px rgba(241,194,50,.98);
       text-shadow:
         0 0 16px rgba(241,194,50,.60),
-        0 0 44px rgba(241,194,50,.25);
+        0 0 48px rgba(241,194,50,.25);
       filter: drop-shadow(0 0 16px rgba(241,194,50,.28));
-      opacity:.98;
     }
-
-    /* shine sweep */
     .title3d .shine{
       position:absolute; inset:-55% -75%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,.20), transparent);
@@ -183,27 +166,27 @@
       100%{transform:translateX(35%) rotate(12deg); opacity:.12}
     }
 
-    /* ===== TRANSLATOR ===== */
+    /* Translator bigger */
     .translator{
-      margin-top:14px;
+      margin-top:12px;
       display:flex;
       justify-content:center;
       align-items:center;
-      gap:12px;
+      gap:10px;
       flex-wrap:wrap;
     }
     .translator .label{
-      padding:8px 12px;
+      padding:9px 12px;
       border-radius:14px;
       background:rgba(0,0,0,.25);
       border:1px solid rgba(255,255,255,0.12);
-      font-size:.95rem;
+      font-size:1.0rem;
       box-shadow: inset 0 0 18px rgba(0,0,0,.6);
     }
     .flags{display:flex;gap:10px; align-items:center;}
     .flag-btn{
-      width:36px;height:26px;
-      border-radius:10px;
+      width:42px;height:30px;
+      border-radius:12px;
       border:1px solid rgba(255,255,255,0.18);
       background:#111;
       cursor:pointer;
@@ -214,35 +197,34 @@
     .flag-btn.active{outline:2px solid var(--gold);}
     .flag-btn img{width:100%;height:100%;object-fit:cover;}
 
-    /* ===== TEXT ===== */
+    /* Text bigger */
     .subtitle{
-      margin:16px auto 0;
+      margin:14px auto 0;
       max-width:900px;
-      font-size:1.08rem;
-      line-height:1.75;
-      color: rgba(255,255,255,.92);
+      font-size: clamp(1.05rem, 3.8vw, 1.25rem);
+      line-height:1.8;
+      color: rgba(255,255,255,.94);
       text-shadow: 0 2px 14px rgba(0,0,0,.45);
-      padding:0 4px;
+      padding:0 6px;
     }
 
-    /* ===== BUTTONS (Bild 1: metal plates) ===== */
+    /* BIG buttons on mobile (stack) */
     .social{
-      margin-top:18px;
+      margin-top:16px;
       display:flex;
       justify-content:center;
-      gap:14px;
+      gap:12px;
       flex-wrap:wrap;
     }
-
     .plateBtn{
       position:relative;
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:12px;
-      min-width: 260px;
-      padding:14px 18px;
-      border-radius:16px;
+      width: min(720px, 100%);
+      padding:16px 18px;
+      border-radius:18px;
       text-decoration:none;
       font-weight:900;
       color:#fff;
@@ -256,12 +238,10 @@
       overflow:hidden;
       transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
     }
-
-    /* gold/red frame like mockup */
     .plateBtn::before{
       content:"";
       position:absolute; inset:-3px;
-      border-radius:18px;
+      border-radius:20px;
       background: linear-gradient(90deg, rgba(241,194,50,.95), rgba(255,43,43,.55), rgba(241,194,50,.70));
       filter: drop-shadow(0 0 16px rgba(241,194,50,.28)) drop-shadow(0 0 20px rgba(255,43,43,.18));
       opacity:.9;
@@ -270,13 +250,11 @@
     .plateBtn::after{
       content:"";
       position:absolute; inset:3px;
-      border-radius:14px;
+      border-radius:16px;
       background: linear-gradient(180deg, rgba(20,20,26,.95), rgba(8,8,12,.95));
       z-index:1;
       box-shadow: inset 0 1px 0 rgba(255,255,255,.10);
     }
-
-    /* glossy highlight */
     .plateBtn .gloss{
       position:absolute; inset:-50% -70%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,.16), transparent);
@@ -291,7 +269,6 @@
       50%{opacity:.55}
       100%{transform:translateX(35%) rotate(12deg); opacity:.10}
     }
-
     .plateBtn:hover{
       transform: translateY(-2px);
       border-color: rgba(241,194,50,.40);
@@ -302,39 +279,45 @@
         inset 0 1px 0 rgba(255,255,255,.10),
         inset 0 -10px 22px rgba(0,0,0,.55);
     }
-
     .plateBtn .icon{
-      width:28px; height:28px;
+      width:32px; height:32px;
       position:relative; z-index:3;
       filter: drop-shadow(0 0 10px rgba(0,0,0,.35));
     }
     .plateBtn .label{
       position:relative; z-index:3;
-      font-size:1.05rem;
+      font-size:1.12rem;
     }
 
-    /* ===== TRUST ===== */
+    /* Trust bigger */
     .trust{
-      margin:18px auto 0;
+      margin:16px auto 0;
       max-width:900px;
-      padding:14px;
+      padding:16px 14px;
       background: rgba(0,0,0,.22);
       border:1px solid rgba(255,255,255,.10);
       border-radius:18px;
-      opacity:.95;
+      opacity:.97;
       box-shadow: 0 14px 45px rgba(0,0,0,.35);
+      font-size:1.02rem;
+      line-height:1.55;
     }
 
     footer{
-      margin-top:20px;
-      font-size:.82rem;
-      opacity:.65;
+      margin-top:16px;
+      font-size:.9rem;
+      opacity:.7;
     }
 
-    @media(max-width:600px){
-      .logo-image{max-width:180px;}
-      .logo-frame{padding:10px 24px;}
-      .plateBtn{min-width: 100%;}
+    /* Extra mobile boost */
+    @media(max-width:420px){
+      html{font-size:17px;}
+      body{padding:14px 10px 24px;}
+      .shell{width: calc(100vw - 20px);}
+      .logo-image{max-width:190px;}
+      .logo-frame{padding:10px 22px;}
+      .plateBtn{padding:16px 16px;}
+      .title3d{padding:14px 14px;}
     }
   </style>
 </head>
@@ -342,23 +325,18 @@
 <body>
   <div class="shell">
     <header>
-      <!-- LOGO -->
       <div class="logo-frame">
         <img src="logo.png" alt="RESPECT AGENCY Logo" class="logo-image">
       </div>
 
-      <!-- Premium Title -->
       <div class="titleWrap">
         <div class="title3d" aria-label="RESPECT AGENCY">
-          <div class="outline" aria-hidden="true">
-            <div class="t">RESPECT AGENCY</div>
-          </div>
+          <div class="outline" aria-hidden="true"><div class="t">RESPECT AGENCY</div></div>
           <div class="t">RESPECT AGENCY</div>
           <div class="shine" aria-hidden="true"></div>
         </div>
       </div>
 
-      <!-- Translator -->
       <div class="translator">
         <div class="label">ÇEVİRİ / TRANSLATOR</div>
         <div class="flags">
@@ -374,7 +352,6 @@
         Detaylı bilgi için <b>WhatsApp’tan bize yaz.</b>
       </div>
 
-      <!-- Premium Buttons -->
       <div class="social" aria-label="İletişim">
         <a class="plateBtn" href="https://wa.me/4917613428278" target="_blank" rel="noopener" aria-label="WhatsApp">
           <span class="gloss" aria-hidden="true"></span>
