@@ -38,6 +38,7 @@
   <meta name="twitter:image" content="https://SENIN-DOMAININ/og-image.jpg" />
 
   <link rel="preload" as="image" href="logo.png" />
+  <link rel="preload" as="image" href="dino.png" />
 
   <!-- ===== STRUCTURED DATA (Schema.org) ===== -->
   <script type="application/ld+json">
@@ -85,13 +86,23 @@
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
-    :root{--gold:#f1c232;--red:#ff2b2b;--bg1:#05040a;--bg2:#0b0010;--text:#fff;}
+    :root{
+      --gold:#f1c232;
+      --red:#ff2b2b;
+      --bg1:#05040a;
+      --bg2:#0b0010;
+      --text:#fff;
+
+      /* BIGO green */
+      --bigo:#00E676;
+      --bigoGlow: rgba(0,230,118,.55);
+    }
 
     body{
       min-height:100vh;
       background:
-        radial-gradient(1200px 650px at 50% -10%, rgba(255,43,43,.18), transparent 60%),
-        radial-gradient(900px 650px at 15% 10%, rgba(241,194,50,.18), transparent 62%),
+        radial-gradient(1200px 650px at 50% -10%, rgba(0,230,118,.16), transparent 60%),
+        radial-gradient(900px 650px at 15% 10%, rgba(241,194,50,.16), transparent 62%),
         linear-gradient(180deg, var(--bg1), var(--bg2));
       color:var(--text);
       font-family:Arial, sans-serif;
@@ -124,22 +135,67 @@
     .brand-frame{
       margin:12px auto 0;
       max-width:900px;
-      padding:10px 14px;
+      padding:12px 14px;
       border-radius:22px;
       background:rgba(0,0,0,.25);
-      border:1px solid rgba(241,194,50,.65);
-      box-shadow:0 0 22px rgba(241,194,50,.22), inset 0 0 16px rgba(0,0,0,.65);
+      border:1px solid rgba(0,230,118,.45);
+      box-shadow:0 0 22px rgba(0,230,118,.18), inset 0 0 16px rgba(0,0,0,.65);
     }
+
+    /* Dino + Text in one row */
+    .brand-row{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .dino{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 0 14px rgba(0,230,118,.22);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .dino img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      padding:6px;
+      filter: drop-shadow(0 0 6px rgba(0,230,118,.35));
+    }
+
+    /* BIGO green pulsing text */
     .brand-text{
-      font-size:clamp(30px, 6.2vw, 44px);
+      font-size:clamp(28px, 6.2vw, 44px);
       font-weight:1000;
       letter-spacing:1.6px;
       text-transform:uppercase;
-      color:var(--red);
-      text-shadow:0 0 10px rgba(255,43,43,.45), 0 0 22px rgba(255,43,43,.20);
-      animation:blinkText 3s infinite;
+      color:var(--bigo);
+      text-shadow:
+        0 0 8px rgba(0,230,118,.40),
+        0 0 18px rgba(0,230,118,.22);
+      animation: pulseBigo 1.6s ease-in-out infinite;
+      will-change: transform, filter;
     }
-    @keyframes blinkText{0%,42%{opacity:1}50%{opacity:0}58%{opacity:1}100%{opacity:1}}
+
+    @keyframes pulseBigo{
+      0%, 100%{
+        transform: scale(1);
+        filter: drop-shadow(0 0 0 rgba(0,230,118,0));
+      }
+      50%{
+        transform: scale(1.035);
+        filter: drop-shadow(0 0 10px rgba(0,230,118,.35));
+      }
+    }
 
     .translator{
       margin-top:12px;
@@ -228,7 +284,14 @@
       </div>
 
       <div class="brand-frame" aria-label="BIGO LIVE RESMİ AJANS">
-        <div class="brand-text" id="brandText">BIGO LIVE RESMİ AJANS</div>
+        <div class="brand-row">
+          <!-- Dino image LEFT -->
+          <div class="dino" aria-hidden="true">
+            <img src="dino.png" alt="BIGO Dino">
+          </div>
+
+          <div class="brand-text" id="brandText">BIGO LIVE RESMİ AJANS</div>
+        </div>
       </div>
 
       <div class="translator">
