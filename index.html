@@ -85,19 +85,13 @@
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
-    :root{
-      --gold:#f1c232;
-      --bg1:#05040a;
-      --bg2:#0b0010;
-      --text:#fff;
-      --fillBlack:#07070b;
-    }
+    :root{--gold:#f1c232;--red:#ff2b2b;--bg1:#05040a;--bg2:#0b0010;--text:#fff;}
 
     body{
       min-height:100vh;
       background:
-        radial-gradient(1200px 650px at 50% -10%, rgba(241,194,50,.14), transparent 60%),
-        radial-gradient(900px 650px at 15% 10%, rgba(255,255,255,.08), transparent 62%),
+        radial-gradient(1200px 650px at 50% -10%, rgba(255,43,43,.18), transparent 60%),
+        radial-gradient(900px 650px at 15% 10%, rgba(241,194,50,.18), transparent 62%),
         linear-gradient(180deg, var(--bg1), var(--bg2));
       color:var(--text);
       font-family:Arial, sans-serif;
@@ -130,48 +124,22 @@
     .brand-frame{
       margin:12px auto 0;
       max-width:900px;
-      padding:12px 14px;
+      padding:10px 14px;
       border-radius:22px;
       background:rgba(0,0,0,.25);
-      border:1px solid rgba(241,194,50,.55);
-      box-shadow:0 0 22px rgba(241,194,50,.18), inset 0 0 16px rgba(0,0,0,.65);
+      border:1px solid rgba(241,194,50,.65);
+      box-shadow:0 0 22px rgba(241,194,50,.22), inset 0 0 16px rgba(0,0,0,.65);
     }
-
-    /* GOLD OUTLINE + BLACK INSIDE + PULSE */
     .brand-text{
-      font-size:clamp(28px, 6.2vw, 44px);
+      font-size:clamp(30px, 6.2vw, 44px);
       font-weight:1000;
       letter-spacing:1.6px;
       text-transform:uppercase;
-
-      /* innen schwarz */
-      color: var(--fillBlack);
-
-      /* außen gold (Outline) */
-      -webkit-text-stroke: 2px var(--gold);
-
-      /* fallback outline via shadow (für Browser die stroke schlecht können) */
-      text-shadow:
-        1px 0 0 rgba(241,194,50,.95),
-        -1px 0 0 rgba(241,194,50,.95),
-        0 1px 0 rgba(241,194,50,.95),
-        0 -1px 0 rgba(241,194,50,.95),
-        0 0 10px rgba(241,194,50,.35);
-
-      animation: pulseGold 1.6s ease-in-out infinite;
-      will-change: transform, filter;
+      color:var(--red);
+      text-shadow:0 0 10px rgba(255,43,43,.45), 0 0 22px rgba(255,43,43,.20);
+      animation:blinkText 3s infinite;
     }
-
-    @keyframes pulseGold{
-      0%, 100%{
-        transform: scale(1);
-        filter: drop-shadow(0 0 0 rgba(241,194,50,0));
-      }
-      50%{
-        transform: scale(1.035);
-        filter: drop-shadow(0 0 12px rgba(241,194,50,.35));
-      }
-    }
+    @keyframes blinkText{0%,42%{opacity:1}50%{opacity:0}58%{opacity:1}100%{opacity:1}}
 
     .translator{
       margin-top:12px;
@@ -222,12 +190,10 @@
       flex-wrap:wrap;
       justify-content:center;
     }
-
-    /* BUTTONS THINNER (weniger Höhe) */
     .plateBtn{
       width:min(720px,100%);
-      padding:10px 16px;     /* dünner von oben nach unten */
-      border-radius:16px;    /* etwas kompakter */
+      padding:16px;
+      border-radius:18px;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -239,7 +205,7 @@
       border:1px solid rgba(255,255,255,.12);
       box-shadow:0 18px 55px rgba(0,0,0,.55);
     }
-    .plateBtn img{width:28px;height:28px;} /* leicht kleiner, passt besser zur dünnen Höhe */
+    .plateBtn img{width:32px;height:32px;}
 
     .trust{
       margin:16px auto 0;
@@ -339,7 +305,7 @@
       footerEl.innerHTML = t.footer;
 
       document.querySelectorAll(".flag-btn").forEach(b=>b.classList.remove("active"));
-      const btn = document.querySelector(\`.flag-btn[data-lang="\${lang}"]\`);
+      const btn = document.querySelector(`.flag-btn[data-lang="${lang}"]`);
       if(btn) btn.classList.add("active");
     }
 
