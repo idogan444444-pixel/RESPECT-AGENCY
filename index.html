@@ -186,7 +186,9 @@
     .gold-amount{
       color:var(--gold);
       font-weight:900;
-      text-shadow: 0 0 6px rgba(241,194,50,.45), 0 0 14px rgba(241,194,50,.25);
+      text-shadow:
+        0 0 6px rgba(241,194,50,.45),
+        0 0 14px rgba(241,194,50,.25);
       animation: goldPulse 1.6s ease-in-out infinite;
       display:inline-block;
     }
@@ -228,7 +230,7 @@
       font-size:1.02rem;
     }
 
-    /* ✅ YENİ: Legal Box (Impressum/Datenschutz) */
+    /* Legal boxes */
     .legal-box{
       margin:16px auto 0;
       max-width:900px;
@@ -254,7 +256,7 @@
     }
     .legal-text b{color:var(--gold);}
 
-    /* Footer + Links */
+    /* Footer */
     footer{margin-top:16px;font-size:.9rem;opacity:.85;}
     .footer-links{
       margin-top:8px;
@@ -318,19 +320,20 @@
 
     <div class="trust" id="trust"></div>
 
-    <!-- ✅ YENİ: IMPRESSUM -->
     <section id="impressum" class="legal-box" aria-label="Impressum">
       <div class="legal-title" id="impressumTitle"></div>
       <div class="legal-text" id="impressumText"></div>
     </section>
 
-    <!-- ✅ YENİ: DATENSCHUTZ -->
     <section id="datenschutz" class="legal-box" aria-label="Datenschutzerklärung">
       <div class="legal-title" id="datenschutzTitle"></div>
       <div class="legal-text" id="datenschutzText"></div>
     </section>
 
-    <footer id="footer"></footer>
+    <!-- ✅ FIX: Saubere Footer-Struktur -->
+    <footer>
+      <div id="footer"></div>
+    </footer>
   </div>
 
   <script>
@@ -382,7 +385,7 @@
       de: {
         pageTitle: "BIGO LIVE OFFIZIELLE AGENTUR | Creator & Streamer Support",
         subtitle: `<b>Mit nur 3 Stunden pro Tag</b> von zuhause Geld verdienen?<br>
-        Für BIGO LIVE Creator bieten wir <b>300$ – 8.000$ Verdienstmöglichkeiten</b>.<br>
+        Für BIGO LIVE Creator bieten wir <span class="gold-amount">300$ – 8.000$</span> Verdienstmöglichkeiten.<br>
         Für Details <b>schreib uns auf WhatsApp.</b>`,
         trust: `<b>BIGO LIVE OFFIZIELLE AGENTUR</b> – professionell, zuverlässig und mit <b>10 Jahren Erfahrung</b>.`,
         footer: `© 2025 BIGO LIVE OFFIZIELLE AGENTUR`,
@@ -432,7 +435,7 @@
       en: {
         pageTitle: "BIGO LIVE OFFICIAL AGENCY | Creator Support & Earnings",
         subtitle: `<b>Earn from home with just 3 hours a day.</b><br>
-        We offer BIGO LIVE creators <b>$300 – $8,000</b> earning opportunities.<br>
+        We offer BIGO LIVE creators <span class="gold-amount">$300 – $8,000</span> earning opportunities.<br>
         For details, <b>message us on WhatsApp.</b>`,
         trust: `<b>BIGO LIVE OFFICIAL AGENCY</b> – professional support with <b>10 years of experience</b>.`,
         footer: `© 2025 BIGO LIVE OFFICIAL AGENCY`,
