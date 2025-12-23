@@ -48,6 +48,14 @@
       box-shadow:0 28px 90px rgba(0,0,0,.62);
     }
 
+    /* ✅ NEW: Logo row with icons on the right */
+    .top-row{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
     .logo-frame{
       display:inline-block;
       padding:10px 22px;
@@ -57,6 +65,35 @@
       box-shadow:0 0 18px rgba(241,194,50,.35), inset 0 0 18px rgba(0,0,0,.75);
     }
     .logo-image{max-width:190px;width:100%;height:auto;display:block;}
+
+    /* ✅ NEW: top icons */
+    .top-icons{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:center;
+      padding:10px 12px;
+      border-radius:18px;
+      background:rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .iconLink{
+      width:44px;height:44px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg,#1e1e24,#08080c);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 14px 40px rgba(0,0,0,.45);
+      text-decoration:none;
+    }
+    .iconLink img{width:26px;height:26px;display:block;}
+    .iconLink:active{transform:scale(.98);}
+    .iconLink:hover{
+      outline:2px solid rgba(241,194,50,.55);
+      box-shadow:0 0 18px rgba(241,194,50,.22), 0 14px 40px rgba(0,0,0,.45);
+    }
 
     .brand-frame{
       margin:12px auto 0;
@@ -134,7 +171,6 @@
       50%{transform:scale(1.05);filter:drop-shadow(0 0 12px rgba(241,194,50,.45));}
     }
 
-    /* ✅ NEW: SEO Text block */
     .seo-box{
       margin-top:12px;
       padding:14px 14px;
@@ -148,6 +184,7 @@
     }
     .seo-box b{color:var(--gold);}
 
+    /* keep your big buttons */
     .social{
       margin-top:16px;
       display:flex;
@@ -266,8 +303,24 @@
 <body>
   <div class="shell">
     <header>
-      <div class="logo-frame">
-        <img src="logo.png" alt="RESPECT AGENCY Logo" class="logo-image">
+
+      <!-- ✅ Logo + icons in same row -->
+      <div class="top-row">
+        <div class="logo-frame">
+          <img src="logo.png" alt="RESPECT AGENCY Logo" class="logo-image">
+        </div>
+
+        <div class="top-icons" aria-label="Quick Contact Icons">
+          <a class="iconLink" href="https://wa.me/491771977401" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+          </a>
+          <a class="iconLink" href="https://instagram.com/respect.agencyy" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+          </a>
+          <a class="iconLink" href="https://t.me/RESPECT_44" target="_blank" rel="noopener" aria-label="Telegram">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+          </a>
+        </div>
       </div>
 
       <div class="brand-frame" aria-label="BIGO LIVE RESMİ AJANS">
@@ -285,8 +338,6 @@
 
       <div class="info-box">
         <div class="subtitle" id="subtitle"></div>
-
-        <!-- ✅ Multilingual SEO Text -->
         <div class="seo-box" id="seoText"></div>
       </div>
 
@@ -317,7 +368,6 @@
     </footer>
   </div>
 
-  <!-- ===== MODAL ===== -->
   <div class="modalOverlay" id="modalOverlay" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modalHeader">
@@ -340,7 +390,6 @@
         BIGO LIVE platformunda güvenilir bir ajansla çalışmak istiyorsanız doğru yerdesiniz.`,
         trust: `<b>BIGO LIVE RESMİ AJANS</b>, BIGO LIVE alanında <b>10 yıllık deneyime</b> sahip profesyonel bir ajanstır.`,
         footer: `© 2025 BIGO LIVE RESMİ AJANS`,
-
         impressumTitle: "İmpressum (Yasal Bilgi)",
         impressumText: `
           <b>İşletme:</b> RESPECT AGENCY / BIGO LIVE RESMİ AJANS<br>
@@ -355,27 +404,21 @@
         datenschutzText: `
           <b>1. Genel Bilgi</b><br>
           Bu web sitesinde kişisel verilerin korunması bizim için önemlidir. Veriler yalnızca teknik olarak gerekli olduğu ölçüde işlenir.<br><br>
-
           <b>2. Sorumlu Kişi</b><br>
           RESPECT AGENCY / Ibrahim Dogan – Büchnerstr. 4, 34260 Kaufungen, Almanya<br>
           E-posta: info@respect-agency.net<br><br>
-
           <b>3. Sunucu Kayıtları</b><br>
           Siteye girişte hosting sağlayıcısı teknik verileri kaydedebilir (IP adresi, tarayıcı türü, zaman). Bu veriler güvenlik amacıyladır.<br><br>
-
           <b>4. WhatsApp / Instagram / Telegram Üzerinden İletişim</b><br>
           Bizimle bu kanallar üzerinden iletişime geçtiğinizde, mesaj içeriğiniz ve iletişim bilgileriniz talebinizi yanıtlamak için saklanabilir.<br><br>
-
           <b>5. Haklarınız</b><br>
           Bilgi alma, düzeltme ve silme hakkına sahipsiniz.<br><br>
-
           <b>6. SSL</b><br>
           Bu site güvenlik amacıyla SSL şifrelemesi kullanır.
         `,
         btnImp: "İmpressum",
         btnDs: "Gizlilik / Datenschutz"
       },
-
       de: {
         pageTitle: "BIGO LIVE OFFIZIELLE AGENTUR | Creator & Streamer Support",
         subtitle: `<b>Mit nur 3 Stunden pro Tag</b> von zuhause Geld verdienen?<br>
@@ -386,7 +429,6 @@
         Beratung und nachhaltigen Wachstumsmöglichkeiten auf BIGO LIVE.`,
         trust: `<b>BIGO LIVE OFFIZIELLE AGENTUR</b> – professionell, zuverlässig und mit <b>10 Jahren Erfahrung</b>.`,
         footer: `© 2025 BIGO LIVE OFFIZIELLE AGENTUR`,
-
         impressumTitle: "Impressum",
         impressumText: `
           <b>Angaben gemäß § 5 TMG</b><br><br>
@@ -396,11 +438,9 @@
           Büchnerstr. 4<br>
           34260 Kaufungen<br>
           Deutschland<br><br>
-
           <b>Kontakt:</b><br>
           Telefon / WhatsApp: +49 177 1977401<br>
           E-Mail: info@respect-agency.net<br><br>
-
           <b>Verantwortlich für den Inhalt:</b><br>
           Ibrahim Dogan
         `,
@@ -408,30 +448,24 @@
         datenschutzText: `
           <b>1. Datenschutz auf einen Blick</b><br>
           Der Schutz Ihrer persönlichen Daten ist uns wichtig. Personenbezogene Daten werden nur im technisch notwendigen Umfang verarbeitet.<br><br>
-
           <b>2. Verantwortliche Stelle</b><br>
           RESPECT AGENCY / Ibrahim Dogan<br>
           Büchnerstr. 4, 34260 Kaufungen, Deutschland<br>
           E-Mail: info@respect-agency.net<br><br>
-
           <b>3. Server-Log-Dateien</b><br>
           Beim Besuch der Website werden automatisch technische Informationen erfasst (z. B. IP-Adresse, Browser, Uhrzeit).
           Die Verarbeitung erfolgt zur Sicherheit und Stabilität der Seite.<br><br>
-
           <b>4. Kontakt über WhatsApp / Instagram / Telegram</b><br>
           Wenn Sie uns über diese Dienste kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage gespeichert.
           Eine Weitergabe erfolgt nicht ohne Einwilligung.<br><br>
-
           <b>5. Ihre Rechte</b><br>
           Sie haben das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung.<br><br>
-
           <b>6. SSL-Verschlüsselung</b><br>
           Diese Seite nutzt SSL-Verschlüsselung zum Schutz der Datenübertragung.
         `,
         btnImp: "Impressum",
         btnDs: "Datenschutz"
       },
-
       en: {
         pageTitle: "BIGO LIVE OFFICIAL AGENCY | Creator Support & Earnings",
         subtitle: `<b>Earn from home with just 3 hours a day.</b><br>
@@ -442,38 +476,30 @@
         for new and experienced BIGO LIVE creators.`,
         trust: `<b>BIGO LIVE OFFICIAL AGENCY</b> – professional support with <b>10 years of experience</b>.`,
         footer: `© 2025 BIGO LIVE OFFICIAL AGENCY`,
-
         impressumTitle: "Imprint",
         impressumText: `
           <b>Operator</b>: RESPECT AGENCY / BIGO LIVE OFFICIAL AGENCY<br>
           <b>Owner</b>: Ibrahim Dogan<br>
           <b>Address</b>: Büchnerstr. 4, 34260 Kaufungen, Germany<br><br>
-
           <b>Contact</b>:<br>
           Phone / WhatsApp: +49 177 1977401<br>
           Email: info@respect-agency.net<br><br>
-
           <b>Responsible for content</b>: Ibrahim Dogan
         `,
         datenschutzTitle: "Privacy Policy",
         datenschutzText: `
           <b>1. Overview</b><br>
           We take the protection of personal data seriously. We process data only as necessary for operating this website.<br><br>
-
           <b>2. Controller</b><br>
           RESPECT AGENCY / Ibrahim Dogan<br>
           Büchnerstr. 4, 34260 Kaufungen, Germany<br>
           Email: info@respect-agency.net<br><br>
-
           <b>3. Server logs</b><br>
           When you visit this site, the hosting provider may collect technical data (e.g., IP address, browser type, time) for security purposes.<br><br>
-
           <b>4. Contact via WhatsApp / Instagram / Telegram</b><br>
           If you contact us via these services, your message and contact details may be stored to handle your request.<br><br>
-
           <b>5. Your rights</b><br>
           You may request access, correction, deletion, or restriction of your personal data.<br><br>
-
           <b>6. SSL</b><br>
           This website uses SSL encryption to protect data transmission.
         `,
@@ -524,7 +550,7 @@
       document.title = t.pageTitle;
 
       subtitleEl.innerHTML = t.subtitle;
-      seoEl.innerHTML = t.seo;              // ✅ SEO text per language
+      seoEl.innerHTML = t.seo;
       trustEl.innerHTML = t.trust;
       footerEl.innerHTML = t.footer;
 
