@@ -11,10 +11,8 @@
   <meta name="author" content="BIGO LIVE RESMİ AJANS" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 
-  <!-- Canonical: BURAYA kendi site URL'ni yaz -->
   <link rel="canonical" href="https://SENIN-DOMAININ/" />
 
-  <!-- Hreflang -->
   <link rel="alternate" hreflang="tr" href="https://SENIN-DOMAININ/?lang=tr" />
   <link rel="alternate" hreflang="de" href="https://SENIN-DOMAININ/?lang=de" />
   <link rel="alternate" hreflang="en" href="https://SENIN-DOMAININ/?lang=en" />
@@ -22,66 +20,7 @@
 
   <meta name="theme-color" content="#05040a" />
 
-  <!-- ===== SOCIAL PREVIEW (OG/Twitter) ===== -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="BIGO LIVE RESMİ AJANS" />
-  <meta property="og:title" content="BIGO LIVE RESMİ AJANS | Resmi BIGO LIVE Ajansı" />
-  <meta property="og:description" content="Günde 3 saat ayırarak evden gelir fırsatları. İletişim: WhatsApp / Instagram / Telegram." />
-  <meta property="og:url" content="https://SENIN-DOMAININ/" />
-  <meta property="og:image" content="https://SENIN-DOMAININ/og-image.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="BIGO LIVE RESMİ AJANS" />
-  <meta name="twitter:description" content="Resmi BIGO LIVE yayıncı ajansı. WhatsApp / Instagram / Telegram." />
-  <meta name="twitter:image" content="https://SENIN-DOMAININ/og-image.jpg" />
-
   <link rel="preload" as="image" href="logo.png" />
-
-  <!-- ===== STRUCTURED DATA (Schema.org) ===== -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"Organization",
-        "@id":"https://SENIN-DOMAININ/#org",
-        "name":"BIGO LIVE RESMİ AJANS",
-        "url":"https://SENIN-DOMAININ/",
-        "logo":"https://SENIN-DOMAININ/logo.png",
-        "sameAs":[
-          "https://instagram.com/respect.agencyy",
-          "https://t.me/RESPECT_44",
-          "https://wa.me/491771977401"
-        ],
-        "contactPoint":[{
-          "@type":"ContactPoint",
-          "contactType":"customer support",
-          "telephone":"+49-177-1977401",
-          "availableLanguage":["tr","de","en"]
-        }]
-      },
-      {
-        "@type":"WebSite",
-        "@id":"https://SENIN-DOMAININ/#website",
-        "url":"https://SENIN-DOMAININ/",
-        "name":"BIGO LIVE RESMİ AJANS",
-        "publisher":{"@id":"https://SENIN-DOMAININ/#org"},
-        "inLanguage":["tr","de","en"]
-      },
-      {
-        "@type":"WebPage",
-        "@id":"https://SENIN-DOMAININ/#home",
-        "url":"https://SENIN-DOMAININ/",
-        "name":"BIGO LIVE RESMİ AJANS | Resmi BIGO LIVE Ajansı",
-        "isPartOf":{"@id":"https://SENIN-DOMAININ/#website"},
-        "about":{"@id":"https://SENIN-DOMAININ/#org"},
-        "inLanguage":"tr"
-      }
-    ]
-  }
-  </script>
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
@@ -186,9 +125,7 @@
     .gold-amount{
       color:var(--gold);
       font-weight:900;
-      text-shadow:
-        0 0 6px rgba(241,194,50,.45),
-        0 0 14px rgba(241,194,50,.25);
+      text-shadow:0 0 6px rgba(241,194,50,.45), 0 0 14px rgba(241,194,50,.25);
       animation: goldPulse 1.6s ease-in-out infinite;
       display:inline-block;
     }
@@ -230,50 +167,87 @@
       font-size:1.02rem;
     }
 
-    /* ===== Legal boxes ===== */
-    .legal-box{
-      margin:16px auto 0;
-      max-width:900px;
-      padding:16px 14px;
-      border-radius:18px;
-      background:linear-gradient(180deg, rgba(20,20,26,.95), rgba(8,8,12,.95));
-      border:1px solid rgba(241,194,50,.40);
-      box-shadow:0 0 18px rgba(241,194,50,.18), inset 0 0 18px rgba(0,0,0,.6);
-      text-align:left;
-    }
-    .legal-title{
-      color:var(--gold);
-      font-size:1.25rem;
-      font-weight:900;
-      margin-bottom:10px;
-      text-align:center;
-    }
-    .legal-text{
-      font-size:.95rem;
-      line-height:1.8;
-      color:rgba(255,255,255,.93);
-      word-break:break-word;
-    }
-    .legal-text b{color:var(--gold);}
-
-    /* Footer + links */
-    footer{margin-top:16px;font-size:.9rem;opacity:.85;}
+    /* ===== Footer Buttons ===== */
+    footer{margin-top:16px;font-size:.9rem;opacity:.92;}
     .footer-links{
       margin-top:8px;
       display:flex;
-      gap:14px;
+      gap:12px;
       justify-content:center;
       flex-wrap:wrap;
     }
-    .footer-links a{
+    .legalBtn{
+      cursor:pointer;
+      appearance:none;
+      border:none;
       color:var(--gold);
-      text-decoration:none;
       font-weight:900;
-      padding:8px 12px;
+      padding:10px 14px;
       border-radius:14px;
       background:rgba(0,0,0,.25);
       border:1px solid rgba(255,255,255,.10);
     }
+    .legalBtn:active{transform:scale(.99);}
+
+    /* ===== Modal ===== */
+    .modalOverlay{
+      position:fixed; inset:0;
+      background:rgba(0,0,0,.65);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:9999;
+    }
+    .modalOverlay.show{display:flex;}
+    .modal{
+      width:min(920px, 100%);
+      max-height:min(82vh, 720px);
+      overflow:auto;
+      border-radius:20px;
+      background:linear-gradient(180deg, rgba(20,20,26,.98), rgba(8,8,12,.98));
+      border:1px solid rgba(241,194,50,.45);
+      box-shadow:0 28px 90px rgba(0,0,0,.72);
+      padding:16px 14px;
+      text-align:left;
+    }
+    .modalHeader{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:10px;
+      position:sticky;
+      top:0;
+      background:linear-gradient(180deg, rgba(20,20,26,.98), rgba(20,20,26,.88));
+      padding:8px 4px;
+      border-radius:14px;
+      backdrop-filter: blur(6px);
+    }
+    .modalTitle{
+      color:var(--gold);
+      font-size:1.2rem;
+      font-weight:1000;
+      margin-left:6px;
+    }
+    .closeBtn{
+      cursor:pointer;
+      border:none;
+      background:rgba(255,255,255,.08);
+      color:#fff;
+      font-weight:900;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .modalBody{
+      color:rgba(255,255,255,.93);
+      font-size:.95rem;
+      line-height:1.8;
+      padding:2px 6px 8px;
+      word-break:break-word;
+    }
+    .modalBody b{color:var(--gold);}
   </style>
 </head>
 
@@ -319,21 +293,24 @@
 
     <div class="trust" id="trust"></div>
 
-    <!-- ===== IMPRESSUM ===== -->
-    <section id="impressum" class="legal-box" aria-label="Impressum">
-      <div class="legal-title" id="impressumTitle"></div>
-      <div class="legal-text" id="impressumText"></div>
-    </section>
-
-    <!-- ===== DATENSCHUTZ ===== -->
-    <section id="datenschutz" class="legal-box" aria-label="Datenschutzerklärung">
-      <div class="legal-title" id="datenschutzTitle"></div>
-      <div class="legal-text" id="datenschutzText"></div>
-    </section>
-
     <footer>
       <div id="footer"></div>
+      <div class="footer-links">
+        <button class="legalBtn" type="button" id="openImpressum">Impressum</button>
+        <button class="legalBtn" type="button" id="openDatenschutz">Datenschutz</button>
+      </div>
     </footer>
+  </div>
+
+  <!-- ===== MODAL ===== -->
+  <div class="modalOverlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modalHeader">
+        <div class="modalTitle" id="modalTitle">Impressum</div>
+        <button class="closeBtn" type="button" id="closeModal">Kapat / Close</button>
+      </div>
+      <div class="modalBody" id="modalBody"></div>
+    </div>
   </div>
 
   <script>
@@ -345,8 +322,8 @@
         Detaylı bilgi için <b>WhatsApp’tan bize yaz.</b>`,
         trust: `<b>BIGO LIVE RESMİ AJANS</b>, BIGO LIVE alanında <b>10 yıllık deneyime</b> sahip profesyonel bir ajanstır.`,
         footer: `© 2025 BIGO LIVE RESMİ AJANS`,
-        footerLinks: { imp: "İmpressum", ds: "Gizlilik / Datenschutz" },
 
+        // Modal content
         impressumTitle: "İmpressum (Yasal Bilgi)",
         impressumText: `
           <b>İşletme:</b> RESPECT AGENCY / BIGO LIVE RESMİ AJANS<br>
@@ -357,7 +334,6 @@
           E-posta: info@respect-agency.net<br><br>
           <b>İçerikten sorumlu kişi:</b> Ibrahim Dogan
         `,
-
         datenschutzTitle: "Gizlilik Politikası (Datenschutz)",
         datenschutzText: `
           <b>1. Genel Bilgi</b><br>
@@ -378,7 +354,9 @@
 
           <b>6. SSL</b><br>
           Bu site güvenlik amacıyla SSL şifrelemesi kullanır.
-        `
+        `,
+        btnImp: "İmpressum",
+        btnDs: "Gizlilik / Datenschutz"
       },
 
       de: {
@@ -388,7 +366,6 @@
         Für Details <b>schreib uns auf WhatsApp.</b>`,
         trust: `<b>BIGO LIVE OFFIZIELLE AGENTUR</b> – professionell, zuverlässig und mit <b>10 Jahren Erfahrung</b>.`,
         footer: `© 2025 BIGO LIVE OFFIZIELLE AGENTUR`,
-        footerLinks: { imp: "Impressum", ds: "Datenschutz" },
 
         impressumTitle: "Impressum",
         impressumText: `
@@ -407,7 +384,6 @@
           <b>Verantwortlich für den Inhalt:</b><br>
           Ibrahim Dogan
         `,
-
         datenschutzTitle: "Datenschutzerklärung",
         datenschutzText: `
           <b>1. Datenschutz auf einen Blick</b><br>
@@ -431,7 +407,9 @@
 
           <b>6. SSL-Verschlüsselung</b><br>
           Diese Seite nutzt SSL-Verschlüsselung zum Schutz der Datenübertragung.
-        `
+        `,
+        btnImp: "Impressum",
+        btnDs: "Datenschutz"
       },
 
       en: {
@@ -441,7 +419,6 @@
         For details, <b>message us on WhatsApp.</b>`,
         trust: `<b>BIGO LIVE OFFICIAL AGENCY</b> – professional support with <b>10 years of experience</b>.`,
         footer: `© 2025 BIGO LIVE OFFICIAL AGENCY`,
-        footerLinks: { imp: "Imprint", ds: "Privacy Policy" },
 
         impressumTitle: "Imprint",
         impressumText: `
@@ -455,7 +432,6 @@
 
           <b>Responsible for content</b>: Ibrahim Dogan
         `,
-
         datenschutzTitle: "Privacy Policy",
         datenschutzText: `
           <b>1. Overview</b><br>
@@ -477,7 +453,9 @@
 
           <b>6. SSL</b><br>
           This website uses SSL encryption to protect data transmission.
-        `
+        `,
+        btnImp: "Imprint",
+        btnDs: "Privacy Policy"
       }
     };
 
@@ -485,42 +463,62 @@
     const trustEl = document.getElementById("trust");
     const footerEl = document.getElementById("footer");
 
-    const impTitleEl = document.getElementById("impressumTitle");
-    const impTextEl  = document.getElementById("impressumText");
-    const dsTitleEl  = document.getElementById("datenschutzTitle");
-    const dsTextEl   = document.getElementById("datenschutzText");
+    const btnOpenImp = document.getElementById("openImpressum");
+    const btnOpenDs = document.getElementById("openDatenschutz");
+
+    const modalOverlay = document.getElementById("modalOverlay");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalBody = document.getElementById("modalBody");
+    const closeModalBtn = document.getElementById("closeModal");
+
+    let currentLang = "tr";
+
+    function openModal(type){
+      const t = texts[currentLang] || texts.tr;
+      if(type === "imp"){
+        modalTitle.textContent = t.impressumTitle;
+        modalBody.innerHTML = t.impressumText;
+      }else{
+        modalTitle.textContent = t.datenschutzTitle;
+        modalBody.innerHTML = t.datenschutzText;
+      }
+      modalOverlay.classList.add("show");
+      modalOverlay.setAttribute("aria-hidden", "false");
+      // prevent background scroll
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(){
+      modalOverlay.classList.remove("show");
+      modalOverlay.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
 
     function setLang(lang){
       const t = texts[lang] || texts.tr;
+      currentLang = lang;
       document.documentElement.lang = lang;
       document.title = t.pageTitle;
 
       subtitleEl.innerHTML = t.subtitle;
       trustEl.innerHTML = t.trust;
+      footerEl.innerHTML = t.footer;
 
-      impTitleEl.innerHTML = t.impressumTitle;
-      impTextEl.innerHTML  = t.impressumText;
-
-      dsTitleEl.innerHTML = t.datenschutzTitle;
-      dsTextEl.innerHTML  = t.datenschutzText;
-
-      footerEl.innerHTML = `
-        ${t.footer}
-        <div class="footer-links">
-          <a href="#impressum">${t.footerLinks.imp}</a>
-          <a href="#datenschutz">${t.footerLinks.ds}</a>
-        </div>
-      `;
+      // update button labels per language
+      btnOpenImp.textContent = t.btnImp;
+      btnOpenDs.textContent = t.btnDs;
 
       document.querySelectorAll(".flag-btn").forEach(b=>b.classList.remove("active"));
       const btn = document.querySelector(`.flag-btn[data-lang="${lang}"]`);
       if(btn) btn.classList.add("active");
     }
 
+    // init language
     const params = new URLSearchParams(window.location.search);
     const urlLang = params.get("lang");
     setLang(urlLang && texts[urlLang] ? urlLang : "tr");
 
+    // flag click
     document.querySelectorAll(".flag-btn").forEach(btn=>{
       btn.addEventListener("click", ()=>{
         setLang(btn.dataset.lang);
@@ -528,6 +526,21 @@
         u.searchParams.set("lang", btn.dataset.lang);
         window.history.replaceState({}, "", u.toString());
       });
+    });
+
+    // modal buttons
+    btnOpenImp.addEventListener("click", ()=>openModal("imp"));
+    btnOpenDs.addEventListener("click", ()=>openModal("ds"));
+    closeModalBtn.addEventListener("click", closeModal);
+
+    // close by click outside
+    modalOverlay.addEventListener("click", (e)=>{
+      if(e.target === modalOverlay) closeModal();
+    });
+
+    // close by ESC
+    window.addEventListener("keydown", (e)=>{
+      if(e.key === "Escape" && modalOverlay.classList.contains("show")) closeModal();
     });
   </script>
 </body>
