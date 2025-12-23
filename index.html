@@ -266,3 +266,76 @@
         </a>
         <a class="plateBtn" href="https://instagram.com/respect.agencyy" target="_blank" rel="noopener">
           <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="">
+          Instagram
+        </a>
+        <a class="plateBtn" href="https://t.me/RESPECT_44" target="_blank" rel="noopener">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="">
+          Telegram
+        </a>
+      </div>
+    </header>
+
+    <div class="trust" id="trust"></div>
+    <footer id="footer"></footer>
+  </div>
+
+  <script>
+    const texts = {
+      tr: {
+        pageTitle: "BIGO LIVE RESMİ AJANS | Resmi BIGO LIVE Yayıncı Ajansı",
+        subtitle: `<b>Günde sadece 3 saat ayırarak</b> evden gelir elde etmek ister misin?<br>
+        BIGO LIVE yayıncıları için <span class="gold-amount">300$ – 8.000$ Dolar</span> arası kazanç fırsatları sunuyoruz.<br>
+        Detaylı bilgi için <b>WhatsApp’tan bize yaz.</b>`,
+        trust: `<b>BIGO LIVE RESMİ AJANS</b>, BIGO LIVE alanında <b>10 yıllık deneyime</b> sahip profesyonel bir ajanstır.`,
+        footer: `© 2025 BIGO LIVE RESMİ AJANS`
+      },
+      de: {
+        pageTitle: "BIGO LIVE OFFIZIELLE AGENTUR | Creator & Streamer Support",
+        subtitle: `<b>Mit nur 3 Stunden pro Tag</b> von zuhause Geld verdienen?<br>
+        Für BIGO LIVE Creator bieten wir <b>300$ – 8.000$ Verdienstmöglichkeiten</b>.<br>
+        Für Details <b>schreib uns auf WhatsApp.</b>`,
+        trust: `<b>BIGO LIVE OFFIZIELLE AGENTUR</b> – professionell, zuverlässig und mit <b>10 Jahren Erfahrung</b>.`,
+        footer: `© 2025 BIGO LIVE OFFIZIELLE AGENTUR`
+      },
+      en: {
+        pageTitle: "BIGO LIVE OFFICIAL AGENCY | Creator Support & Earnings",
+        subtitle: `<b>Earn from home with just 3 hours a day.</b><br>
+        We offer BIGO LIVE creators <b>$300 – $8,000</b> earning opportunities.<br>
+        For details, <b>message us on WhatsApp.</b>`,
+        trust: `<b>BIGO LIVE OFFICIAL AGENCY</b> – professional support with <b>10 years of experience</b>.`,
+        footer: `© 2025 BIGO LIVE OFFICIAL AGENCY`
+      }
+    };
+
+    const subtitleEl = document.getElementById("subtitle");
+    const trustEl = document.getElementById("trust");
+    const footerEl = document.getElementById("footer");
+
+    function setLang(lang){
+      const t = texts[lang] || texts.tr;
+      document.documentElement.lang = lang;
+      document.title = t.pageTitle;
+      subtitleEl.innerHTML = t.subtitle;
+      trustEl.innerHTML = t.trust;
+      footerEl.innerHTML = t.footer;
+
+      document.querySelectorAll(".flag-btn").forEach(b=>b.classList.remove("active"));
+      const btn = document.querySelector(`.flag-btn[data-lang="${lang}"]`);
+      if(btn) btn.classList.add("active");
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const urlLang = params.get("lang");
+    setLang(urlLang && texts[urlLang] ? urlLang : "tr");
+
+    document.querySelectorAll(".flag-btn").forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        setLang(btn.dataset.lang);
+        const u = new URL(window.location.href);
+        u.searchParams.set("lang", btn.dataset.lang);
+        window.history.replaceState({}, "", u.toString());
+      });
+    });
+  </script>
+</body>
+</html>
