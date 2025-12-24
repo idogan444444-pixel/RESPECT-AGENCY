@@ -19,15 +19,7 @@
   <link rel="alternate" hreflang="x-default" href="https://respect-agency.net/" />
 
   <meta name="theme-color" content="#05040a" />
-
-  <!-- ✅ Local preload -->
   <link rel="preload" as="image" href="logo.png" />
-  <link rel="preload" as="image" href="assets/icons/whatsapp.png" />
-  <link rel="preload" as="image" href="assets/icons/instagram.png" />
-  <link rel="preload" as="image" href="assets/icons/telegram.png" />
-  <link rel="preload" as="image" href="assets/flags/tr.png" />
-  <link rel="preload" as="image" href="assets/flags/de.png" />
-  <link rel="preload" as="image" href="assets/flags/gb.png" />
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box;}
@@ -145,10 +137,9 @@
       background:#111;
       overflow:hidden;
       cursor:pointer;
-      padding:0;
     }
     .flag-btn.active{outline:2px solid var(--gold);}
-    .flag-btn img{width:100%;height:100%;object-fit:cover;display:block;}
+    .flag-btn img{width:100%;height:100%;object-fit:cover;}
 
     .info-box{
       margin:14px auto 0;
@@ -214,7 +205,7 @@
       border:1px solid rgba(255,255,255,.12);
       box-shadow:0 18px 55px rgba(0,0,0,.55);
     }
-    .plateBtn img{width:32px;height:32px;display:block;}
+    .plateBtn img{width:32px;height:32px;}
 
     .trust{
       margin:16px auto 0;
@@ -317,13 +308,13 @@
 
         <div class="top-icons" aria-label="Quick Contact Icons">
           <a class="iconLink" href="https://wa.me/491771977401" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <img src="assets/icons/whatsapp.png" alt="WhatsApp">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
           </a>
           <a class="iconLink" href="https://instagram.com/respect.agencyy" target="_blank" rel="noopener" aria-label="Instagram">
-            <img src="assets/icons/instagram.png" alt="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
           </a>
           <a class="iconLink" href="https://t.me/RESPECT_44" target="_blank" rel="noopener" aria-label="Telegram">
-            <img src="assets/icons/telegram.png" alt="Telegram">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
           </a>
         </div>
       </div>
@@ -335,15 +326,9 @@
       <div class="translator">
         <div class="label">ÇEVİRİ / TRANSLATOR</div>
         <div class="flags">
-          <button class="flag-btn active" data-lang="tr" aria-label="Türkçe">
-            <img src="assets/flags/tr.png" alt="TR">
-          </button>
-          <button class="flag-btn" data-lang="de" aria-label="Deutsch">
-            <img src="assets/flags/de.png" alt="DE">
-          </button>
-          <button class="flag-btn" data-lang="en" aria-label="English">
-            <img src="assets/flags/gb.png" alt="EN">
-          </button>
+          <button class="flag-btn active" data-lang="tr" aria-label="Türkçe"><img src="https://flagcdn.com/w80/tr.png" alt="TR"></button>
+          <button class="flag-btn" data-lang="de" aria-label="Deutsch"><img src="https://flagcdn.com/w80/de.png" alt="DE"></button>
+          <button class="flag-btn" data-lang="en" aria-label="English"><img src="https://flagcdn.com/w80/gb.png" alt="EN"></button>
         </div>
       </div>
 
@@ -354,15 +339,15 @@
 
       <div class="social" aria-label="İletişim">
         <a class="plateBtn" href="https://wa.me/491771977401" target="_blank" rel="noopener">
-          <img src="assets/icons/whatsapp.png" alt="">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="">
           WhatsApp
         </a>
         <a class="plateBtn" href="https://instagram.com/respect.agencyy" target="_blank" rel="noopener">
-          <img src="assets/icons/instagram.png" alt="">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="">
           Instagram
         </a>
         <a class="plateBtn" href="https://t.me/RESPECT_44" target="_blank" rel="noopener">
-          <img src="assets/icons/telegram.png" alt="">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="">
           Telegram
         </a>
       </div>
@@ -429,8 +414,9 @@
           Siteye girişte teknik veriler (IP adresi, tarih/saat, tarayıcı, işletim sistemi vb.) sunucu günlüklerinde işlenebilir.<br>
           <b>Hukuki dayanak:</b> DSGVO Art. 6(1)(f) (güvenlik/istikrar).<br><br>
 
-          <b>4. Yerel Görseller</b><br>
-          Bu web sitesindeki ikonlar ve bayrak görselleri yerel olarak (kendi sunucumuzdan) yüklenir. Bu nedenle sayfa açılışında bu görseller için ayrı bir üçüncü taraf-CDN veri aktarımı amaçlanmaz.<br><br>
+          <b>4. Harici Görseller (Icons/Flags - CDN)</b><br>
+          Bu sitede ikon ve bayrak görselleri harici sunuculardan yüklenebilir (örn. Flaticon CDN, FlagCDN). Bu sırada IP adresiniz üçüncü taraflara iletilebilir.<br>
+          <b>Hukuki dayanak:</b> DSGVO Art. 6(1)(f).<br><br>
 
           <b>5. WhatsApp / Instagram / Telegram Üzerinden İletişim</b><br>
           Butonlara tıkladığınızda ilgili hizmete yönlendirilirsiniz. Bu sırada IP adresi gibi teknik veriler ilgili sağlayıcıya aktarılabilir. Sağlayıcıların veri işlemeleri üzerinde kontrolümüz yoktur.<br>
@@ -503,8 +489,9 @@
           Beim Aufruf werden Server-Logfiles verarbeitet (z. B. IP-Adresse, Datum/Uhrzeit, Referrer-URL, Browsertyp, Betriebssystem).<br>
           <b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. f DSGVO (Sicherheit, Stabilität, Fehleranalyse).<br><br>
 
-          <b>4. Lokale Inhalte (Icons/Flaggen)</b><br>
-          Icons und Flaggen werden lokal von unserer Website geladen. Dadurch ist für diese Grafiken keine zusätzliche CDN-Datenübertragung an Drittanbieter beim Seitenaufruf beabsichtigt.<br><br>
+          <b>4. Externe Inhalte (Icons/Flaggen über CDN)</b><br>
+          Auf der Website werden teilweise Grafiken (Icons/Flaggen) von externen Servern geladen (z. B. Flaticon-CDN, FlagCDN). Dabei kann Ihre IP-Adresse an diese Drittanbieter übertragen werden.<br>
+          <b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. f DSGVO.<br><br>
 
           <b>5. Kontakt über WhatsApp / Instagram / Telegram</b><br>
           Beim Anklicken der Buttons werden Sie zu den jeweiligen Diensten weitergeleitet. Dabei können personenbezogene Daten (insbesondere IP-Adresse) an den Anbieter übermittelt werden. Drittlandverarbeitung (z. B. USA) ist möglich.<br>
@@ -568,8 +555,9 @@
           Server logs may include IP address, date/time, browser type, operating system.<br>
           <b>Legal basis:</b> Art. 6(1)(f) GDPR.<br><br>
 
-          <b>4. Local assets (icons/flags)</b><br>
-          Icons and flags are loaded locally from this website, so no additional CDN transfer for these graphics is intended when loading the page.<br><br>
+          <b>4. External assets (icons/flags via CDN)</b><br>
+          Some images are loaded from external CDNs (e.g., Flaticon, FlagCDN). Your IP address may be transmitted to these providers.<br>
+          <b>Legal basis:</b> Art. 6(1)(f) GDPR.<br><br>
 
           <b>5. Contact via WhatsApp / Instagram / Telegram</b><br>
           Clicking the buttons redirects you to those services; data transfers (e.g., IP address) may occur. Third-country processing (e.g., USA) may be possible.<br>
@@ -651,12 +639,12 @@
       if(btn) btn.classList.add("active");
     }
 
-    // initial language
+    // ✅ initial language
     const params = new URLSearchParams(window.location.search);
     const urlLang = params.get("lang");
     setLang(urlLang && texts[urlLang] ? urlLang : "tr");
 
-    // flags
+    // ✅ flags
     document.querySelectorAll(".flag-btn").forEach(btn=>{
       btn.addEventListener("click", ()=>{
         const newLang = btn.dataset.lang;
@@ -668,17 +656,17 @@
       });
     });
 
-    // modal buttons
+    // ✅ modal buttons
     btnOpenImp.addEventListener("click", ()=>openModal("imp"));
     btnOpenDs.addEventListener("click", ()=>openModal("ds"));
     closeModalBtn.addEventListener("click", closeModal);
 
-    // close by clicking overlay
+    // ✅ close by clicking overlay
     modalOverlay.addEventListener("click", (e)=>{
       if(e.target === modalOverlay) closeModal();
     });
 
-    // close by ESC
+    // ✅ close by ESC
     window.addEventListener("keydown", (e)=>{
       if(e.key === "Escape" && modalOverlay.classList.contains("show")) closeModal();
     });
