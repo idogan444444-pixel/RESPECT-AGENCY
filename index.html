@@ -11,11 +11,12 @@
   <meta name="author" content="BIGO LIVE RESMİ AJANS" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
 
-  <link rel="canonical" href="https://SENIN-DOMAININ/" />
-  <link rel="alternate" hreflang="tr" href="https://SENIN-DOMAININ/?lang=tr" />
-  <link rel="alternate" hreflang="de" href="https://SENIN-DOMAININ/?lang=de" />
-  <link rel="alternate" hreflang="en" href="https://SENIN-DOMAININ/?lang=en" />
-  <link rel="alternate" hreflang="x-default" href="https://SENIN-DOMAININ/" />
+  <!-- ✅ FIXED: Canonical + hreflang -->
+  <link rel="canonical" href="https://respect-agency.net/" />
+  <link rel="alternate" hreflang="tr" href="https://respect-agency.net/?lang=tr" />
+  <link rel="alternate" hreflang="de" href="https://respect-agency.net/?lang=de" />
+  <link rel="alternate" hreflang="en" href="https://respect-agency.net/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://respect-agency.net/" />
 
   <meta name="theme-color" content="#05040a" />
   <link rel="preload" as="image" href="logo.png" />
@@ -48,7 +49,6 @@
       box-shadow:0 28px 90px rgba(0,0,0,.62);
     }
 
-    /* ✅ NEW: Logo row with icons on the right */
     .top-row{
       display:flex;
       align-items:center;
@@ -66,7 +66,6 @@
     }
     .logo-image{max-width:190px;width:100%;height:auto;display:block;}
 
-    /* ✅ NEW: top icons */
     .top-icons{
       display:flex;
       gap:10px;
@@ -184,7 +183,6 @@
     }
     .seo-box b{color:var(--gold);}
 
-    /* keep your big buttons */
     .social{
       margin-top:16px;
       display:flex;
@@ -297,14 +295,15 @@
       word-break:break-word;
     }
     .modalBody b{color:var(--gold);}
+    .modalBody a{color:var(--gold);}
+    .modalBody ul{margin:8px 0 8px 18px;}
+    .modalBody li{margin:4px 0;}
   </style>
 </head>
 
 <body>
   <div class="shell">
     <header>
-
-      <!-- ✅ Logo + icons in same row -->
       <div class="top-row">
         <div class="logo-frame">
           <img src="logo.png" alt="RESPECT AGENCY Logo" class="logo-image">
@@ -398,27 +397,54 @@
           <b>İletişim:</b><br>
           WhatsApp / Telefon: +49 177 1977401<br>
           E-posta: info@respect-agency.net<br><br>
-          <b>İçerikten sorumlu kişi:</b> Ibrahim Dogan
+          <b>İçerikten sorumlu kişi:</b> Ibrahim Dogan<br>
+          <b>KDV No (varsa):</b> —<br>
         `,
         datenschutzTitle: "Gizlilik Politikası (Datenschutz)",
         datenschutzText: `
-          <b>1. Genel Bilgi</b><br>
-          Bu web sitesinde kişisel verilerin korunması bizim için önemlidir. Veriler yalnızca teknik olarak gerekli olduğu ölçüde işlenir.<br><br>
-          <b>2. Sorumlu Kişi</b><br>
-          RESPECT AGENCY / Ibrahim Dogan – Büchnerstr. 4, 34260 Kaufungen, Almanya<br>
+          <b>1. Genel Bakış</b><br>
+          Kişisel verilerinizin korunmasını ciddiye alıyoruz. Bu web sitesinde veriler, yalnızca web sitesinin güvenli ve sorunsuz çalışması için gerekli olduğu ölçüde işlenir.<br><br>
+
+          <b>2. Veri Sorumlusu</b><br>
+          RESPECT AGENCY / Ibrahim Dogan<br>
+          Büchnerstr. 4, 34260 Kaufungen, Almanya<br>
           E-posta: info@respect-agency.net<br><br>
-          <b>3. Sunucu Kayıtları</b><br>
-          Siteye girişte hosting sağlayıcısı teknik verileri kaydedebilir (IP adresi, tarayıcı türü, zaman). Bu veriler güvenlik amacıyladır.<br><br>
-          <b>4. WhatsApp / Instagram / Telegram Üzerinden İletişim</b><br>
-          Bizimle bu kanallar üzerinden iletişime geçtiğinizde, mesaj içeriğiniz ve iletişim bilgileriniz talebinizi yanıtlamak için saklanabilir.<br><br>
-          <b>5. Haklarınız</b><br>
-          Bilgi alma, düzeltme ve silme hakkına sahipsiniz.<br><br>
-          <b>6. SSL</b><br>
-          Bu site güvenlik amacıyla SSL şifrelemesi kullanır.
+
+          <b>3. Hosting (Namecheap) ve Yayın (GitHub Pages)</b><br>
+          Alan adı ve hosting hizmeti <b>Namecheap, Inc.</b> üzerinden sağlanmaktadır. Web sitesinin içerikleri <b>GitHub Pages (GitHub, Inc., ABD)</b> üzerinden dağıtılabilir.<br>
+          Siteye erişildiğinde sunucu günlükleri (ör. IP adresi, tarih/saat, tarayıcı, işletim sistemi) teknik olarak kaydedilebilir.<br>
+          Bu işlem, güvenlik ve istikrar için <b>GDPR/DSGVO Art. 6(1)(f)</b> (meşru menfaat) kapsamında yapılır.<br><br>
+
+          <b>4. Harici Görseller / CDN (ikonlar ve bayraklar)</b><br>
+          Bu sitede bazı ikon ve bayrak görselleri harici kaynaklardan yüklenir (ör. Flaticon CDN, FlagCDN). Sayfayı açtığınızda IP adresiniz bu üçüncü taraflara iletilebilir.<br>
+          Bu işlem <b>GDPR/DSGVO Art. 6(1)(f)</b> kapsamında (web sitesinin görsel sunumu) yapılır.<br><br>
+
+          <b>5. WhatsApp / Instagram / Telegram ile İletişim</b><br>
+          Sitedeki butonlara tıkladığınızda ilgili hizmete (WhatsApp, Instagram, Telegram) yönlendirilirsiniz. Bu sırada IP adresi gibi teknik veriler ilgili sağlayıcıya iletilebilir.<br>
+          Biz bu sağlayıcıların veri işlemelerine doğrudan müdahale edemeyiz. Kullanımınız gönüllülüğe dayanır.<br>
+          Hukuki dayanak: <b>GDPR/DSGVO Art. 6(1)(a)</b> (rıza) ve/veya <b>Art. 6(1)(f)</b> (iletişim menfaati).<br>
+          Veriler AB dışına (örn. ABD) aktarılabilir.<br><br>
+
+          <b>6. Çerezler & Takip (Analytics / Pixel)</b><br>
+          Bu web sitesi kendi tarafımızdan bilinçli olarak <b>takip/analiz araçları</b> (Google Analytics, Meta/Facebook Pixel vb.) kullanmamaktadır.<br>
+          Ancak hosting/dağıtım sağlayıcıları teknik olarak gerekli çerezler veya benzer teknolojiler kullanabilir.<br><br>
+
+          <b>7. Saklama Süresi</b><br>
+          Veriler yalnızca gerekli olduğu süre boyunca saklanır. Sunucu günlükleri genellikle güvenlik nedeniyle sınırlı süre tutulur; iletişim içerikleri ise talebinize yanıt vermek için gerekli olduğu süre boyunca saklanır.<br><br>
+
+          <b>8. Haklarınız</b><br>
+          Erişim, düzeltme, silme, işlemenin kısıtlanması, veri taşınabilirliği (uygunsa) ve itiraz hakkınız vardır. Rızaya dayalı işlemlerde rızanızı geleceğe dönük olarak geri çekebilirsiniz.<br><br>
+
+          <b>9. Şikayet Hakkı</b><br>
+          Bir denetim otoritesine şikayette bulunma hakkınız vardır (özellikle Almanya/Hessen).<br><br>
+
+          <b>10. SSL</b><br>
+          Bu site veri aktarımını korumak için SSL şifrelemesi kullanır.
         `,
         btnImp: "İmpressum",
         btnDs: "Gizlilik / Datenschutz"
       },
+
       de: {
         pageTitle: "BIGO LIVE OFFIZIELLE AGENTUR | Creator & Streamer Support",
         subtitle: `<b>Mit nur 3 Stunden pro Tag</b> von zuhause Geld verdienen?<br>
@@ -429,6 +455,7 @@
         Beratung und nachhaltigen Wachstumsmöglichkeiten auf BIGO LIVE.`,
         trust: `<b>BIGO LIVE OFFIZIELLE AGENTUR</b> – professionell, zuverlässig und mit <b>10 Jahren Erfahrung</b>.`,
         footer: `© 2025 BIGO LIVE OFFIZIELLE AGENTUR`,
+
         impressumTitle: "Impressum",
         impressumText: `
           <b>Angaben gemäß § 5 TMG</b><br><br>
@@ -438,34 +465,63 @@
           Büchnerstr. 4<br>
           34260 Kaufungen<br>
           Deutschland<br><br>
+
           <b>Kontakt:</b><br>
           Telefon / WhatsApp: +49 177 1977401<br>
           E-Mail: info@respect-agency.net<br><br>
-          <b>Verantwortlich für den Inhalt:</b><br>
-          Ibrahim Dogan
+
+          <b>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV/MStV:</b><br>
+          Ibrahim Dogan<br><br>
+
+          <b>USt-IdNr.:</b> — (nur falls vorhanden eintragen)
         `,
+
         datenschutzTitle: "Datenschutzerklärung",
         datenschutzText: `
           <b>1. Datenschutz auf einen Blick</b><br>
-          Der Schutz Ihrer persönlichen Daten ist uns wichtig. Personenbezogene Daten werden nur im technisch notwendigen Umfang verarbeitet.<br><br>
-          <b>2. Verantwortliche Stelle</b><br>
+          Der Schutz Ihrer persönlichen Daten ist uns wichtig. Personenbezogene Daten werden nur verarbeitet, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist.<br><br>
+
+          <b>2. Verantwortliche Stelle (Art. 4 Nr. 7 DSGVO)</b><br>
           RESPECT AGENCY / Ibrahim Dogan<br>
           Büchnerstr. 4, 34260 Kaufungen, Deutschland<br>
           E-Mail: info@respect-agency.net<br><br>
-          <b>3. Server-Log-Dateien</b><br>
-          Beim Besuch der Website werden automatisch technische Informationen erfasst (z. B. IP-Adresse, Browser, Uhrzeit).
-          Die Verarbeitung erfolgt zur Sicherheit und Stabilität der Seite.<br><br>
-          <b>4. Kontakt über WhatsApp / Instagram / Telegram</b><br>
-          Wenn Sie uns über diese Dienste kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage gespeichert.
-          Eine Weitergabe erfolgt nicht ohne Einwilligung.<br><br>
-          <b>5. Ihre Rechte</b><br>
-          Sie haben das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung.<br><br>
-          <b>6. SSL-Verschlüsselung</b><br>
+
+          <b>3. Hosting (Namecheap) & Bereitstellung (GitHub Pages)</b><br>
+          Diese Website nutzt Dienste von <b>Namecheap, Inc.</b> (Domain/Hosting) und wird über <b>GitHub Pages (GitHub, Inc., USA)</b> bereitgestellt/ausgeliefert.<br>
+          Beim Aufruf der Website werden durch den jeweiligen Anbieter automatisch Informationen in sogenannten Server-Logfiles verarbeitet (z. B. IP-Adresse, Datum/Uhrzeit, Referrer-URL, Browsertyp, Betriebssystem).<br>
+          <b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Sicherheit, Stabilität, Missbrauchs-/Fehleranalyse).<br><br>
+
+          <b>4. Externe Inhalte (Icons/Flaggen über CDN)</b><br>
+          Auf dieser Website werden teilweise Grafiken (Icons/Flaggen) von externen Servern geladen (z. B. Flaticon-CDN, FlagCDN). Beim Laden kann Ihre IP-Adresse an diese Drittanbieter übertragen werden.<br>
+          <b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer ansprechenden Darstellung und technisch effizienter Auslieferung).<br><br>
+
+          <b>5. Kontakt über WhatsApp / Instagram / Telegram</b><br>
+          Auf unserer Website befinden sich Buttons/Links zu WhatsApp, Instagram und Telegram. Beim Anklicken werden Sie zu den jeweiligen Diensten weitergeleitet. Dabei können personenbezogene Daten (insbesondere IP-Adresse) an den jeweiligen Anbieter übermittelt werden.<br>
+          Wir haben keinen Einfluss auf Art und Umfang der Datenverarbeitung durch diese Anbieter. Die Nutzung erfolgt freiwillig.<br>
+          <b>Rechtsgrundlage:</b> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung durch Nutzung/Weiterleitung) und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an schneller Kommunikation).<br>
+          Es kann nicht ausgeschlossen werden, dass eine Verarbeitung auch in Drittländern (z. B. USA) erfolgt.<br><br>
+
+          <b>6. Cookies & Tracking (Google Analytics / Pixel)</b><br>
+          Wir setzen nach aktuellem Stand <b>keine</b> Tracking- oder Analyse-Tools (z. B. Google Analytics, Meta/Facebook Pixel) bewusst ein und verwenden keine eigenen Marketing-Cookies.<br>
+          Hinweis: Technisch notwendige Cookies oder ähnliche Technologien können je nach Hosting/Bereitstellung durch Drittanbieter eingesetzt werden.<br><br>
+
+          <b>7. Speicherdauer</b><br>
+          Personenbezogene Daten werden nur so lange gespeichert, wie dies zur Erreichung der jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen. Server-Logfiles werden in der Regel nur für einen begrenzten Zeitraum vorgehalten.<br><br>
+
+          <b>8. Ihre Rechte</b><br>
+          Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO, soweit anwendbar) sowie Widerspruch (Art. 21 DSGVO).<br>
+          Sofern eine Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO).<br><br>
+
+          <b>9. Beschwerderecht</b><br>
+          Sie haben das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren (Art. 77 DSGVO). Zuständig ist insbesondere die Aufsichtsbehörde Ihres üblichen Aufenthaltsortes oder in Hessen (wegen Kaufungen).<br><br>
+
+          <b>10. SSL-Verschlüsselung</b><br>
           Diese Seite nutzt SSL-Verschlüsselung zum Schutz der Datenübertragung.
         `,
         btnImp: "Impressum",
         btnDs: "Datenschutz"
       },
+
       en: {
         pageTitle: "BIGO LIVE OFFICIAL AGENCY | Creator Support & Earnings",
         subtitle: `<b>Earn from home with just 3 hours a day.</b><br>
@@ -476,6 +532,7 @@
         for new and experienced BIGO LIVE creators.`,
         trust: `<b>BIGO LIVE OFFICIAL AGENCY</b> – professional support with <b>10 years of experience</b>.`,
         footer: `© 2025 BIGO LIVE OFFICIAL AGENCY`,
+
         impressumTitle: "Imprint",
         impressumText: `
           <b>Operator</b>: RESPECT AGENCY / BIGO LIVE OFFICIAL AGENCY<br>
@@ -484,23 +541,47 @@
           <b>Contact</b>:<br>
           Phone / WhatsApp: +49 177 1977401<br>
           Email: info@respect-agency.net<br><br>
-          <b>Responsible for content</b>: Ibrahim Dogan
+          <b>Responsible for content</b>: Ibrahim Dogan<br>
+          <b>VAT ID</b>: — (add if available)
         `,
+
         datenschutzTitle: "Privacy Policy",
         datenschutzText: `
           <b>1. Overview</b><br>
-          We take the protection of personal data seriously. We process data only as necessary for operating this website.<br><br>
+          We take the protection of personal data seriously. We process data only as necessary to provide a secure and functional website and to communicate with you.<br><br>
+
           <b>2. Controller</b><br>
           RESPECT AGENCY / Ibrahim Dogan<br>
           Büchnerstr. 4, 34260 Kaufungen, Germany<br>
           Email: info@respect-agency.net<br><br>
-          <b>3. Server logs</b><br>
-          When you visit this site, the hosting provider may collect technical data (e.g., IP address, browser type, time) for security purposes.<br><br>
-          <b>4. Contact via WhatsApp / Instagram / Telegram</b><br>
-          If you contact us via these services, your message and contact details may be stored to handle your request.<br><br>
-          <b>5. Your rights</b><br>
-          You may request access, correction, deletion, or restriction of your personal data.<br><br>
-          <b>6. SSL</b><br>
+
+          <b>3. Hosting (Namecheap) & Delivery (GitHub Pages)</b><br>
+          This website uses services from <b>Namecheap, Inc.</b> (domain/hosting) and may be delivered via <b>GitHub Pages (GitHub, Inc., USA)</b>.<br>
+          When you visit the website, technical data may be processed in server log files (e.g., IP address, date/time, browser type, operating system).<br>
+          <b>Legal basis:</b> Art. 6(1)(f) GDPR (legitimate interest in security, stability and troubleshooting).<br><br>
+
+          <b>4. External assets (icons/flags via CDN)</b><br>
+          Some images (icons/flags) are loaded from external servers (e.g., Flaticon CDN, FlagCDN). When these are loaded, your IP address may be transmitted to those third parties.<br>
+          <b>Legal basis:</b> Art. 6(1)(f) GDPR (legitimate interest in proper display and efficient delivery).<br><br>
+
+          <b>5. Contact via WhatsApp / Instagram / Telegram</b><br>
+          Our website contains buttons/links to WhatsApp, Instagram and Telegram. When you click, you will be redirected to the respective platform. In doing so, personal data (in particular your IP address) may be transmitted to that provider.<br>
+          We do not control how these providers process data. Use is voluntary.<br>
+          <b>Legal basis:</b> Art. 6(1)(a) GDPR (consent by using the link) and/or Art. 6(1)(f) GDPR (legitimate interest in communication). Third-country processing (e.g., USA) cannot be ruled out.<br><br>
+
+          <b>6. Cookies & Tracking</b><br>
+          To our current knowledge, we do not intentionally use analytics/tracking tools such as Google Analytics or Meta/Facebook Pixel and we do not set our own marketing cookies. However, technical cookies or similar technologies may be used by hosting/delivery providers if required.<br><br>
+
+          <b>7. Retention</b><br>
+          Data is stored only as long as necessary for the respective purposes or as required by law. Server logs are typically retained for a limited period.<br><br>
+
+          <b>8. Your rights</b><br>
+          You may request access, rectification, erasure, restriction, data portability (where applicable) and object to processing. If processing is based on consent, you can withdraw consent at any time for the future.<br><br>
+
+          <b>9. Supervisory authority</b><br>
+          You have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR).<br><br>
+
+          <b>10. SSL</b><br>
           This website uses SSL encryption to protect data transmission.
         `,
         btnImp: "Imprint",
@@ -558,7 +639,7 @@
       btnOpenDs.textContent = t.btnDs;
 
       document.querySelectorAll(".flag-btn").forEach(b=>b.classList.remove("active"));
-      const btn = document.querySelector(`.flag-btn[data-lang="${lang}"]`);
+      const btn = document.querySelector(\`.flag-btn[data-lang="\${lang}"]\`);
       if(btn) btn.classList.add("active");
     }
 
