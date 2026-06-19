@@ -1,18 +1,20 @@
-Index backup · HTML
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RESPECT AJANS | Offizieller BIGO LIVE Agentur</title>
-  <meta name="description" content="RESPECT AJANS – Offizieller BIGO LIVE Partner. Werde Streamer und verdiene Geld von zuhause. Jetzt bewerben auf WhatsApp, Instagram oder Telegram." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#07060f" />
+  <title>RESPECT AGENTUR | Offizieller BIGO LIVE Agentur</title>
+  <meta name="description" content="RESPECT AGENTUR – Offizieller BIGO LIVE Partner. Werde Streamer und verdiene Geld von zuhause. Jetzt bewerben auf WhatsApp, Instagram oder Telegram." />
   <meta name="keywords" content="BIGO LIVE Agentur, BIGO LIVE resmi ajans, BIGO LIVE yayıncı ajansı, Streamer werden, evden gelir, BIGO ajans Deutschland" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://respect-agency.net/" />
  
   <!-- Open Graph -->
-  <meta property="og:title" content="RESPECT AJANS | Offizieller BIGO LIVE Agentur" />
-  <meta property="og:description" content="Werde offizieller BIGO LIVE Streamer mit RESPECT AJANS. Täglich Geld verdienen – von zuhause." />
+  <meta property="og:title" content="RESPECT AGENTUR | Offizieller BIGO LIVE Agentur" />
+  <meta property="og:description" content="Werde offizieller BIGO LIVE Streamer mit RESPECT AGENTUR. Täglich Geld verdienen – von zuhause." />
   <meta property="og:url" content="https://respect-agency.net/" />
   <meta property="og:type" content="website" />
  
@@ -177,6 +179,52 @@ Index backup · HTML
       filter: drop-shadow(0 0 20px rgba(201,168,76,0.4));
     }
  
+    .bigo-partner-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      margin-bottom: 20px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(0,229,255,0.18);
+      border-radius: 24px;
+      padding: 16px 12px;
+      width: 100%;
+      max-width: 680px;
+    }
+    .bigo-dino {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 14px rgba(0,229,255,0.5));
+      flex-shrink: 0;
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    .bigo-spin-badge {
+      flex: 1;
+      text-align: center;
+      display: inline-block;
+      font-size: clamp(13px, 2.2vw, 16px);
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg,
+        #a8732e 0%, #e8c97a 25%, #fffde0 40%, #ffc200 55%, #e8c97a 70%, #a8732e 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 2.8s linear infinite;
+      border: 2px solid rgba(201,168,76,0.45);
+      border-radius: 16px;
+      padding: 10px 16px;
+      line-height: 1.6;
+    }
+ 
     .badge {
       display: inline-block;
       background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(123,47,255,0.15));
@@ -192,7 +240,7 @@ Index backup · HTML
     }
  
     .hero h1 {
-      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-size: clamp(1.5rem, 4vw, 2.6rem);
       font-family: 'Black Han Sans', 'Inter', sans-serif;
       font-weight: 900;
       line-height: 1.05;
@@ -587,9 +635,218 @@ Index backup · HTML
       display: block;
     }
  
-    @media (max-width: 600px) {
-      .stats { gap: 32px; }
-      .cta-group { flex-direction: column; align-items: center; }
+    /* ── TESTIMONIALS ── */
+    .testimonials-section {
+      background: var(--dark2);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      padding: 80px 24px;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 20px;
+      padding: 28px 24px;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px; left: 20px;
+      font-size: 4rem;
+      color: var(--gold);
+      opacity: 0.25;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding-top: 24px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .testimonial-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .stars { color: #ffc200; font-size: 13px; margin-bottom: 4px; }
+ 
+    /* ── FAQ ── */
+    .faq-section { padding: 80px 24px; max-width: 800px; margin: 0 auto; }
+    .faq-item {
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 16px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: rgba(201,168,76,0.4); }
+    .faq-question {
+      width: 100%;
+      background: var(--dark3);
+      border: none;
+      color: var(--text);
+      padding: 20px 24px;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-question:hover { background: rgba(201,168,76,0.05); }
+    .faq-chevron {
+      font-size: 12px;
+      color: var(--gold);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      display: none;
+      padding: 0 24px 20px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-muted);
+      background: var(--dark3);
+    }
+    .faq-item.open .faq-answer { display: block; }
+ 
+    /* ══════════════════════════════════
+       MOBILE OPTIMIERUNG (iOS & Android)
+       ══════════════════════════════════ */
+    @media (max-width: 768px) {
+ 
+      /* Navbar: Social-Buttons nur Icons, Flags kleiner */
+      .lang-bar {
+        padding: 8px 12px;
+        gap: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .lang-bar-social { gap: 8px; }
+      .social-top-btn span { display: none; }
+      .social-top-btn { padding: 10px 12px; min-width: 44px; min-height: 44px; justify-content: center; }
+      .social-top-btn i { font-size: 20px; }
+      .flag-btn { padding: 8px 10px; font-size: 16px; min-width: 44px; min-height: 44px; }
+      .flag-btn .fcode { font-size: 10px; }
+ 
+      /* Hero */
+      .hero { padding: 130px 16px 48px; }
+      .logo { width: 80px; margin-bottom: 18px; }
+ 
+      /* BIGO banner: kleiner auf Handy */
+      .bigo-partner-banner {
+        padding: 10px 8px;
+        gap: 6px;
+        border-radius: 16px;
+      }
+      .bigo-dino { width: 60px; height: 60px; }
+      .bigo-spin-badge {
+        font-size: 11px;
+        padding: 8px 10px;
+        letter-spacing: 0.8px;
+      }
+ 
+      /* Haupt-CTA Buttons */
+      .btn {
+        padding: 14px 22px;
+        font-size: 15px;
+        width: 100%;
+        justify-content: center;
+      }
+      .cta-group {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 320px;
+      }
+ 
+      /* Stats */
+      .stats { gap: 24px; padding: 40px 16px; flex-wrap: wrap; }
+      .stat-number { font-size: 1.8rem; }
+ 
+      /* Country flags */
+      .country-flags { gap: 14px; }
+      .country-item { padding: 16px 20px; min-width: 100px; }
+      .country-flag { font-size: 2.2rem; }
+ 
+      /* Sections */
+      section { padding: 48px 16px; }
+      .testimonials-section { padding: 48px 16px; }
+      .countries-section { padding: 40px 16px; }
+      .contact-section section { padding: 48px 16px; }
+      .faq-section { padding: 48px 16px; }
+ 
+      /* Cards */
+      .cards { grid-template-columns: 1fr; gap: 16px; }
+      .card { padding: 24px 20px; }
+ 
+      /* Steps */
+      .steps { grid-template-columns: 1fr; gap: 16px; }
+      .step { padding: 22px 18px; }
+ 
+      /* Contact grid */
+      .contact-grid { grid-template-columns: 1fr; gap: 14px; }
+      .contact-card { padding: 20px 16px; flex-direction: row; gap: 16px; }
+ 
+      /* Testimonials */
+      .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+      .testimonial-card { padding: 22px 18px; }
+ 
+      /* FAQ */
+      .faq-question { padding: 16px 18px; font-size: 14px; }
+      .faq-answer { padding: 0 18px 16px; font-size: 13px; }
+ 
+      /* Section titles */
+      .section-title { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+ 
+      /* Modal: Vollbild auf Mobile */
+      .modal-overlay { padding: 12px; align-items: flex-end; }
+      .modal-box {
+        padding: 28px 20px;
+        max-height: 92vh;
+        border-radius: 20px 20px 12px 12px;
+      }
+ 
+      /* Footer Buttons */
+      .footer-btn { padding: 12px 20px; min-height: 44px; font-size: 14px; }
+    }
+ 
+    /* Extra klein (iPhone SE etc.) */
+    @media (max-width: 380px) {
+      .bigo-dino { width: 48px; height: 48px; }
+      .bigo-spin-badge { font-size: 10px; padding: 6px 8px; }
+      .flag-btn { padding: 7px 8px; font-size: 14px; }
     }
   </style>
 </head>
@@ -622,9 +879,13 @@ Index backup · HTML
   <!-- HERO -->
   <div class="hero">
     <img src="logo.png" alt="Respect Agency Logo" class="logo" onerror="this.style.display='none'" />
-    <div class="badge">
-      <span data-lang="de">🏆 Offizieller BIGO LIVE Partner · 4 Länder</span>
-      <span data-lang="tr">🏆 Resmi BIGO LIVE Ajansı · 4 Ülke</span>
+    <div class="bigo-partner-banner">
+      <img src="https://static-web.bigolive.tv/as/bigo-static/www.bigo.tv/img/logo_icon.png" alt="BIGO LIVE" class="bigo-dino" />
+      <div class="bigo-spin-badge">
+        <span data-lang="de">🏆 OFFIZIELLER<br>BIGO LIVE PARTNER<br>· 4 LÄNDER ·</span>
+        <span data-lang="tr">🏆 RESMİ<br>BIGO LIVE AJANSI<br>· 4 ÜLKE ·</span>
+      </div>
+      <img src="https://static-web.bigolive.tv/as/bigo-static/www.bigo.tv/img/logo_icon.png" alt="BIGO LIVE" class="bigo-dino" />
     </div>
     <h1>
       <span data-lang="de">
@@ -637,7 +898,7 @@ Index backup · HTML
       </span>
     </h1>
     <p>
-      <span data-lang="de">Du träumst davon, von zuhause Geld zu verdienen? Mit <strong>RESPECT AJANS</strong> — dem offiziellen BIGO LIVE Partner in 🇹🇷 🇩🇪 🇨🇭 🇦🇹 — wird das Realität. Keine Vorkenntnisse nötig. Keine Investition. Nur dein Smartphone, deine Stimme und 3 Stunden täglich.</span>
+      <span data-lang="de">Du träumst davon, von zuhause Geld zu verdienen? Mit <strong>RESPECT AGENTUR</strong> — dem offiziellen BIGO LIVE Partner in 🇹🇷 🇩🇪 🇨🇭 🇦🇹 — wird das Realität. Keine Vorkenntnisse nötig. Keine Investition. Nur dein Smartphone, deine Stimme und 3 Stunden täglich.</span>
       <span data-lang="tr">Evden para kazanmayı mı hayal ediyorsun? <strong>RESPECT AJANS</strong> ile bu hayal gerçeğe dönüşüyor. 🇹🇷 🇩🇪 🇨🇭 🇦🇹 — 4 ülkede resmi BIGO LIVE ajansıyız. Önceden deneyim gerekmez. Yatırım yok. Sadece telefonun, sesin ve günde 3 saat vaktin yeterli.</span>
     </p>
     <div class="cta-group">
@@ -677,7 +938,7 @@ Index backup · HTML
       <span data-lang="tr"><span class="gold">4 Ülkede</span> Faaliyet Gösteriyoruz</span>
     </div>
     <p class="countries-sub">
-      <span data-lang="de">RESPECT AJANS betreibt offizielle BIGO LIVE Agenturen in der Türkei, Deutschland, der Schweiz und Österreich.</span>
+      <span data-lang="de">RESPECT AGENTUR betreibt offizielle BIGO LIVE Agenturen in der Türkei, Deutschland, der Schweiz und Österreich.</span>
       <span data-lang="tr">RESPECT AJANS, Türkiye, Almanya, İsviçre ve Avusturya'da resmi BIGO LIVE ajansları yürütmektedir.</span>
     </p>
     <div class="country-flags">
@@ -707,7 +968,7 @@ Index backup · HTML
   <!-- VORTEILE -->
   <section id="benefits">
     <p class="section-title">
-      <span data-lang="de">Warum <span class="gold">RESPECT AJANS?</span></span>
+      <span data-lang="de">Warum <span class="gold">RESPECT AGENTUR?</span></span>
       <span data-lang="tr">Neden <span class="gold">RESPECT AJANS?</span></span>
     </p>
     <p class="section-sub">
@@ -782,6 +1043,156 @@ Index backup · HTML
     </div>
   </section>
  
+  <!-- TESTIMONIALS -->
+  <div class="testimonials-section">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p class="section-title" style="text-align:center;margin-bottom:12px;">
+        <span data-lang="de">Was unsere <span class="gold">Streamer sagen</span></span>
+        <span data-lang="tr">Yayıncılarımız <span class="gold">Ne Diyor?</span></span>
+      </p>
+      <p class="section-sub">
+        <span data-lang="de">Echte Erfahrungen – echte Ergebnisse.</span>
+        <span data-lang="tr">Gerçek deneyimler – gerçek sonuçlar.</span>
+      </p>
+      <div class="testimonials-grid">
+ 
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="de">Eine super Agentur! Sie helfen mir bei allem und supporten mich durch und durch. Ich bin so froh, Teil dieser Familie zu sein.</span>
+            <span data-lang="tr">Harika bir ajans! Her konuda bana yardım ediyorlar ve beni her zaman destekliyorlar. Bu ailenin bir parçası olduğum için çok mutluyum.</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👩</div>
+            <div>
+              <div class="testimonial-name">Ceylan</div>
+              <div class="testimonial-meta">⭐ <span data-lang="de">Seit mehr als 4 Jahren dabei</span><span data-lang="tr">4 yılı aşkın süredir aramızda</span></div>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="de">Die beste Agentur! Der Chef ist immer hilfsbereit, supportet mich, hilft mir bei allem und zeigt mir alle Tricks und Tipps. Ich empfehle es jedem!</span>
+            <span data-lang="tr">En iyi ajans! Patron her zaman yardımsever, beni destekliyor, her konuda yardımcı oluyor ve tüm ipuçlarını ve püf noktalarını gösteriyor. Herkese tavsiye ederim!</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👩</div>
+            <div>
+              <div class="testimonial-name">Ayla</div>
+              <div class="testimonial-meta">⭐ <span data-lang="de">Seit 2 Monaten dabei</span><span data-lang="tr">2 aydır aramızda</span></div>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="de">Er ist wie ein Bruder für mich und hilft mir bei allem. Ich verdiene bereits über <strong>$1.200</strong> – und bin erst seit 3 Monaten dabei. Unglaublich!</span>
+            <span data-lang="tr">O benim için bir ağabey gibi ve her konuda bana yardım ediyor. Sadece 3 aydır buradayım ve zaten <strong>1.200$</strong>'ın üzerinde kazanıyorum. İnanılmaz!</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👨</div>
+            <div>
+              <div class="testimonial-name">M9</div>
+              <div class="testimonial-meta">⭐ <span data-lang="de">Seit 3 Monaten dabei</span><span data-lang="tr">3 aydır aramızda</span></div>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="de">Ich lerne bereits alles von der Agentur und bekomme jede Hilfe, die ich brauche. Es ist die beste Agentur in BIGO – er hilft seinen Streamern und supportet sie alle.</span>
+            <span data-lang="tr">Ajanstan her şeyi öğreniyorum ve ihtiyacım olan her türlü yardımı alıyorum. BIGO'daki en iyi ajans bu – yayıncılarına yardım ediyor ve hepsini destekliyor.</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👩</div>
+            <div>
+              <div class="testimonial-name">Derya</div>
+              <div class="testimonial-meta">⭐ <span data-lang="de">Neu dabei</span><span data-lang="tr">Yeni katıldı</span></div>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </div>
+ 
+  <!-- FAQ -->
+  <section class="faq-section">
+    <p class="section-title" style="text-align:center;margin-bottom:12px;">
+      <span data-lang="de">Häufige <span class="gold">Fragen</span></span>
+      <span data-lang="tr">Sık Sorulan <span class="gold">Sorular</span></span>
+    </p>
+    <p class="section-sub">
+      <span data-lang="de">Alles, was du wissen möchtest.</span>
+      <span data-lang="tr">Merak ettiğin her şey.</span>
+    </p>
+ 
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">
+        <span data-lang="de">Muss ich mein Gesicht zeigen?</span>
+        <span data-lang="tr">Yüzümü göstermek zorunda mıyım?</span>
+        <span class="faq-chevron">▼</span>
+      </button>
+      <div class="faq-answer">
+        <span data-lang="de">Ja, als Streamer bei BIGO LIVE musst du dich zeigen. Die Zuschauer möchten eine echte Person sehen – das ist der Schlüssel zu mehr Supportern und höherem Verdienst.</span>
+        <span data-lang="tr">Evet, BIGO LIVE'da yayıncı olarak görünmen gerekiyor. İzleyiciler gerçek bir kişi görmek ister – bu daha fazla destekçi ve daha yüksek kazanç için anahtardır.</span>
+      </div>
+    </div>
+ 
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">
+        <span data-lang="de">Wie viel kann ich verdienen?</span>
+        <span data-lang="tr">Ne kadar kazanabilirim?</span>
+        <span class="faq-chevron">▼</span>
+      </button>
+      <div class="faq-answer">
+        <span data-lang="de">Der Verdienst liegt zwischen <strong>128 $ und 8.000 $</strong> pro Monat – je nach Livezeit und Unterstützung durch deine Supporter. Je mehr du streamst und je aktiver deine Community ist, desto höher dein Einkommen.</span>
+        <span data-lang="tr">Kazanç aylık <strong>128 $ ile 8.000 $</strong> arasında değişiyor – yayın süresine ve destekçilerinden aldığın desteğe bağlı. Ne kadar çok yayın yaparsan ve topluluğun ne kadar aktif olursa, gelirin o kadar yüksek olur.</span>
+      </div>
+    </div>
+ 
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">
+        <span data-lang="de">Ist es wirklich kostenlos?</span>
+        <span data-lang="tr">Gerçekten ücretsiz mi?</span>
+        <span class="faq-chevron">▼</span>
+      </button>
+      <div class="faq-answer">
+        <span data-lang="de">Ja, 100% kostenlos. Du bezahlst nichts. Keine Anmeldegebühr, keine versteckten Kosten. Wir verdienen nur, wenn du verdienst – das ist unser Prinzip.</span>
+        <span data-lang="tr">Evet, %100 ücretsiz. Hiçbir şey ödemiyorsun. Kayıt ücreti yok, gizli maliyet yok. Biz sadece sen kazandığında kazanıyoruz – bu bizim ilkemiz.</span>
+      </div>
+    </div>
+ 
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">
+        <span data-lang="de">Welche Geräte brauche ich?</span>
+        <span data-lang="tr">Hangi cihaza ihtiyacım var?</span>
+        <span class="faq-chevron">▼</span>
+      </button>
+      <div class="faq-answer">
+        <span data-lang="de">Nur ein Smartphone mit Internetzugang reicht aus. Android oder iPhone – beides funktioniert. Kein Computer, kein Mikrofon, keine Kamera nötig.</span>
+        <span data-lang="tr">Sadece internet bağlantısı olan bir akıllı telefon yeterli. Android veya iPhone – ikisi de çalışır. Bilgisayar, mikrofon veya kamera gerekmiyor.</span>
+      </div>
+    </div>
+ 
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">
+        <span data-lang="de">Wann bekomme ich mein Geld ausgezahlt?</span>
+        <span data-lang="tr">Paramı ne zaman alırım?</span>
+        <span class="faq-chevron">▼</span>
+      </button>
+      <div class="faq-answer">
+        <span data-lang="de">BIGO LIVE zahlt wöchentlich oder monatlich aus – direkt auf dein Konto. Die Auszahlung ist transparent und zuverlässig.</span>
+        <span data-lang="tr">BIGO LIVE haftalık veya aylık ödeme yapıyor – doğrudan hesabına. Ödeme şeffaf ve güvenilir.</span>
+      </div>
+    </div>
+ 
+  </section>
+ 
   <!-- CONTACT -->
   <div class="contact-section">
     <section id="contact">
@@ -815,12 +1226,15 @@ Index backup · HTML
  
   <!-- FOOTER -->
   <footer>
-    <p style="margin-bottom: 16px;">© 2018 RESPECT AJANS</p>
+    <p style="margin-bottom: 16px;">© 2018 <span data-lang="de">RESPECT AGENTUR</span><span data-lang="tr">RESPECT AJANS</span></p>
     <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:16px;">
       <button onclick="openModal('impressum')" class="footer-btn">📄 Impressum</button>
       <button onclick="openModal('datenschutz')" class="footer-btn">🔒 Datenschutz</button>
     </div>
-    <p style="font-size: 11px; opacity: 0.5;">Offizieller BIGO LIVE Partner · Resmi BIGO LIVE Ajansı</p>
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:14px; opacity:0.7;">
+      <img src="https://static-web.bigolive.tv/as/bigo-static/www.bigo.tv/img/logo_icon.png" alt="BIGO LIVE" style="width:28px; height:28px; border-radius:6px;" />
+      <span style="font-size: 12px;">Offizieller BIGO LIVE Partner · Resmi BIGO LIVE Ajansı</span>
+    </div>
   </footer>
  
   <!-- IMPRESSUM MODAL -->
@@ -944,7 +1358,7 @@ Index backup · HTML
         </p>
  
         <p style="font-size:12px;color:var(--text-muted);margin-top:16px;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;">
-          <span data-lang="de">Stand: Juni 2026 · RESPECT AJANS · Ibrahim Dogan</span>
+          <span data-lang="de">Stand: Juni 2026 · RESPECT AGENTUR · Ibrahim Dogan</span>
           <span data-lang="tr">Güncelleme: Haziran 2026 · RESPECT AJANS · Ibrahim Dogan</span>
         </p>
  
@@ -971,6 +1385,12 @@ Index backup · HTML
  
       localStorage.setItem('lang', lang);
       localStorage.setItem('country', country || lang);
+    }
+ 
+    function toggleFaq(item) {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
     }
  
     function openModal(id) {
