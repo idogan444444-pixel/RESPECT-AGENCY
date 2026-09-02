@@ -129,11 +129,12 @@
     /* lang-btn kept for compatibility */
  
     .translator-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 1.5px;
+      font-size: 12.5px;
+      color: #ffffff;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      font-weight: 600;
+      font-weight: 800;
+      text-shadow: 0 0 10px rgba(255,255,255,0.4), 0 1px 2px rgba(0,0,0,0.7);
     }
     .flag-only {
       font-size: 22px;
@@ -183,7 +184,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 100px 24px 60px;
+      padding: 130px 24px 60px;
       position: relative;
       overflow: hidden;
     }
@@ -863,7 +864,7 @@
       .flag-btn .fcode { font-size: 10px; }
  
       /* Hero */
-      .hero { padding: 130px 16px 48px; }
+      .hero { padding: 190px 16px 48px; }
       .logo { width: 80px; margin-bottom: 18px; }
  
       /* BIGO banner: kleiner auf Handy */
@@ -1699,6 +1700,22 @@
     const savedLang = localStorage.getItem('lang');
     const savedCountry = localStorage.getItem('country');
     setLang(savedLang || 'tr', savedCountry || null);
+
+    // Hero-Abstand oben automatisch an die fixierte Sprachleiste anpassen
+    // (verhindert, dass der Banner unter der Leiste verschwindet)
+    (function () {
+      var bar = document.querySelector('.lang-bar');
+      var hero = document.querySelector('.hero');
+      if (!bar || !hero) return;
+      function fixHeroPad() {
+        hero.style.paddingTop = (bar.offsetHeight + 26) + 'px';
+      }
+      fixHeroPad();
+      window.addEventListener('load', fixHeroPad);
+      window.addEventListener('resize', fixHeroPad);
+      // Sicherheitshalber nach kurzem Moment nochmal (Fonts/Icons geladen)
+      setTimeout(fixHeroPad, 300);
+    })();
 
     // ── ✨ Scroll-Reveal: Elemente gleiten beim Scrollen sanft rein ──
     (function () {
