@@ -1,6 +1,1775 @@
 <!DOCTYPE html>
 <html lang="de">
+<head><!DOCTYPE html>
+<html lang="de">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#07060f" />
+  <title>RESPECT AGENTUR | Offizieller BIGO LIVE Agentur</title>
+  <meta name="description" content="RESPECT AGENTUR – Offizieller BIGO LIVE Partner. Werde Streamer und verdiene Geld von zuhause. Jetzt bewerben auf WhatsApp, Instagram oder Telegram." />
+  <meta name="keywords" content="BIGO LIVE Agentur, BIGO LIVE resmi ajans, BIGO LIVE yayıncı ajansı, Streamer werden, evden gelir, BIGO ajans Deutschland" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://respect-agency.net/" />
+ 
+  <!-- Open Graph -->
+  <meta property="og:title" content="RESPECT AGENTUR | Offizieller BIGO LIVE Agentur" />
+  <meta property="og:description" content="Werde offizieller BIGO LIVE Streamer mit RESPECT AGENTUR. Täglich Geld verdienen – von zuhause." />
+  <meta property="og:url" content="https://respect-agency.net/" />
+  <meta property="og:type" content="website" />
+ 
+  <!-- Datenschutz: keine externen Fonts/Icons/CDNs — alles lokal in dieser Datei -->
+  <meta name="referrer" content="no-referrer" />
+ 
+  <style>
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --purple: #7b2fff;
+      --dark: #07060f;
+      --dark2: #0f0d1a;
+      --dark3: #16132a;
+      --text: #e8e4f0;
+      --text-muted: #9990b8;
+    }
+ 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* Lokale Inline-Icons (ersetzen Font Awesome) */
+    .ic { width: 1em; height: 1em; fill: currentColor; display: inline-block; vertical-align: -0.125em; flex-shrink: 0; }
+ 
+    html { scroll-behavior: smooth; }
+ 
+    body {
+      /* Deutlich sichtbarer Carbon-Faser-Hintergrund – kontrastreiche „Punkte" */
+      background-color: #030304;
+      background-image:
+        linear-gradient(27deg,  #000000 6px, transparent 6px),
+        linear-gradient(207deg, #000000 6px, transparent 6px),
+        linear-gradient(27deg,  #33333f 6px, transparent 6px),
+        linear-gradient(207deg, #33333f 6px, transparent 6px),
+        linear-gradient(90deg,  #0d0d12 11px, transparent 11px),
+        linear-gradient(#262632 25%, #030304 25%, #030304 50%, #262632 50%, #262632 75%, #030304 75%);
+      background-size: 22px 22px;
+      background-position: 0 0, 11px 6px, 0 11px, 11px 17px, 0 0, 0 0;
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      overflow-x: hidden;
+    }
+ 
+    /* ── LANGUAGE SWITCHER ── */
+    .lang-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: rgba(7,6,15,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+ 
+    .lang-bar-social {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+ 
+    .social-top-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      white-space: nowrap;
+    }
+    .social-top-btn .ic { font-size: 18px; }
+    .social-top-btn.wa  { background: #25D366; color: #fff; box-shadow: 0 2px 12px rgba(37,211,102,0.35); }
+    .social-top-btn.ig  { background: linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); color: #fff; box-shadow: 0 2px 12px rgba(220,39,67,0.35); }
+    .social-top-btn.tg  { background: #229ED9; color: #fff; box-shadow: 0 2px 12px rgba(34,158,217,0.35); }
+    .social-top-btn:hover { transform: translateY(-2px); filter: brightness(1.1); }
+ 
+    .lang-bar-langs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+ 
+    .lang-btn-row {
+      display: flex;
+      gap: 7px;
+      align-items: center;
+      /* Glänzend-goldener Rahmen mit Carbon innen (wie die großen Buttons) */
+      padding: 7px 9px;
+      border-radius: 34px;
+      background:
+        repeating-linear-gradient(45deg, #0a0a0d 0px, #0a0a0d 2px, #15151b 2px, #15151b 4px) padding-box,
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 5px) padding-box,
+        linear-gradient(100deg,
+          #7a4e18 0%, #b98a30 14%, #e8c97a 28%, #fffbe6 42%,
+          #ffd24d 50%, #fffbe6 58%, #e8c97a 72%, #b98a30 86%, #7a4e18 100%
+        ) border-box;
+      background-size: auto, auto, 260% 100%;
+      background-repeat: repeat, repeat, no-repeat;
+      border: 2px solid transparent;
+      box-shadow: 0 0 16px rgba(201,168,76,0.30), inset 0 0 12px rgba(0,0,0,0.6);
+      animation: bannerGoldShine 4.5s linear infinite;
+    }
+ 
+    /* lang-btn kept for compatibility */
+ 
+    .translator-label {
+      font-size: 12.5px;
+      color: #ffffff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 800;
+      text-shadow: 0 0 10px rgba(255,255,255,0.4), 0 1px 2px rgba(0,0,0,0.7);
+    }
+    .flag-only {
+      font-size: 22px;
+      line-height: 1;
+      cursor: default;
+      filter: drop-shadow(0 1px 4px rgba(0,0,0,0.4));
+    }
+    .flag-btn {
+      background: none;
+      border: 2px solid rgba(201,168,76,0.5);
+      border-radius: 30px;
+      padding: 7px 14px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--text);
+      font-weight: 700;
+    }
+    .flag-btn:hover, .flag-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--dark);
+    }
+    .flag-btn .fcode {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+ 
+    @media (max-width: 640px) {
+      .social-top-btn span { display: none; }
+      .social-top-btn { padding: 9px 12px; }
+      .social-top-btn .ic { font-size: 20px; }
+      .lang-bar { padding: 8px 12px; }
+      .lang-btn { padding: 7px 16px; font-size: 13px; }
+    }
+ 
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 130px 24px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+ 
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 30%, rgba(123,47,255,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 80% 70%, rgba(201,168,76,0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+ 
+    .logo {
+      width: 110px;
+      margin-bottom: 28px;
+      filter: drop-shadow(0 0 20px rgba(201,168,76,0.4));
+    }
+ 
+    .bigo-partner-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+      margin-bottom: 20px;
+      /* Carbon innen + glänzend-goldener Rahmen (respektiert runde Ecken) */
+      background:
+        repeating-linear-gradient(45deg, #0a0a0d 0px, #0a0a0d 2px, #15151b 2px, #15151b 4px) padding-box,
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 5px) padding-box,
+        linear-gradient(100deg,
+          #7a4e18 0%, #b98a30 14%, #e8c97a 28%, #fffbe6 42%,
+          #ffd24d 50%, #fffbe6 58%, #e8c97a 72%, #b98a30 86%, #7a4e18 100%
+        ) border-box;
+      background-size: auto, auto, 260% 100%;
+      background-repeat: repeat, repeat, no-repeat;
+      border: 2.5px solid transparent;
+      border-radius: 24px;
+      padding: 16px 12px;
+      width: 100%;
+      max-width: 680px;
+      box-shadow:
+        0 0 28px rgba(201,168,76,0.30),
+        inset 0 0 26px rgba(0,0,0,0.75);
+      animation: bannerGoldShine 4.5s linear infinite;
+    }
+    @keyframes bannerGoldShine {
+      0%   { background-position: 0 0, 0 0, 0% 0; }
+      100% { background-position: 0 0, 0 0, 260% 0; }
+    }
+    .bigo-dino {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 14px rgba(0,229,255,0.5));
+      flex-shrink: 0;
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    .bigo-spin-badge {
+      flex: 1;
+      text-align: center;
+      display: inline-block;
+      font-size: clamp(13px, 2.2vw, 16px);
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg,
+        #a8732e 0%, #e8c97a 25%, #fffde0 40%, #ffc200 55%, #e8c97a 70%, #a8732e 100%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 2.8s linear infinite;
+      border: 2px solid rgba(201,168,76,0.45);
+      border-radius: 16px;
+      padding: 10px 16px;
+      line-height: 1.6;
+    }
+ 
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(123,47,255,0.15));
+      border: 1px solid rgba(201,168,76,0.35);
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 22px;
+    }
+ 
+    .hero h1 {
+      font-size: clamp(1.5rem, 4vw, 2.6rem);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 28px;
+      letter-spacing: 2px;
+      -webkit-text-fill-color: unset;
+      /* In einen Button verwandelt: schwarz innen, glänzend-goldener Rahmen */
+      display: inline-block;
+      background:
+        repeating-linear-gradient(45deg, #0a0a0d 0px, #0a0a0d 2px, #15151b 2px, #15151b 4px) padding-box,
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 5px) padding-box,
+        linear-gradient(100deg,
+          #7a4e18 0%, #b98a30 14%, #e8c97a 28%, #fffbe6 42%,
+          #ffd24d 50%, #fffbe6 58%, #e8c97a 72%, #b98a30 86%, #7a4e18 100%
+        ) border-box;
+      background-size: auto, auto, 260% 100%;
+      background-repeat: repeat, repeat, no-repeat;
+      border: 3px solid transparent;
+      border-radius: 22px;
+      padding: 22px 34px;
+      box-shadow: 0 0 30px rgba(201,168,76,0.32), inset 0 0 28px rgba(0,0,0,0.8);
+      animation: bannerGoldShine 4.5s linear infinite;
+    }
+    .hero-title-line {
+      display: block;
+      position: relative;
+      /* Exakt die Machart des Banner-Textes „RESMİ BIGO LIVE AJANSI" */
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: transparent;
+      background: linear-gradient(90deg,
+        #a8732e 0%, #e8c97a 25%, #fffde0 40%, #ffc200 55%, #e8c97a 70%, #a8732e 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 0;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.85));
+    }
+ 
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      color: #ffffff;
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      font-weight: 500;
+      text-shadow: 0 0 14px rgba(255,255,255,0.28), 0 1px 3px rgba(0,0,0,0.6);
+      /* In einen Button verwandelt: Carbon innen, glänzend-goldener Rahmen (wie oben) */
+      display: inline-block;
+      text-align: center;
+      background:
+        repeating-linear-gradient(45deg, #0a0a0d 0px, #0a0a0d 2px, #15151b 2px, #15151b 4px) padding-box,
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 5px) padding-box,
+        linear-gradient(100deg,
+          #7a4e18 0%, #b98a30 14%, #e8c97a 28%, #fffbe6 42%,
+          #ffd24d 50%, #fffbe6 58%, #e8c97a 72%, #b98a30 86%, #7a4e18 100%
+        ) border-box;
+      background-size: auto, auto, 260% 100%;
+      background-repeat: repeat, repeat, no-repeat;
+      border: 2.5px solid transparent;
+      border-radius: 20px;
+      padding: 22px 28px;
+      box-shadow: 0 0 26px rgba(201,168,76,0.28), inset 0 0 24px rgba(0,0,0,0.7);
+      animation: bannerGoldShine 4.5s linear infinite;
+    }
+    .hero p strong { color: #ffffff; font-weight: 800; }
+ 
+    .cta-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+ 
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), #a8732e);
+      color: #07060f;
+      box-shadow: 0 4px 24px rgba(201,168,76,0.35);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.5);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.06);
+      transform: translateY(-2px);
+    }
+ 
+    /* ── STATS ── */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      padding: 60px 24px;
+      background: transparent;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+ 
+    .stat {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, #b98a30, #e8c97a 45%, #fffbe6 55%, #e8c97a 70%, #b98a30);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 10px rgba(201,168,76,0.45)) drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+    }
+    .stat-label {
+      font-size: 13px;
+      color: #ffffff;
+      font-weight: 600;
+      margin-top: 4px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.25), 0 1px 2px rgba(0,0,0,0.5);
+    }
+ 
+    /* ── SECTION ── */
+    section {
+      padding: 80px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+ 
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 56px;
+      font-size: 15px;
+    }
+    .gold { color: var(--gold); }
+ 
+    /* ── COUNTRIES ── */
+    .countries-section {
+      background: transparent;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .countries-title {
+      font-size: clamp(1.3rem, 3.5vw, 2rem);
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #ecd48a;
+      text-shadow: 0 0 12px rgba(201,168,76,0.45), 0 1px 2px rgba(0,0,0,0.6);
+    }
+    .countries-title .gold { color: #fff6d5; }
+    .countries-sub {
+      color: #ffffff;
+      font-size: 15px;
+      margin-bottom: 44px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.22), 0 1px 2px rgba(0,0,0,0.5);
+    }
+    .country-flags {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .country-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      /* Carbon innen + glänzend-goldener Rahmen */
+      background:
+        repeating-linear-gradient(45deg, #0a0a0d 0px, #0a0a0d 2px, #15151b 2px, #15151b 4px) padding-box,
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 5px) padding-box,
+        linear-gradient(135deg, #7a4e18, #b98a30 25%, #e8c97a 45%, #fffbe6 52%, #e8c97a 60%, #b98a30 78%, #7a4e18) border-box;
+      background-size: auto, auto, 100% 100%;
+      background-repeat: repeat, repeat, no-repeat;
+      border: 2px solid transparent;
+      border-radius: 20px;
+      padding: 24px 32px;
+      min-width: 130px;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: inset 0 0 18px rgba(0,0,0,0.6);
+    }
+    .country-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(201,168,76,0.30), inset 0 0 18px rgba(0,0,0,0.6);
+    }
+    .country-flag { font-size: 3rem; line-height: 1; }
+    .country-name { font-size: 14px; font-weight: 700; color: var(--text); }
+    .country-tag {
+      font-size: 11px;
+      color: var(--gold);
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 30px;
+      padding: 3px 10px;
+      font-weight: 600;
+    }
+ 
+    /* ── CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+ 
+    .card {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: 20px;
+      padding: 32px 28px;
+      transition: transform 0.25s, border-color 0.25s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201,168,76,0.35);
+    }
+    .card-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: var(--text-muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+ 
+    /* ── STEPS ── */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      counter-reset: steps;
+    }
+    .step {
+      background: var(--dark3);
+      border: 1px solid rgba(123,47,255,0.18);
+      border-radius: 20px;
+      padding: 28px;
+      position: relative;
+    }
+    .step-num {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), #5b1fc4);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1rem;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(123,47,255,0.4);
+    }
+    .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .step p { color: var(--text-muted); font-size: 13px; line-height: 1.6; }
+ 
+    /* ── CONTACT ── */
+    .contact-section {
+      background: transparent;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+ 
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+ 
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 28px 20px;
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 20px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.25s;
+    }
+    .contact-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.15);
+    }
+    .contact-card .icon { font-size: 2rem; }
+    .contact-card .name { font-weight: 700; font-size: 1rem; }
+    .contact-card .handle { color: var(--text-muted); font-size: 12px; }
+ 
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 500;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      text-shadow: 0 0 10px rgba(255,255,255,0.22), 0 1px 2px rgba(0,0,0,0.55);
+    }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+ 
+    /* ── FOOTER BUTTONS ── */
+    .footer-btn {
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.5);
+      color: #ecd48a;
+      padding: 10px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 700;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      transition: all 0.2s;
+      text-shadow: 0 0 8px rgba(201,168,76,0.4);
+    }
+    .footer-btn:hover {
+      background: var(--gold);
+      color: var(--dark);
+      border-color: var(--gold);
+    }
+ 
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: var(--dark3);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 20px;
+      padding: 36px 32px;
+      max-width: 560px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: var(--text);
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .modal-close:hover { background: rgba(255,255,255,0.18); }
+    .modal-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .modal-body p {
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+    .modal-body strong { color: var(--text); }
+    .modal-body a { color: var(--gold); text-decoration: none; }
+    .modal-body a:hover { text-decoration: underline; }
+ 
+    /* ── LANG TOGGLE ── */
+    [data-lang="tr"] { display: none; }
+    body.lang-tr [data-lang="de"] { display: none; }
+    body.lang-tr [data-lang="tr"] { display: block; }
+    body.lang-tr span[data-lang="tr"] { display: inline; }
+    body.lang-tr span[data-lang="de"] { display: none; }
+    span[data-lang="tr"] { display: none; }
+ 
+    /* ── GLOW PULSE ANIMATION ── */
+    @keyframes glowPulse {
+      0% {
+        filter:
+          drop-shadow(0 2px 6px rgba(0,0,0,0.9))
+          drop-shadow(0 0 8px rgba(255,198,0,0.3));
+      }
+      50% {
+        filter:
+          drop-shadow(0 2px 6px rgba(0,0,0,0.9))
+          drop-shadow(0 0 18px rgba(255,215,0,1))
+          drop-shadow(0 0 40px rgba(255,198,0,0.85))
+          drop-shadow(0 0 70px rgba(255,180,0,0.5));
+      }
+      100% {
+        filter:
+          drop-shadow(0 2px 6px rgba(0,0,0,0.9))
+          drop-shadow(0 0 8px rgba(255,198,0,0.3));
+      }
+    }
+    .glow-pulse {
+      animation: glowPulse 2s ease-in-out infinite;
+      display: block;
+    }
+ 
+    /* ── TESTIMONIALS ── */
+    .testimonials-section {
+      background: transparent;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      padding: 80px 24px;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonial-card {
+      background: linear-gradient(160deg, var(--dark3) 0%, #120f24 100%);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 20px;
+      padding: 30px 24px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Feiner Gold-Streifen oben an jeder Karte */
+    .testimonial-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #e8c97a, #fffbe6, #e8c97a, transparent);
+      opacity: 0.85;
+    }
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 16px; left: 20px;
+      font-size: 4rem;
+      color: var(--gold);
+      opacity: 0.25;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 20px;
+      padding-top: 24px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--gold));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      border: 2px solid rgba(232,201,122,0.7);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.14);
+    }
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .testimonial-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .stars { color: #ffc200; font-size: 14px; margin-bottom: 4px; letter-spacing: 2px; text-shadow: 0 0 10px rgba(255,194,0,0.55); }
+ 
+    /* ── FAQ ── */
+    .faq-section { padding: 80px 24px; max-width: 800px; margin: 0 auto; }
+    .faq-item {
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: 16px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: rgba(201,168,76,0.4); }
+    .faq-question {
+      width: 100%;
+      background: var(--dark3);
+      border: none;
+      color: var(--text);
+      padding: 20px 24px;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-question:hover { background: rgba(201,168,76,0.05); }
+    .faq-chevron {
+      font-size: 12px;
+      color: var(--gold);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      display: none;
+      padding: 0 24px 20px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-muted);
+      background: var(--dark3);
+    }
+    .faq-item.open .faq-answer { display: block; }
+ 
+    /* ══════════════════════════════════
+       MOBILE OPTIMIERUNG (iOS & Android)
+       ══════════════════════════════════ */
+    @media (max-width: 768px) {
+ 
+      /* Navbar: Social-Buttons nur Icons, Flags kleiner */
+      .lang-bar {
+        padding: 8px 12px;
+        gap: 8px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .lang-bar-social { gap: 8px; }
+      .social-top-btn span { display: none; }
+      .social-top-btn { padding: 10px 12px; min-width: 44px; min-height: 44px; justify-content: center; }
+      .social-top-btn .ic { font-size: 20px; }
+      .flag-btn { padding: 8px 10px; font-size: 16px; min-width: 44px; min-height: 44px; }
+      .flag-btn .fcode { font-size: 10px; }
+ 
+      /* Hero */
+      .hero { padding: 190px 16px 48px; }
+      .logo { width: 80px; margin-bottom: 18px; }
+ 
+      /* BIGO banner: kleiner auf Handy */
+      .bigo-partner-banner {
+        padding: 10px 8px;
+        gap: 6px;
+        border-radius: 16px;
+      }
+      .bigo-dino { width: 60px; height: 60px; }
+      .bigo-spin-badge {
+        font-size: 11px;
+        padding: 8px 10px;
+        letter-spacing: 0.8px;
+      }
+ 
+      /* Haupt-CTA Buttons */
+      .btn {
+        padding: 14px 22px;
+        font-size: 15px;
+        width: 100%;
+        justify-content: center;
+      }
+      .cta-group {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 320px;
+      }
+ 
+      /* Stats */
+      .stats { gap: 24px; padding: 40px 16px; flex-wrap: wrap; }
+      .stat-number { font-size: 1.8rem; }
+ 
+      /* Country flags */
+      .country-flags { gap: 14px; }
+      .country-item { padding: 16px 20px; min-width: 100px; }
+      .country-flag { font-size: 2.2rem; }
+ 
+      /* Sections */
+      section { padding: 48px 16px; }
+      .testimonials-section { padding: 48px 16px; }
+      .countries-section { padding: 40px 16px; }
+      .contact-section section { padding: 48px 16px; }
+      .faq-section { padding: 48px 16px; }
+ 
+      /* Cards */
+      .cards { grid-template-columns: 1fr; gap: 16px; }
+      .card { padding: 24px 20px; }
+ 
+      /* Steps */
+      .steps { grid-template-columns: 1fr; gap: 16px; }
+      .step { padding: 22px 18px; }
+ 
+      /* Contact grid */
+      .contact-grid { grid-template-columns: 1fr; gap: 14px; }
+      .contact-card { padding: 20px 16px; flex-direction: row; gap: 16px; }
+ 
+      /* Testimonials */
+      .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+      .testimonial-card { padding: 22px 18px; }
+ 
+      /* FAQ */
+      .faq-question { padding: 16px 18px; font-size: 14px; }
+      .faq-answer { padding: 0 18px 16px; font-size: 13px; }
+ 
+      /* Section titles */
+      .section-title { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+ 
+      /* Modal: Vollbild auf Mobile */
+      .modal-overlay { padding: 12px; align-items: flex-end; }
+      .modal-box {
+        padding: 28px 20px;
+        max-height: 92vh;
+        border-radius: 20px 20px 12px 12px;
+      }
+ 
+      /* Footer Buttons */
+      .footer-btn { padding: 12px 20px; min-height: 44px; font-size: 14px; }
+    }
+ 
+    /* Extra klein (iPhone SE etc.) */
+    @media (max-width: 380px) {
+      .bigo-dino { width: 48px; height: 48px; }
+      .bigo-spin-badge { font-size: 10px; padding: 6px 8px; }
+      .flag-btn { padding: 7px 8px; font-size: 14px; }
+    }
+
+    /* ══════════════════════════════════
+       ✨ VERSCHÖNERUNG (Feinschliff)
+       ══════════════════════════════════ */
+
+    /* Sanftes Einblenden beim Scrollen */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s cubic-bezier(.22,.61,.36,1),
+                  transform .7s cubic-bezier(.22,.61,.36,1);
+      will-change: opacity, transform;
+    }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* Hero: sanft schwebendes Leuchten für mehr Tiefe */
+    @keyframes heroDrift {
+      0%, 100% { transform: translate(0,0) scale(1); opacity: .85; }
+      50%      { transform: translate(5%,-4%) scale(1.1); opacity: 1; }
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -18%; right: -12%;
+      width: 62vw; height: 62vw;
+      max-width: 660px; max-height: 660px;
+      background: radial-gradient(circle at 50% 50%, rgba(123,47,255,0.16) 0%, transparent 62%);
+      filter: blur(22px);
+      pointer-events: none;
+      animation: heroDrift 12s ease-in-out infinite;
+      z-index: 0;
+    }
+    .hero > * { position: relative; z-index: 1; }
+
+    /* Gold-Button: eleganter Glanz-Sweep zieht den Blick zum CTA */
+    .btn-gold { position: relative; overflow: hidden; }
+    .btn-gold::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -130%;
+      width: 55%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+      transform: skewX(-20deg);
+      animation: btnShine 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes btnShine {
+      0%, 62% { left: -130%; }
+      100%    { left: 160%; }
+    }
+
+    /* Karten & Schritte: weicher Gold-Schein beim Hover */
+    .card:hover, .step:hover { box-shadow: 0 14px 40px rgba(201,168,76,0.16); }
+    .testimonial-card { transition: transform .25s, box-shadow .25s, border-color .25s; }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201,168,76,0.35);
+      box-shadow: 0 14px 40px rgba(201,168,76,0.14);
+    }
+
+    /* Stat-Zahlen: kleiner, sanfter Auftritt */
+    .stat.in .stat-number { animation: statPop .6s cubic-bezier(.22,1.2,.36,1) both; }
+    @keyframes statPop {
+      0%   { transform: scale(.6); opacity: 0; }
+      100% { transform: scale(1);  opacity: 1; }
+    }
+
+    /* Schwebender WhatsApp-Button (immer sichtbar → mehr Kontakte) */
+    .wa-float {
+      position: fixed;
+      right: 22px; bottom: 22px;
+      z-index: 1500;
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 32px;
+      text-decoration: none;
+      box-shadow: 0 6px 22px rgba(37,211,102,0.45);
+      transition: transform .2s ease, box-shadow .2s ease;
+      animation: waPulse 2.4s ease-in-out infinite;
+    }
+    .wa-float:hover { transform: scale(1.09); }
+    .wa-float .wa-label {
+      position: absolute;
+      right: 74px;
+      background: rgba(7,6,15,0.92);
+      color: var(--text);
+      border: 1px solid rgba(37,211,102,0.5);
+      font-size: 13px; font-weight: 700;
+      padding: 8px 14px; border-radius: 30px;
+      white-space: nowrap;
+      opacity: 0; transform: translateX(8px);
+      transition: opacity .2s, transform .2s;
+      pointer-events: none;
+    }
+    .wa-float:hover .wa-label { opacity: 1; transform: translateX(0); }
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 6px 22px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.55); }
+      50%      { box-shadow: 0 6px 22px rgba(37,211,102,0.45), 0 0 0 16px rgba(37,211,102,0); }
+    }
+    /* Schwebender Instagram-Button (linke Seite, WhatsApp bleibt rechts) */
+    .ig-float {
+      position: fixed;
+      left: 22px; bottom: 22px;
+      z-index: 1500;
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 32px;
+      text-decoration: none;
+      box-shadow: 0 6px 22px rgba(220,39,67,0.45);
+      transition: transform .2s ease;
+      animation: igPulse 2.4s ease-in-out infinite;
+    }
+    .ig-float:hover { transform: scale(1.09); }
+    .ig-float .ig-label {
+      position: absolute;
+      left: 74px;
+      background: rgba(7,6,15,0.92);
+      color: var(--text);
+      border: 1px solid rgba(220,39,67,0.55);
+      font-size: 13px; font-weight: 700;
+      padding: 8px 14px; border-radius: 30px;
+      white-space: nowrap;
+      opacity: 0; transform: translateX(-8px);
+      transition: opacity .2s, transform .2s;
+      pointer-events: none;
+    }
+    .ig-float:hover .ig-label { opacity: 1; transform: translateX(0); }
+    @keyframes igPulse {
+      0%, 100% { box-shadow: 0 6px 22px rgba(220,39,67,0.45), 0 0 0 0 rgba(220,39,67,0.55); }
+      50%      { box-shadow: 0 6px 22px rgba(220,39,67,0.45), 0 0 0 16px rgba(220,39,67,0); }
+    }
+
+    @media (max-width: 640px) {
+      .wa-float { right: 16px; bottom: 16px; width: 56px; height: 56px; font-size: 28px; }
+      .ig-float { left: 16px; bottom: 16px; width: 56px; height: 56px; font-size: 28px; }
+      .wa-float .wa-label, .ig-float .ig-label { display: none; }
+    }
+
+    /* Titel: Buchstabe für Buchstabe schreiben, danach dreht der Button sich ein paar Mal */
+    @keyframes typeReveal {
+      from { clip-path: inset(0 100% 0 0); }
+      to   { clip-path: inset(0 0 0 0); }
+    }
+    @keyframes titleSpin {
+      to { transform: rotate(360deg); }
+    }
+    /* kein Gold-Glow-Blinken mehr auf der Schrift – nur noch das Tippen */
+    .hero h1 .hero-title-line {
+      clip-path: inset(0 100% 0 0);
+      animation: typeReveal 1.1s steps(16, end) forwards,
+                 shimmer 2.8s linear infinite;
+    }
+    .hero h1 .hero-title-line:nth-child(2) { animation-delay: 1.15s; }
+    /* Gold-Rahmen bleibt (bannerGoldShine) + Button dreht sich 2× nach dem Schreiben */
+    .hero h1 {
+      animation: bannerGoldShine 4.5s linear infinite,
+                 titleSpin 1.3s ease-in-out 2.5s 2;
+    }
+
+    /* Titel-Button auf kleinen Handys etwas kompakter */
+    @media (max-width: 640px) {
+      .hero h1 { padding: 16px 18px; border-radius: 18px; }
+      .hero p  { padding: 16px 18px; border-radius: 16px; }
+    }
+
+    /* Barrierefreiheit: Bewegung reduzieren, wenn vom Nutzer gewünscht */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1 !important; transform: none !important; transition: none; }
+      .hero::after, .btn-gold::after, .stat.in .stat-number,
+      .bigo-partner-banner, .wa-float, .ig-float, .hero h1, .hero p,
+      .lang-btn-row { animation: none; }
+      .hero h1 .hero-title-line { animation: none; clip-path: none; }
+    }
+  </style>
+</head>
+<body>
+ 
+  <!-- LANGUAGE BAR -->
+  <div class="lang-bar">
+    <div class="lang-bar-social">
+      <a href="https://wa.me/491771977401" class="social-top-btn wa" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span>
+      </a>
+      <a href="https://instagram.com/respect.agencyy" class="social-top-btn ig" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg><span>Instagram</span>
+      </a>
+      <a href="https://t.me/RESPECT_44" class="social-top-btn tg" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span>Telegram</span>
+      </a>
+    </div>
+    <div class="lang-bar-langs">
+      <div class="lang-btn-row">
+        <button class="flag-btn active" id="btn-tr" onclick="setLang('tr')">🇹🇷 <span class="fcode">TR</span></button>
+        <button class="flag-btn" id="btn-de" onclick="setLang('de')">🇩🇪 <span class="fcode">DE</span></button>
+        <button class="flag-btn" id="btn-ch" onclick="setLang('de','ch')">🇨🇭 <span class="fcode">CH</span></button>
+        <button class="flag-btn" id="btn-at" onclick="setLang('de','at')">🇦🇹 <span class="fcode">AT</span></button>
+      </div>
+      <div class="translator-label">🌐 Translator</div>
+    </div>
+  </div>
+ 
+  <!-- HERO -->
+  <div class="hero">
+    <div class="bigo-partner-banner">
+      <img src="data:image/png;base64,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" alt="BIGO LIVE" class="bigo-dino" />
+      <div class="bigo-spin-badge">
+        <span data-lang="de">🏆 OFFIZIELLER<br>BIGO LIVE PARTNER<br>· 4 LÄNDER ·</span>
+        <span data-lang="tr">🏆 RESMİ<br>BIGO LIVE AJANSI<br>· 4 ÜLKE ·</span>
+      </div>
+      <img src="data:image/png;base64,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" alt="BIGO LIVE" class="bigo-dino" />
+    </div>
+    <h1>
+      <span data-lang="de">
+        <span class="hero-title-line glow-pulse">WERDE STREAMER.</span>
+        <span class="hero-title-line glow-pulse" style="animation-delay:1s;">VERDIENE ECHTES GELD.</span>
+      </span>
+      <span data-lang="tr">
+        <span class="hero-title-line glow-pulse">YAYINCI OL.</span>
+        <span class="hero-title-line glow-pulse" style="animation-delay:1s;">GERÇEK PARA KAZAN.</span>
+      </span>
+    </h1>
+    <p>
+      <span data-lang="de">Du träumst davon, von zuhause Geld zu verdienen? Mit <strong>RESPECT AGENTUR</strong> — dem offiziellen BIGO LIVE Partner in 🇹🇷 🇩🇪 🇨🇭 🇦🇹 — wird das Realität. Keine Vorkenntnisse nötig. Keine Investition. Nur dein Smartphone, deine Stimme und 3 Stunden täglich.</span>
+      <span data-lang="tr">Evden para kazanmayı mı hayal ediyorsun? <strong>RESPECT AJANS</strong> ile bu hayal gerçeğe dönüşüyor. 🇹🇷 🇩🇪 🇨🇭 🇦🇹 — 4 ülkede resmi BIGO LIVE ajansıyız. Önceden deneyim gerekmez. Yatırım yok. Sadece telefonun, sesin ve günde 3 saat vaktin yeterli.</span>
+    </p>
+    <div class="cta-group">
+      <a href="https://wa.me/491771977401" class="btn btn-gold" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> <span data-lang="de">Jetzt kostenlos bewerben</span><span data-lang="tr">Ücretsiz Başvur</span>
+      </a>
+      <a href="#how" class="btn btn-outline">
+        <span data-lang="de">Wie funktioniert es?</span><span data-lang="tr">Nasıl çalışır?</span>
+      </a>
+    </div>
+  </div>
+ 
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-number">3h</div>
+      <div class="stat-label"><span data-lang="de">Täglich reichen</span><span data-lang="tr">Günlük yeterli</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">100%</div>
+      <div class="stat-label"><span data-lang="de">Von zuhause</span><span data-lang="tr">Evden çalış</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label"><span data-lang="de">Support</span><span data-lang="tr">Destek</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">🏆</div>
+      <div class="stat-label"><span data-lang="de">Offizieller Partner</span><span data-lang="tr">Resmi Partner</span></div>
+    </div>
+  </div>
+ 
+  <!-- COUNTRIES -->
+  <div class="countries-section">
+    <div class="countries-title">
+      <span data-lang="de">Wir sind in <span class="gold">4 Ländern</span> aktiv</span>
+      <span data-lang="tr"><span class="gold">4 Ülkede</span> Faaliyet Gösteriyoruz</span>
+    </div>
+    <p class="countries-sub">
+      <span data-lang="de">RESPECT AGENTUR betreibt offizielle BIGO LIVE Agenturen in der Türkei, Deutschland, der Schweiz und Österreich.</span>
+      <span data-lang="tr">RESPECT AJANS, Türkiye, Almanya, İsviçre ve Avusturya'da resmi BIGO LIVE ajansları yürütmektedir.</span>
+    </p>
+    <div class="country-flags">
+      <div class="country-item">
+        <div class="country-flag">🇹🇷</div>
+        <div class="country-name"><span data-lang="de">Türkei</span><span data-lang="tr">Türkiye</span></div>
+        <div class="country-tag">BIGO LIVE Ajans</div>
+      </div>
+      <div class="country-item">
+        <div class="country-flag">🇩🇪</div>
+        <div class="country-name"><span data-lang="de">Deutschland</span><span data-lang="tr">Almanya</span></div>
+        <div class="country-tag">BIGO LIVE Agentur</div>
+      </div>
+      <div class="country-item">
+        <div class="country-flag">🇨🇭</div>
+        <div class="country-name"><span data-lang="de">Schweiz</span><span data-lang="tr">İsviçre</span></div>
+        <div class="country-tag">BIGO LIVE Agentur</div>
+      </div>
+      <div class="country-item">
+        <div class="country-flag">🇦🇹</div>
+        <div class="country-name"><span data-lang="de">Österreich</span><span data-lang="tr">Avusturya</span></div>
+        <div class="country-tag">BIGO LIVE Agentur</div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- VORTEILE -->
+  <section id="benefits">
+    <p class="section-title">
+      <span data-lang="de">Warum <span class="gold">RESPECT AGENTUR?</span></span>
+      <span data-lang="tr">Neden <span class="gold">RESPECT AJANS?</span></span>
+    </p>
+    <p class="section-sub">
+      <span data-lang="de">Wir sind mehr als eine Agentur – wir sind dein Team.</span>
+      <span data-lang="tr">Biz sadece bir ajans değiliz – senin ekibiniz.</span>
+    </p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <h3><span data-lang="de">Echtes Einkommen</span><span data-lang="tr">Gerçek Gelir</span></h3>
+        <p><span data-lang="de">Verdiene täglich Geld durch BIGO LIVE Livestreams – direkt auf dein Konto ausgezahlt.</span><span data-lang="tr">BIGO LIVE yayınları ile her gün para kazan – doğrudan hesabına.</span></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏠</div>
+        <h3><span data-lang="de">Von zuhause</span><span data-lang="tr">Evden</span></h3>
+        <p><span data-lang="de">Kein Büro, kein Pendeln. Du brauchst nur ein Smartphone und eine Internetverbindung.</span><span data-lang="tr">Ofis yok, yolculuk yok. Sadece bir akıllı telefon ve internet bağlantısı yeterli.</span></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎓</div>
+        <h3><span data-lang="de">Vollständiges Training</span><span data-lang="tr">Tam Eğitim</span></h3>
+        <p><span data-lang="de">Keine Erfahrung nötig – wir schulen dich vollständig und begleiten dich Schritt für Schritt.</span><span data-lang="tr">Deneyim gerekmez – seni tam olarak eğitiyor ve adım adım destekliyoruz.</span></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🤝</div>
+        <h3><span data-lang="de">Persönlicher Support</span><span data-lang="tr">Kişisel Destek</span></h3>
+        <p><span data-lang="de">Unser Team ist immer erreichbar – per WhatsApp, Instagram oder Telegram.</span><span data-lang="tr">Ekibimiz her zaman ulaşılabilir – WhatsApp, Instagram veya Telegram üzerinden.</span></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3><span data-lang="de">Schneller Start</span><span data-lang="tr">Hızlı Başlangıç</span></h3>
+        <p><span data-lang="de">In wenigen Tagen bist du live. Wir kümmern uns um die Anmeldung und den Account-Aufbau.</span><span data-lang="tr">Birkaç gün içinde yayındasın. Kayıt ve hesap oluşturmayla biz ilgileniyoruz.</span></p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌍</div>
+        <h3><span data-lang="de">International</span><span data-lang="tr">Uluslararası</span></h3>
+        <p><span data-lang="de">Wir betreuen Streamer in 4 Ländern: 🇹🇷 Türkei, 🇩🇪 Deutschland, 🇨🇭 Schweiz und 🇦🇹 Österreich – alle mit offizieller BIGO LIVE Agentur.</span><span data-lang="tr">4 ülkede yayıncılara destek veriyoruz: 🇹🇷 Türkiye, 🇩🇪 Almanya, 🇨🇭 İsviçre ve 🇦🇹 Avusturya – hepsi resmi BIGO LIVE ajansı ile.</span></p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- HOW IT WORKS -->
+  <section id="how" style="background: transparent;">
+    <p class="section-title">
+      <span data-lang="de">In <span class="gold">4 Schritten</span> zum Streamer</span>
+      <span data-lang="tr"><span class="gold">4 Adımda</span> Yayıncı Ol</span>
+    </p>
+    <p class="section-sub">
+      <span data-lang="de">Einfacher als du denkst.</span>
+      <span data-lang="tr">Düşündüğünden daha kolay.</span>
+    </p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3><span data-lang="de">Kontakt aufnehmen</span><span data-lang="tr">İletişime Geç</span></h3>
+        <p><span data-lang="de">Schreib uns auf WhatsApp, Instagram oder Telegram. Wir antworten schnell.</span><span data-lang="tr">WhatsApp, Instagram veya Telegram'dan yaz. Hızlı cevap veriyoruz.</span></p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3><span data-lang="de">Erstgespräch</span><span data-lang="tr">İlk Görüşme</span></h3>
+        <p><span data-lang="de">Wir erklären alles – Verdienstmöglichkeiten, Ablauf und deine Fragen.</span><span data-lang="tr">Her şeyi açıklıyoruz – kazanç imkânları, süreç ve sorularınız.</span></p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3><span data-lang="de">Account & Training</span><span data-lang="tr">Hesap & Eğitim</span></h3>
+        <p><span data-lang="de">Wir richten deinen BIGO LIVE Account ein und schulen dich für den Start.</span><span data-lang="tr">BIGO LIVE hesabını kuruyoruz ve başlangıç için seni eğitiyoruz.</span></p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3><span data-lang="de">Go Live & Verdienen</span><span data-lang="tr">Yayına Geç & Kazan</span></h3>
+        <p><span data-lang="de">Du gehst live und verdienst. Unser Team bleibt an deiner Seite.</span><span data-lang="tr">Yayına geçiyorsun ve kazanıyorsun. Ekibimiz yanında olmaya devam ediyor.</span></p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- TESTIMONIALS -->
+  <div class="testimonials-section">
+    <div style="max-width:1100px;margin:0 auto;">
+      <p class="section-title" style="text-align:center;margin-bottom:12px;">
+        <span data-lang="de">Was unsere <span class="gold">Streamer sagen</span></span>
+        <span data-lang="tr">Yayıncılarımız <span class="gold">Ne Diyor?</span></span>
+      </p>
+      <p class="section-sub">
+        <span data-lang="de">Echte Erfahrungen – echte Ergebnisse.</span>
+        <span data-lang="tr">Gerçek deneyimler – gerçek sonuçlar.</span>
+      </p>
+      <div class="testimonials-grid">
+ 
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="de">Eine super Agentur! Sie helfen mir bei allem und supporten mich durch und durch. Ich bin so froh, Teil dieser Familie zu sein.</span>
+            <span data-lang="tr">Harika bir ajans! Her konuda bana yardım ediyorlar ve beni her zaman destekliyorlar. Bu ailenin bir parçası olduğum için çok mutluyum.</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👩</div>
+            <div>
+              <div class="testimonial-name">Ceylan</div>
+              <div class="testimonial-meta">⭐ <span data-lang="de">Seit mehr als 4 Jahren dabei</span><span data-lang="tr">4 yılı aşkın süredir aramızda</span></div>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="de">Die beste Agentur! Der Chef ist immer hilfsbereit, supportet mich, hilft mir bei allem und zeigt mir alle Tricks und Tipps. Ich empfehle es jedem!</span>
+            <span data-lang="tr">En iyi ajans! Patron her zaman yardımsever, beni destekliyor, her konuda yardımcı oluyor ve tüm ipuçlarını ve püf noktalarını gösteriyor. Herkese tavsiye ederim!</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👩</div>
+            <div>
+              <div class="testimonial-name">Ayla</div>
+              <div class="testimonial-meta">⭐ <span data-lang="de">Seit 2 Monaten dabei</span><span data-lang="tr">2 aydır aramızda</span></div>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="de">Er ist wie ein Bruder für mich und hilft mir bei allem. Ich verdiene bereits über <strong>$1.200</strong> – und bin erst seit 3 Monaten dabei. Unglaublich!</span>
+            <span data-lang="tr">O benim için bir ağabey gibi ve her konuda bana yardım ediyor. Sadece 3 aydır buradayım ve zaten <strong>1.200$</strong>'ın üzerinde kazanıyorum. İnanılmaz!</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👨</div>
+            <div>
+              <div class="testimonial-name">M9</div>
+              <div class="testimonial-meta">⭐ <span data-lang="de">Seit 3 Monaten dabei</span><span data-lang="tr">3 aydır aramızda</span></div>
+            </div>
+          </div>
+        </div>
+ 
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            <span data-lang="de">Ich lerne bereits alles von der Agentur und bekomme jede Hilfe, die ich brauche. Es ist die beste Agentur in BIGO – er hilft seinen Streamern und supportet sie alle.</span>
+            <span data-lang="tr">Ajanstan her şeyi öğreniyorum ve ihtiyacım olan her türlü yardımı alıyorum. BIGO'daki en iyi ajans bu – yayıncılarına yardım ediyor ve hepsini destekliyor.</span>
+          </p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👩</div>
+            <div>
+              <div class="testimonial-name">Derya</div>
+              <div class="testimonial-meta">⭐ <span data-lang="de">Neu dabei</span><span data-lang="tr">Yeni katıldı</span></div>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </div>
+ 
+  <!-- FAQ -->
+  <section class="faq-section">
+    <p class="section-title" style="text-align:center;margin-bottom:12px;">
+      <span data-lang="de">Häufige <span class="gold">Fragen</span></span>
+      <span data-lang="tr">Sık Sorulan <span class="gold">Sorular</span></span>
+    </p>
+    <p class="section-sub">
+      <span data-lang="de">Alles, was du wissen möchtest.</span>
+      <span data-lang="tr">Merak ettiğin her şey.</span>
+    </p>
+ 
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">
+        <span data-lang="de">Muss ich mein Gesicht zeigen?</span>
+        <span data-lang="tr">Yüzümü göstermek zorunda mıyım?</span>
+        <span class="faq-chevron">▼</span>
+      </button>
+      <div class="faq-answer">
+        <span data-lang="de">Ja, als Streamer bei BIGO LIVE musst du dich zeigen. Die Zuschauer möchten eine echte Person sehen – das ist der Schlüssel zu mehr Supportern und höherem Verdienst.</span>
+        <span data-lang="tr">Evet, BIGO LIVE'da yayıncı olarak görünmen gerekiyor. İzleyiciler gerçek bir kişi görmek ister – bu daha fazla destekçi ve daha yüksek kazanç için anahtardır.</span>
+      </div>
+    </div>
+ 
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">
+        <span data-lang="de">Wie viel kann ich verdienen?</span>
+        <span data-lang="tr">Ne kadar kazanabilirim?</span>
+        <span class="faq-chevron">▼</span>
+      </button>
+      <div class="faq-answer">
+        <span data-lang="de">Der Verdienst liegt zwischen <strong>128 $ und 8.000 $</strong> pro Monat – je nach Livezeit und Unterstützung durch deine Supporter. Je mehr du streamst und je aktiver deine Community ist, desto höher dein Einkommen.</span>
+        <span data-lang="tr">Kazanç aylık <strong>128 $ ile 8.000 $</strong> arasında değişiyor – yayın süresine ve destekçilerinden aldığın desteğe bağlı. Ne kadar çok yayın yaparsan ve topluluğun ne kadar aktif olursa, gelirin o kadar yüksek olur.</span>
+      </div>
+    </div>
+ 
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">
+        <span data-lang="de">Ist es wirklich kostenlos?</span>
+        <span data-lang="tr">Gerçekten ücretsiz mi?</span>
+        <span class="faq-chevron">▼</span>
+      </button>
+      <div class="faq-answer">
+        <span data-lang="de">Ja, 100% kostenlos. Du bezahlst nichts. Keine Anmeldegebühr, keine versteckten Kosten. Wir verdienen nur, wenn du verdienst – das ist unser Prinzip.</span>
+        <span data-lang="tr">Evet, %100 ücretsiz. Hiçbir şey ödemiyorsun. Kayıt ücreti yok, gizli maliyet yok. Biz sadece sen kazandığında kazanıyoruz – bu bizim ilkemiz.</span>
+      </div>
+    </div>
+ 
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">
+        <span data-lang="de">Welche Geräte brauche ich?</span>
+        <span data-lang="tr">Hangi cihaza ihtiyacım var?</span>
+        <span class="faq-chevron">▼</span>
+      </button>
+      <div class="faq-answer">
+        <span data-lang="de">Nur ein Smartphone mit Internetzugang reicht aus. Android oder iPhone – beides funktioniert. Kein Computer, kein Mikrofon, keine Kamera nötig.</span>
+        <span data-lang="tr">Sadece internet bağlantısı olan bir akıllı telefon yeterli. Android veya iPhone – ikisi de çalışır. Bilgisayar, mikrofon veya kamera gerekmiyor.</span>
+      </div>
+    </div>
+ 
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <button class="faq-question">
+        <span data-lang="de">Wann bekomme ich mein Geld ausgezahlt?</span>
+        <span data-lang="tr">Paramı ne zaman alırım?</span>
+        <span class="faq-chevron">▼</span>
+      </button>
+      <div class="faq-answer">
+        <span data-lang="de">BIGO LIVE zahlt wöchentlich oder monatlich aus – direkt auf dein Konto. Die Auszahlung ist transparent und zuverlässig.</span>
+        <span data-lang="tr">BIGO LIVE haftalık veya aylık ödeme yapıyor – doğrudan hesabına. Ödeme şeffaf ve güvenilir.</span>
+      </div>
+    </div>
+ 
+  </section>
+ 
+  <!-- CONTACT -->
+  <div class="contact-section">
+    <section id="contact">
+      <p class="section-title">
+        <span data-lang="de"><span class="gold">Jetzt</span> Kontakt aufnehmen</span>
+        <span data-lang="tr"><span class="gold">Şimdi</span> İletişime Geç</span>
+      </p>
+      <p class="section-sub">
+        <span data-lang="de">Wir freuen uns auf deine Nachricht!</span>
+        <span data-lang="tr">Mesajını bekliyoruz!</span>
+      </p>
+      <div class="contact-grid">
+        <a href="https://wa.me/491771977401" class="contact-card" target="_blank" rel="noopener">
+          <div class="icon">💬</div>
+          <div class="name">WhatsApp</div>
+          <div class="handle">+49 177 1977401</div>
+        </a>
+        <a href="https://instagram.com/respect.agencyy" class="contact-card" target="_blank" rel="noopener">
+          <div class="icon">📸</div>
+          <div class="name">Instagram</div>
+          <div class="handle">@respect.agencyy</div>
+        </a>
+        <a href="https://t.me/RESPECT_44" class="contact-card" target="_blank" rel="noopener">
+          <div class="icon">✈️</div>
+          <div class="name">Telegram</div>
+          <div class="handle">@RESPECT_44</div>
+        </a>
+      </div>
+    </section>
+  </div>
+ 
+  <!-- FOOTER -->
+  <footer>
+    <p style="margin-bottom: 16px;">© 2018 <span data-lang="de">RESPECT AGENTUR</span><span data-lang="tr">RESPECT AJANS</span></p>
+    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:16px;">
+      <button onclick="openModal('impressum')" class="footer-btn">📄 Impressum</button>
+      <button onclick="openModal('datenschutz')" class="footer-btn">🔒 Datenschutz</button>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:14px;">
+      <img src="data:image/png;base64,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" alt="BIGO LIVE" style="width:28px; height:28px; border-radius:6px;" />
+      <span style="font-size: 12px; font-weight: 600;">Offizieller BIGO LIVE Partner · Resmi BIGO LIVE Ajansı</span>
+    </div>
+  </footer>
+ 
+  <!-- SCHWEBENDER WHATSAPP-BUTTON (rechts) -->
+  <a href="https://wa.me/491771977401" class="wa-float" target="_blank" rel="noopener"
+     aria-label="WhatsApp">
+    <span class="wa-label"><span data-lang="de">Jetzt schreiben</span><span data-lang="tr">Hemen yaz</span></span>
+    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <!-- SCHWEBENDER INSTAGRAM-BUTTON (links) -->
+  <a href="https://instagram.com/respect.agencyy" class="ig-float" target="_blank" rel="noopener"
+     aria-label="Instagram">
+    <span class="ig-label"><span data-lang="de">Folge uns</span><span data-lang="tr">Takip et</span></span>
+    <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>
+  </a>
+
+  <!-- IMPRESSUM MODAL -->
+  <div id="modal-impressum" class="modal-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h2 class="modal-title">
+        <span data-lang="de">Impressum</span>
+        <span data-lang="tr">Yasal Bilgiler (Impressum)</span>
+      </h2>
+      <div class="modal-body">
+ 
+        <p><strong><span data-lang="de">Angaben gemäß § 5 TMG</span><span data-lang="tr">Alman Hukuku § 5 TMG Uyarınca Zorunlu Bilgiler</span></strong></p>
+ 
+        <p>
+          <strong><span data-lang="de">Inhaber</span><span data-lang="tr">İşletme Sahibi</span>:</strong><br>
+          Ibrahim Dogan<br>
+          <span data-lang="de">(Einzelunternehmer)</span><span data-lang="tr">(Şahıs İşletmesi)</span>
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">Unternehmen</span><span data-lang="tr">İşletme Adı</span>:</strong><br>
+          RESPECT AJANS<br>
+          <span data-lang="de">(BIGO LIVE Offizieller Partner)</span><span data-lang="tr">(BIGO LIVE Resmi Ortağı)</span>
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">Adresse</span><span data-lang="tr">Adres</span>:</strong><br>
+          Cevizli Mah. Tugay Yolu Cad. 69C<br>34846 Maltepe / İstanbul<br>
+          <span data-lang="de">Türkei</span><span data-lang="tr">Türkiye</span>
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">Kontakt</span><span data-lang="tr">İletişim</span>:</strong><br>
+          <span data-lang="de">Telefon / WhatsApp:</span><span data-lang="tr">Telefon / WhatsApp:</span>
+          <a href="tel:+491771977401">+49 177 1977401</a><br>
+          E-Mail: <a href="mailto:info@respect-agency.net">info@respect-agency.net</a><br>
+          Website: www.respect-agency.net
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</span><span data-lang="tr">İçerikten Sorumlu Kişi (§ 18 MStV)</span>:</strong><br>
+          Ibrahim Dogan<br>Cevizli Mah. Tugay Yolu Cad. 69C, 34846 Maltepe / İstanbul, Türkei
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">Umsatzsteuer-ID</span><span data-lang="tr">KDV Numarası</span>:</strong><br>
+          <span data-lang="de">Eine Umsatzsteuer-Identifikationsnummer liegt derzeit nicht vor.</span>
+          <span data-lang="tr">Şu an için KDV kimlik numarası bulunmamaktadır.</span>
+        </p>
+ 
+        <p style="font-size:12px;color:var(--text-muted);margin-top:16px;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;">
+          <strong><span data-lang="de">Haftungsausschluss</span><span data-lang="tr">Sorumluluk Reddi</span>:</strong>
+          <span data-lang="de"> Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für Inhalte externer Links. Für den Inhalt verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.</span>
+          <span data-lang="tr"> Harici bağlantıların içerikleri için, dikkatli kontrollere rağmen herhangi bir sorumluluk kabul etmiyoruz. Bağlantılı sayfaların içeriğinden yalnızca ilgili operatörler sorumludur.</span>
+        </p>
+ 
+      </div>
+    </div>
+  </div>
+ 
+  <!-- DATENSCHUTZ MODAL -->
+  <div id="modal-datenschutz" class="modal-overlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <h2 class="modal-title">
+        <span data-lang="de">Datenschutzerklärung</span>
+        <span data-lang="tr">Gizlilik Politikası (Datenschutz)</span>
+      </h2>
+      <div class="modal-body">
+ 
+        <p>
+          <strong><span data-lang="de">1. Verantwortlicher (Art. 13 DSGVO)</span><span data-lang="tr">1. Sorumlu Kişi (GDPR Madde 13)</span></strong><br>
+          Ibrahim Dogan<br>Cevizli Mah. Tugay Yolu Cad. 69C, 34846 Maltepe / İstanbul, Türkei<br>
+          E-Mail: <a href="mailto:info@respect-agency.net">info@respect-agency.net</a><br>
+          Tel.: <a href="tel:+491771977401">+49 177 1977401</a>
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">2. Erhebung personenbezogener Daten</span><span data-lang="tr">2. Kişisel Veri Toplama</span></strong><br>
+          <span data-lang="de">Diese Website erhebt keine personenbezogenen Daten automatisch. Beim Besuch der Seite werden keine IP-Adressen dauerhaft gespeichert. Eine Kontaktaufnahme erfolgt ausschließlich freiwillig über externe Kanäle (WhatsApp, Instagram, Telegram).</span>
+          <span data-lang="tr">Bu web sitesi otomatik olarak kişisel veri toplamaz. Siteyi ziyaret ettiğinizde IP adresiniz kalıcı olarak saklanmaz. İletişim yalnızca gönüllü olarak harici kanallar aracılığıyla gerçekleşir (WhatsApp, Instagram, Telegram).</span>
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">3. Kontaktaufnahme</span><span data-lang="tr">3. İletişim Kurulması</span></strong><br>
+          <span data-lang="de">Wenn Sie uns kontaktieren, werden Ihre Angaben (Name, Telefonnummer, Nachricht) ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO. Die Daten werden spätestens nach 12 Monaten gelöscht.</span>
+          <span data-lang="tr">Bizimle iletişime geçtiğinizde bilgileriniz (ad, telefon, mesaj) yalnızca talebinizi işlemek için kullanılır. Hukuki dayanak: GDPR Madde 6 (1)(b). Veriler en geç 12 ay sonra silinir.</span>
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">4. Cookies</span><span data-lang="tr">4. Çerezler (Cookies)</span></strong><br>
+          <span data-lang="de">Diese Website verwendet ausschließlich technisch notwendige Cookies (Spracheinstellung). Es werden keine Tracking- oder Marketing-Cookies eingesetzt. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</span>
+          <span data-lang="tr">Bu web sitesi yalnızca teknik açıdan gerekli çerezleri kullanır (dil ayarı). Takip veya pazarlama çerezleri kullanılmaz. Hukuki dayanak: GDPR Madde 6 (1)(f).</span>
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">5. Hosting</span><span data-lang="tr">5. Barındırma (Hosting)</span></strong><br>
+          <span data-lang="de">Diese Website wird bei einem externen Hosting-Anbieter betrieben. Personenbezogene Daten werden auf den Servern des Hosters gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</span>
+          <span data-lang="tr">Bu web sitesi harici bir barındırma sağlayıcısı tarafından işletilmektedir. Kişisel veriler bu sağlayıcının sunucularında saklanır. Hukuki dayanak: GDPR Madde 6 (1)(f).</span>
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">6. Externe Dienste</span><span data-lang="tr">6. Harici Hizmetler</span></strong><br>
+          <span data-lang="de">Diese Website lädt beim Aufruf <strong>keine externen Dienste</strong> (keine externen Schriften, Icons, Fonts, CDNs oder Analyse-/Tracking-Tools) und überträgt dabei <strong>keine Daten an Dritte</strong>. Alle Inhalte werden direkt von unserem Server geliefert. Die Seite enthält lediglich Verlinkungen zu WhatsApp (Meta), Instagram (Meta) und Telegram – diese werden erst beim aktiven Anklicken geöffnet, dann gelten die jeweiligen Datenschutzrichtlinien der Anbieter.</span>
+          <span data-lang="tr">Bu web sitesi açıldığında <strong>hiçbir harici hizmet yüklemez</strong> (harici yazı tipi, ikon, font, CDN veya analiz/takip aracı yoktur) ve bu sırada <strong>üçüncü taraflara veri aktarmaz</strong>. Tüm içerikler doğrudan kendi sunucumuzdan sunulur. Sayfa yalnızca WhatsApp (Meta), Instagram (Meta) ve Telegram'a bağlantılar içerir – bunlar yalnızca tıkladığınızda açılır, o zaman ilgili sağlayıcıların gizlilik politikaları geçerlidir.</span>
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">7. Ihre Rechte (Art. 15–21 DSGVO)</span><span data-lang="tr">7. Haklarınız (GDPR Madde 15–21)</span></strong><br>
+          <span data-lang="de">Sie haben das Recht auf: Auskunft · Berichtigung · Löschung · Einschränkung · Datenübertragbarkeit · Widerspruch.</span>
+          <span data-lang="tr">Şu haklara sahipsiniz: Bilgi alma · Düzeltme · Silme · Kısıtlama · Veri taşınabilirliği · İtiraz.</span><br>
+          <a href="mailto:info@respect-agency.net">info@respect-agency.net</a>
+        </p>
+ 
+        <p>
+          <strong><span data-lang="de">8. Beschwerderecht bei der Aufsichtsbehörde</span><span data-lang="tr">8. Denetim Kurumuna Şikâyet Hakkı</span></strong><br>
+          <span data-lang="de">Der Hessische Beauftragte für Datenschutz und Informationsfreiheit<br>Postfach 3163, 65021 Wiesbaden</span>
+          <span data-lang="tr">Hessen Veri Koruma ve Bilgi Özgürlüğü Komisyonu<br>Postfach 3163, 65021 Wiesbaden, Almanya</span><br>
+          <a href="https://datenschutz.hessen.de" target="_blank" rel="noopener">datenschutz.hessen.de</a>
+        </p>
+ 
+        <p style="font-size:12px;color:var(--text-muted);margin-top:16px;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;">
+          <span data-lang="de">Stand: Juni 2026 · RESPECT AGENTUR · Ibrahim Dogan</span>
+          <span data-lang="tr">Güncelleme: Haziran 2026 · RESPECT AJANS · Ibrahim Dogan</span>
+        </p>
+ 
+      </div>
+    </div>
+  </div>
+ 
+  <script>
+    function setLang(lang, country) {
+      // Apply language class
+      document.body.className = lang === 'tr' ? 'lang-tr' : '';
+ 
+      // Remove active from all flag buttons
+      ['btn-tr','btn-de','btn-ch','btn-at'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active');
+      });
+ 
+      // Set active button
+      if (country === 'ch') document.getElementById('btn-ch').classList.add('active');
+      else if (country === 'at') document.getElementById('btn-at').classList.add('active');
+      else if (lang === 'de') document.getElementById('btn-de').classList.add('active');
+      else document.getElementById('btn-tr').classList.add('active');
+ 
+      localStorage.setItem('lang', lang);
+      localStorage.setItem('country', country || lang);
+    }
+ 
+    function toggleFaq(item) {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+ 
+    function openModal(id) {
+      document.getElementById('modal-' + id).classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('open'));
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+ 
+    // Default: Turkish; remember preference if set
+    const savedLang = localStorage.getItem('lang');
+    const savedCountry = localStorage.getItem('country');
+    setLang(savedLang || 'tr', savedCountry || null);
+
+    // Hero-Abstand oben automatisch an die fixierte Sprachleiste anpassen
+    // (verhindert, dass der Banner unter der Leiste verschwindet)
+    (function () {
+      var bar = document.querySelector('.lang-bar');
+      var hero = document.querySelector('.hero');
+      if (!bar || !hero) return;
+      function fixHeroPad() {
+        hero.style.paddingTop = (bar.offsetHeight + 26) + 'px';
+      }
+      fixHeroPad();
+      window.addEventListener('load', fixHeroPad);
+      window.addEventListener('resize', fixHeroPad);
+      // Sicherheitshalber nach kurzem Moment nochmal (Fonts/Icons geladen)
+      setTimeout(fixHeroPad, 300);
+    })();
+
+    // ── ✨ Scroll-Reveal: Elemente gleiten beim Scrollen sanft rein ──
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var targets = document.querySelectorAll(
+        '.card, .step, .country-item, .testimonial-card, .stat, .faq-item, .contact-card, .section-title, .section-sub, .countries-title, .countries-sub'
+      );
+      targets.forEach(function (el) { el.classList.add('reveal'); });
+
+      // Zahl hochzählen (z. B. "3h", "100%"); "24/7" & Emoji bleiben unverändert
+      function countUp(node) {
+        if (!node) return;
+        var m = /^(\d+)(\D*)$/.exec(node.textContent.trim());
+        if (!m) return;
+        var target = parseInt(m[1], 10), suffix = m[2] || '';
+        var dur = 1000, start = null;
+        function frame(now) {
+          if (start === null) start = now;
+          var p = Math.min((now - start) / dur, 1);
+          var val = Math.round((1 - Math.pow(1 - p, 3)) * target);
+          node.textContent = val + suffix;
+          if (p < 1) requestAnimationFrame(frame);
+          else node.textContent = target + suffix;
+        }
+        requestAnimationFrame(frame);
+      }
+
+      if (reduce || !('IntersectionObserver' in window)) {
+        targets.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var el = e.target;
+          var sibs = Array.prototype.slice.call(el.parentNode.children);
+          var idx = sibs.indexOf(el);
+          el.style.transitionDelay = Math.min(idx, 6) * 80 + 'ms';
+          el.classList.add('in');
+          if (el.classList.contains('stat')) countUp(el.querySelector('.stat-number'));
+          io.unobserve(el);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      targets.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+</body>
+</html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
