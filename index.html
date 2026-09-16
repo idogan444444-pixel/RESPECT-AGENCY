@@ -20,6 +20,9 @@
  
   <!-- Datenschutz: keine externen Fonts/Icons/CDNs — alles lokal in dieser Datei -->
   <meta name="referrer" content="no-referrer" />
+  <!-- Sicherheit: Content-Security-Policy (XSS-Schutz); alles wird lokal/inline geladen -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
  
   <style>
     :root {
@@ -1580,7 +1583,13 @@
           <span data-lang="de">Eine Umsatzsteuer-Identifikationsnummer liegt derzeit nicht vor.</span>
           <span data-lang="tr">Şu an için KDV kimlik numarası bulunmamaktadır.</span>
         </p>
- 
+
+        <p>
+          <strong><span data-lang="de">Verbraucherstreitbeilegung / Streitschlichtung</span><span data-lang="tr">Tüketici Uyuşmazlık Çözümü</span>:</strong><br>
+          <span data-lang="de">Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</span>
+          <span data-lang="tr">Bir tüketici hakem heyeti nezdinde uyuşmazlık çözüm sürecine katılmaya hazır ve zorunlu değiliz.</span>
+        </p>
+
         <p style="font-size:12px;color:var(--text-muted);margin-top:16px;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;">
           <strong><span data-lang="de">Haftungsausschluss</span><span data-lang="tr">Sorumluluk Reddi</span>:</strong>
           <span data-lang="de"> Trotz sorgfältiger Kontrolle übernehmen wir keine Haftung für Inhalte externer Links. Für den Inhalt verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.</span>
