@@ -1,0 +1,6 @@
+# Interne Rechts-/Aktennotizen — NIEMALS ins öffentliche Repo pushen
+PRE_FLIGHT_CHECKLIST.md
+
+# Lokale Backups
+index.html.bak-*
+*.bak
