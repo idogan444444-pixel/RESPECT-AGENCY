@@ -889,6 +889,14 @@
             <label class="sr-only" for="fInsta" data-i18n="phInsta">Instagram</label><input class="finput" id="fInsta" name="instagram" type="text" autocomplete="off" maxlength="40" data-i18n-ph="phInsta" placeholder="Instagram (@kullanıcı)">
             <label class="sr-only" for="fTikTok" data-i18n="phTikTok">TikTok</label><input class="finput" id="fTikTok" name="tiktok" type="text" autocomplete="off" maxlength="40" data-i18n-ph="phTikTok" placeholder="TikTok (@kullanıcı)">
           </div>
+          <div class="rc-consent" id="rcConsentBox">
+            <input type="checkbox" id="fConsent" name="consent" required aria-required="true">
+            <label for="fConsent">
+              <b>Verilerimin işlenmesini kabul ediyorum.</b> Başvurumu değerlendirmek ve benimle iletişime geçmek için adım, telefonum ve sosyal medya bilgilerimin işlenmesine izin veriyorum. Bilgilerim WhatsApp (Meta, ABD) üzerinden iletilir. İstediğim zaman geri alabilirim.
+              <span class="rc-consent-de"><b>Ich willige in die Verarbeitung meiner Daten ein.</b> Meine Angaben (Name, Telefon, Social-Media) werden zur Bearbeitung meiner Bewerbung und zur Kontaktaufnahme verarbeitet und über WhatsApp (Meta, USA) übermittelt. Der Widerruf ist jederzeit möglich.</span>
+            </label>
+          </div>
+          <p class="fnote rc-consent-err" id="fConsentErr" role="alert" hidden>Lütfen devam etmek için onay kutusunu işaretle. · Bitte kreuze die Einwilligung an, um fortzufahren.</p>
           <button class="btn-badge" type="submit" data-i18n="fSubmit">Hemen Başvur</button>
           <p class="fnote" data-i18n="fNote">Gönder'e bastığında bilgilerinle WhatsApp açılır — saniyeler içinde dönüyoruz.</p>
           <p class="fnote">18 yaşından küçüksen başvuru için ebeveyn/yasal vasi onayı gereklidir. · Minderjährige benötigen die Zustimmung der Eltern/gesetzlichen Vertreter.</p>
@@ -1214,11 +1222,24 @@
         var name=g('fName'),phone=g('fPhone'),insta=g('fInsta'),tk=g('fTikTok');
         if(!name){var n=document.getElementById('fName');if(n)n.focus();return;}
         if(!phone){var p=document.getElementById('fPhone');if(p)p.focus();return;}
+        var cs=document.getElementById('fConsent');
+        if(cs&&!cs.checked){
+          var cb=document.getElementById('rcConsentBox');if(cb)cb.classList.add('rc-err');
+          var ce=document.getElementById('fConsentErr');if(ce)ce.hidden=false;
+          cs.focus();return;
+        }
         var lines=['RESPECT Ajans — Yayinci basvurusu','','Ad: '+name,'Tel: '+phone];
         if(insta)lines.push('Instagram: '+insta);
         if(tk)lines.push('TikTok: '+tk);
         window.open('https://wa.me/491771977401?text='+encodeURIComponent(lines.join('\n')),'_blank','noopener');
       });
+      var csEl=document.getElementById('fConsent');
+      if(csEl){csEl.addEventListener('change',function(){
+        if(csEl.checked){
+          var cb=document.getElementById('rcConsentBox');if(cb)cb.classList.remove('rc-err');
+          var ce=document.getElementById('fConsentErr');if(ce)ce.hidden=true;
+        }
+      });}
     }
 
     // legal modals (Impressum / Datenschutz)
@@ -1309,7 +1330,16 @@ html{scroll-behavior:smooth}
 .btn-gold{transition:transform .2s ease,box-shadow .2s ease!important}
 .btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(230,200,129,.42)!important}
 a:focus-visible,button:focus-visible{outline:2px solid #E6C881;outline-offset:2px}
-@media (prefers-reduced-motion:reduce){.nav .logo .mark,.nav .logo .mark::before,.nav .logo-txt b,.nav .nav-links a,.langsw .miniflag,.rc-bigo-track,.rc-tk-btn,.rc-gift,.rc-gift span{animation:none!important}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){.nav .logo .mark,.nav .logo .mark::before,.nav .logo-txt b,.nav .nav-links a,.langsw .miniflag,.rc-bigo-track,.rc-tk-btn,.rc-gift,.rc-gift span,.rc-consent.rc-err{animation:none!important}html{scroll-behavior:auto}}
+/* Datenschutz-Einwilligung (Pflicht-Haken) */
+.rc-consent{display:flex;gap:11px;align-items:flex-start;text-align:left;padding:13px 15px;border:1px solid rgba(230,200,129,.30);border-radius:13px;background:linear-gradient(180deg,rgba(230,200,129,.07),rgba(230,200,129,.02));transition:border-color .2s,background .2s}
+.rc-consent input[type=checkbox]{-webkit-appearance:auto;appearance:auto;margin:2px 0 0;width:21px;height:21px;min-width:21px;accent-color:#E6C881;cursor:pointer}
+.rc-consent label{margin:0;font-size:12px;line-height:1.55;color:#e9dcc0;cursor:pointer;font-weight:500}
+.rc-consent label b{color:#F2E2B4;font-weight:800}
+.rc-consent-de{display:block;margin-top:5px;color:#b7ab90}
+.rc-consent.rc-err{border-color:#E11D48;background:rgba(225,29,72,.09);animation:rc-cshake .32s ease}
+@keyframes rc-cshake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
+.rc-consent-err{color:#ff9db2!important;font-weight:700;margin-top:2px}
 </style>
 <canvas id="rc-fx" aria-hidden="true"></canvas>
 <button class="rc-gift" id="rc-gift" type="button" aria-label="Geschenke"><span>🎁</span></button>
