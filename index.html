@@ -704,9 +704,8 @@
     </div>
   </div>
 </header>
-<div class="rc-bigo-band" aria-hidden="true"><div class="rc-bigo-track">
-<span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span>
-</div></div>
+<div class="rc-bigo-band" aria-hidden="true"><div class="rc-bigo-track"><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span></div></div>
+<div class="rc-tkbar"><button class="rc-tk-btn" id="rc-tk-open" type="button"><span class="ic">♪</span><span class="tx"><b>TikTok Creator?</b><i>Auf TikTok + BIGO LIVE streamen · Willkommensgeschenk 🎁</i></span><span class="ar">▸</span></button></div>
 
 
 <main id="top">
@@ -1236,11 +1235,9 @@
 
 
 <style id="rc-upgrade-style">
-/* ===== RESPECT Kino-Upgrade (additiv, ueberschreibt nur Optik) ===== */
 .nav .logo .mark{position:relative;width:52px;height:52px;border-radius:15px;overflow:hidden;
   background:linear-gradient(150deg,#fff7dc,#E8C46A 44%,#7a5518)!important;color:#140d02!important;
-  box-shadow:0 0 0 1.5px rgba(247,228,168,.7),0 14px 30px rgba(232,196,106,.45),inset 0 2px 8px rgba(255,255,255,.7),inset 0 -6px 12px rgba(120,80,20,.5);
-  animation:rc-coin 3.6s ease-in-out infinite}
+  box-shadow:0 0 0 1.5px rgba(247,228,168,.7),0 14px 30px rgba(232,196,106,.45),inset 0 2px 8px rgba(255,255,255,.7),inset 0 -6px 12px rgba(120,80,20,.5);animation:rc-coin 3.6s ease-in-out infinite}
 .nav .logo .mark::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent 0 58%,rgba(255,255,255,.5) 64%,transparent 70%);animation:rc-spin 5s linear infinite;pointer-events:none}
 .nav .logo .mark::after{content:"R";position:absolute;inset:0;display:grid;place-items:center;font-family:"Cinzel",Georgia,serif;font-weight:900;font-size:30px;color:#140d02;text-shadow:0 1px 1px rgba(255,255,255,.6)}
 @keyframes rc-spin{to{transform:rotate(360deg)}}
@@ -1257,30 +1254,60 @@
 .langsw button:nth-child(2) .miniflag{animation-delay:.3s}.langsw button:nth-child(3) .miniflag{animation-delay:.6s}.langsw button:nth-child(4) .miniflag{animation-delay:.9s}
 @keyframes rc-wave{0%,100%{transform:skewX(-6deg) rotate(-3deg)}50%{transform:skewX(6deg) rotate(3deg)}}
 .langlabel{color:#e9d29a!important;font-weight:800;letter-spacing:.24em;text-transform:uppercase;text-shadow:0 0 8px rgba(232,196,106,.4)}
-/* BIGO LIVE band */
-.rc-bigo-band{position:relative;z-index:1;overflow:hidden;border-top:1px solid rgba(232,196,106,.2);border-bottom:1px solid rgba(232,196,106,.2);
-  background:linear-gradient(180deg,rgba(232,196,106,.06),transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.rc-bigo-band{position:relative;z-index:1;overflow:hidden;border-top:1px solid rgba(232,196,106,.2);border-bottom:1px solid rgba(232,196,106,.2);background:linear-gradient(180deg,rgba(232,196,106,.06),transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .rc-bigo-track{display:flex;gap:44px;white-space:nowrap;width:max-content;animation:rc-march 22s linear infinite;padding-block:11px}
-.rc-bigo-track span{font-family:"Cinzel",Georgia,serif;font-weight:900;font-size:clamp(18px,3vw,30px);letter-spacing:.22em;
-  background:linear-gradient(180deg,#fff6df,#E8C46A 55%,#7a5518);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-flex;align-items:center;gap:44px}
+.rc-bigo-track span{font-family:"Cinzel",Georgia,serif;font-weight:900;font-size:clamp(18px,3vw,30px);letter-spacing:.22em;background:linear-gradient(180deg,#fff6df,#E8C46A 55%,#7a5518);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-flex;align-items:center;gap:44px}
 .rc-bigo-track span::after{content:"\25C6";-webkit-text-fill-color:#7a5518;font-size:13px}
 @keyframes rc-march{to{transform:translateX(-50%)}}
-/* Geschenk-Hebel (ueber dem Player) */
+/* CANLI ausblenden */
+#canli{display:none!important}
+/* TikTok Button */
+.rc-tkbar{display:flex;justify-content:center;padding:16px}
+.rc-tk-btn{position:relative;display:inline-flex;align-items:center;gap:14px;cursor:pointer;border:0;border-radius:16px;padding:14px 22px;color:#fff;background:linear-gradient(135deg,#050507,#151318);
+  box-shadow:0 0 0 1.5px rgba(37,244,238,.5),0 0 22px rgba(37,244,238,.25),0 0 0 3px rgba(254,44,85,.18),0 16px 40px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.14);transform-style:preserve-3d;transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s;animation:rc-tkglow 3s ease-in-out infinite}
+@keyframes rc-tkglow{0%,100%{box-shadow:0 0 0 1.5px rgba(37,244,238,.5),0 0 18px rgba(37,244,238,.22),0 0 0 3px rgba(254,44,85,.18),0 16px 40px rgba(0,0,0,.5)}50%{box-shadow:0 0 0 1.5px rgba(37,244,238,.9),0 0 30px rgba(37,244,238,.5),0 0 0 3px rgba(254,44,85,.35),0 16px 40px rgba(0,0,0,.5)}}
+.rc-tk-btn:hover{transform:translateY(-3px) rotateX(8deg)}
+.rc-tk-btn .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:22px;color:#000;background:linear-gradient(135deg,#25F4EE,#FE2C55);box-shadow:0 0 16px rgba(37,244,238,.6)}
+.rc-tk-btn .tx{display:flex;flex-direction:column;text-align:left;line-height:1.2}
+.rc-tk-btn .tx b{font-size:16px;font-weight:800;background:linear-gradient(90deg,#25F4EE,#fff 55%,#FE2C55);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rc-tk-btn .tx i{font-style:normal;font-size:12px;color:#d6dde3;font-weight:600}
+.rc-tk-btn .ar{font-size:18px;color:#25F4EE}
+.rc-tk-modal{position:fixed;inset:0;z-index:90;display:grid;place-items:center;background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);padding:20px}
+.rc-tk-modal[hidden]{display:none}
+.rc-tk-card{position:relative;max-width:520px;width:100%;border-radius:22px;padding:26px;color:#fff;background:linear-gradient(180deg,#15141b,#0b0a10);border:1px solid rgba(37,244,238,.3);box-shadow:0 0 0 1px rgba(254,44,85,.22),0 30px 80px rgba(0,0,0,.7)}
+.rc-x{position:absolute;top:12px;right:14px;border:0;background:transparent;color:#9aa3ad;font-size:26px;line-height:1;cursor:pointer}
+.rc-tk-head{display:flex;align-items:center;gap:12px;margin:2px 30px 10px 0}
+.rc-tk-ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:24px;color:#000;background:linear-gradient(135deg,#25F4EE,#FE2C55);box-shadow:0 0 18px rgba(37,244,238,.6)}
+.rc-tk-card h3{margin:0;font-size:20px;font-weight:800;line-height:1.2}
+.rc-tk-card p{color:#cfd6dd;line-height:1.6;font-size:14px}
+.rc-steps{display:grid;gap:12px;margin:14px 0}
+.rc-steps>div{display:flex;gap:12px;align-items:flex-start}
+.rc-steps>div>span{flex:0 0 auto;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-weight:800;color:#000;background:linear-gradient(135deg,#25F4EE,#FE2C55)}
+.rc-steps b{color:#fff}.rc-steps small{display:block;color:#9aa3ad;margin-top:2px;line-height:1.5}
+.rc-tk-cta{display:block;text-align:center;margin-top:8px;text-decoration:none;font-weight:800;color:#000;padding:14px 20px;border-radius:999px;background:linear-gradient(135deg,#25F4EE,#FE2C55);box-shadow:0 12px 30px rgba(37,244,238,.35)}
+/* Geschenk-Paket + FX */
 #rc-fx{position:fixed;inset:0;width:100%;height:100%;z-index:60;pointer-events:none}
-.rc-disp{position:fixed;left:14px;bottom:96px;z-index:61;display:flex;flex-direction:column;align-items:center;gap:6px}
-.rc-disp .m{position:relative;width:120px;height:64px;border-radius:15px;border:1px solid rgba(232,196,106,.3);background:linear-gradient(180deg,#1b1822,#0d0b12);box-shadow:0 14px 30px rgba(0,0,0,.5)}
-.rc-disp .chute{position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:48px;height:15px;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,#F7E4A8,#7a5518);box-shadow:0 0 16px rgba(232,196,106,.45)}
-.rc-disp .face{position:absolute;inset:11px 40px 11px 11px;border-radius:9px;border:1px solid rgba(232,196,106,.25);display:grid;place-items:center;font-size:18px}
-.rc-disp .lever{position:absolute;right:9px;top:50%;transform-origin:50% 100%;transform:translateY(-50%);width:9px;height:36px;border-radius:6px;background:linear-gradient(180deg,#3a3550,#211d2e);transition:transform .18s ease}
-.rc-disp .lever::after{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8aa5,#e11d48);box-shadow:0 0 12px rgba(225,29,72,.6)}
-.rc-disp.pull .lever{transform:translateY(-50%) rotate(38deg)}
-.rc-disp .lbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#F7E4A8;font-weight:800}
-.rc-disp .hit{position:absolute;inset:0;background:transparent;border:0;cursor:pointer}
-@media (max-width:560px){.rc-disp{transform:scale(.85);transform-origin:left bottom}}
-@media (prefers-reduced-motion:reduce){.nav .logo .mark,.nav .logo .mark::before,.nav .logo-txt b,.nav .nav-links a,.langsw .miniflag,.rc-bigo-track{animation:none!important}}
+.rc-gift{position:fixed;left:14px;bottom:96px;z-index:61;width:66px;height:66px;border-radius:18px;border:0;cursor:pointer;font-size:30px;
+  background:radial-gradient(circle at 35% 28%,#2a2536,#12101a);box-shadow:0 0 0 1.5px rgba(232,196,106,.5),0 14px 30px rgba(0,0,0,.5),0 0 24px rgba(232,196,106,.35);animation:rc-gp 5s ease-in-out infinite}
+.rc-gift span{display:inline-block;animation:rc-gb 5s ease-in-out infinite}
+@keyframes rc-gp{0%,84%,100%{box-shadow:0 0 0 1.5px rgba(232,196,106,.5),0 14px 30px rgba(0,0,0,.5),0 0 24px rgba(232,196,106,.35)}90%{box-shadow:0 0 0 2px #F7E4A8,0 14px 30px rgba(0,0,0,.5),0 0 42px rgba(247,228,168,.85)}}
+@keyframes rc-gb{0%,82%,100%{transform:translateY(0) rotate(0)}88%{transform:translateY(-7px) rotate(-9deg)}93%{transform:translateY(-4px) rotate(9deg)}}
+@media (max-width:560px){.rc-gift{transform:scale(.82);transform-origin:left bottom}}
+@media (prefers-reduced-motion:reduce){.nav .logo .mark,.nav .logo .mark::before,.nav .logo-txt b,.nav .nav-links a,.langsw .miniflag,.rc-bigo-track,.rc-tk-btn,.rc-gift,.rc-gift span{animation:none!important}}
 </style>
 <canvas id="rc-fx" aria-hidden="true"></canvas>
-<div class="rc-disp" id="rc-disp"><div class="m"><span class="chute"></span><span class="face">🎁</span><span class="lever"></span><button class="hit" id="rc-lever" aria-label="Hebel ziehen — Geschenke"></button></div><span class="lbl">Zieh am Hebel 🎁</span></div>
+<button class="rc-gift" id="rc-gift" type="button" aria-label="Geschenke"><span>🎁</span></button>
+<div class="rc-tk-modal" id="rc-tk-modal" hidden><div class="rc-tk-card" role="dialog" aria-modal="true" aria-label="TikTok Willkommensgeschenk">
+<button class="rc-x" id="rc-tk-close" type="button" aria-label="Schliessen">×</button>
+<div class="rc-tk-head"><span class="rc-tk-ic">♪</span><h3>TikTok Creator? Hol dir dein Willkommensgeschenk</h3></div>
+<p>Stream weiter auf <b>TikTok</b> — und starte parallel auf <b>BIGO LIVE</b> mit RESPECT. Neu bei BIGO über uns? Dann sichern wir dir ein <b>Willkommensgeschenk</b>. 🎁</p>
+<div class="rc-steps">
+<div><span>1</span><div><b>Weiter auf TikTok</b><small>Dein Publikum bleibt — mach genau weiter wie bisher.</small></div></div>
+<div><span>2</span><div><b>Parallel auf BIGO LIVE</b><small>Wir richten alles ein (Setup, Bonus-Plan) und begleiten dich.</small></div></div>
+<div><span>3</span><div><b>Neu über RESPECT = Geschenk</b><small>Als neue:r BIGO-Creator über uns bekommst du ein Willkommensgeschenk.</small></div></div>
+</div>
+<a class="rc-tk-cta" href="#iletisim" id="rc-tk-go">Jetzt kostenlos bewerben 🎁</a>
+</div></div>
 <script>
 (function(){
   if(window.__rcUp)return; window.__rcUp=1;
@@ -1288,7 +1315,7 @@
   var fx=document.getElementById('rc-fx'),ctx=fx.getContext('2d'),DPR=Math.min(devicePixelRatio||1,2);
   function fit(){fx.width=innerWidth*DPR;fx.height=innerHeight*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);}fit();addEventListener('resize',fit);
   var P=[],G=['\uD83C\uDF81','\uD83D\uDC8E','\uD83D\uDC51','\u2B50','\uD83E\uDE99','\u2728'],run=false;
-  function burst(x,y,n){for(var i=0;i<(n||20);i++){var a=-Math.PI/2+(Math.random()-.5)*1.2,sp=4+Math.random()*7;
+  function burst(x,y,n){for(var i=0;i<(n||22);i++){var a=-Math.PI/2+(Math.random()-.5)*1.2,sp=4+Math.random()*7;
     P.push({x:x,y:y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-3,g:.15+Math.random()*.06,life:1,rot:(Math.random()-.5)*.5,vr:(Math.random()-.5)*.25,s:18+Math.random()*16,ch:G[(Math.random()*G.length)|0]});}
     if(!run){run=true;requestAnimationFrame(tick);}}
   function tick(){ctx.clearRect(0,0,innerWidth,innerHeight);
@@ -1297,11 +1324,18 @@
       ctx.save();ctx.globalAlpha=Math.max(0,Math.min(1,p.life));ctx.translate(p.x,p.y);ctx.rotate(p.rot);
       ctx.font=p.s+'px system-ui,"Apple Color Emoji","Segoe UI Emoji",sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(p.ch,0,0);ctx.restore();}
     if(P.length)requestAnimationFrame(tick);else{run=false;ctx.clearRect(0,0,innerWidth,innerHeight);}}
-  var disp=document.getElementById('rc-disp');
-  function pull(){disp.classList.add('pull');setTimeout(function(){disp.classList.remove('pull');},220);
-    var r=disp.querySelector('.chute').getBoundingClientRect();burst(r.left+r.width/2,r.top+2,reduce?10:22);}
-  document.getElementById('rc-lever').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();pull();});
-  if(!reduce)setInterval(pull,6000);
+  function giftPos(){var g=document.getElementById('rc-gift').getBoundingClientRect();return {x:g.left+g.width/2,y:g.top+6};}
+  function spit(){var p=giftPos();burst(p.x,p.y,reduce?10:24);}
+  document.getElementById('rc-gift').addEventListener('click',function(e){e.preventDefault();spit();});
+  if(!reduce)setInterval(spit,5000);
+  // TikTok modal
+  var m=document.getElementById('rc-tk-modal');
+  function open(){m.hidden=false;} function close(){m.hidden=true;}
+  document.getElementById('rc-tk-open').addEventListener('click',open);
+  document.getElementById('rc-tk-close').addEventListener('click',close);
+  m.addEventListener('click',function(e){if(e.target===m)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  document.getElementById('rc-tk-go').addEventListener('click',close);
 })();
 </script>
 </body>
