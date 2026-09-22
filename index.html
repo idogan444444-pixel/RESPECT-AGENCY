@@ -704,6 +704,10 @@
     </div>
   </div>
 </header>
+<div class="rc-bigo-band" aria-hidden="true"><div class="rc-bigo-track">
+<span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span>
+</div></div>
+
 
 <main id="top">
   <section class="hero">
@@ -1230,5 +1234,75 @@
   })();
 </script>
 
+
+<style id="rc-upgrade-style">
+/* ===== RESPECT Kino-Upgrade (additiv, ueberschreibt nur Optik) ===== */
+.nav .logo .mark{position:relative;width:52px;height:52px;border-radius:15px;overflow:hidden;
+  background:linear-gradient(150deg,#fff7dc,#E8C46A 44%,#7a5518)!important;color:#140d02!important;
+  box-shadow:0 0 0 1.5px rgba(247,228,168,.7),0 14px 30px rgba(232,196,106,.45),inset 0 2px 8px rgba(255,255,255,.7),inset 0 -6px 12px rgba(120,80,20,.5);
+  animation:rc-coin 3.6s ease-in-out infinite}
+.nav .logo .mark::before{content:"";position:absolute;inset:-40%;background:conic-gradient(from 0deg,transparent 0 58%,rgba(255,255,255,.5) 64%,transparent 70%);animation:rc-spin 5s linear infinite;pointer-events:none}
+.nav .logo .mark::after{content:"R";position:absolute;inset:0;display:grid;place-items:center;font-family:"Cinzel",Georgia,serif;font-weight:900;font-size:30px;color:#140d02;text-shadow:0 1px 1px rgba(255,255,255,.6)}
+@keyframes rc-spin{to{transform:rotate(360deg)}}
+@keyframes rc-coin{0%,100%{box-shadow:0 0 0 1.5px rgba(247,228,168,.7),0 14px 30px rgba(232,196,106,.45),inset 0 2px 8px rgba(255,255,255,.7),inset 0 -6px 12px rgba(120,80,20,.5)}50%{box-shadow:0 0 0 1.5px rgba(247,228,168,1),0 20px 46px rgba(232,196,106,.65),inset 0 2px 8px rgba(255,255,255,.7),inset 0 -6px 12px rgba(120,80,20,.5)}}
+.nav .logo-txt b{background:linear-gradient(110deg,#7d611e,#E8C46A 25%,#fff6df 50%,#E8C46A 75%,#7d611e);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:rc-shim 5s linear infinite;text-shadow:0 2px 0 #9a7826,0 4px 10px rgba(232,196,106,.4);letter-spacing:.14em}
+@keyframes rc-shim{to{background-position:220% 0}}
+.nav .logo-txt i{color:#f2d78c!important;letter-spacing:.5em;font-weight:800;text-shadow:0 0 10px rgba(232,196,106,.5);font-style:normal}
+.nav .nav-links a{color:#ffe6a8!important;text-shadow:0 0 10px rgba(232,196,106,.6);border:1px solid rgba(232,196,106,.3);border-radius:999px;padding:10px 16px;transition:transform .25s,box-shadow .25s,color .25s,background .25s;animation:rc-navglow 3.2s ease-in-out infinite}
+@keyframes rc-navglow{0%,100%{text-shadow:0 0 8px rgba(232,196,106,.45)}50%{text-shadow:0 0 16px rgba(247,228,168,.9)}}
+.nav .nav-links a:hover{color:#160f04!important;background:linear-gradient(180deg,#fff4d2,#E8C46A);box-shadow:0 14px 30px rgba(232,196,106,.45);transform:translateY(-2px);text-shadow:none;animation:none}
+.langsw button{position:relative;width:36px;height:36px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1.5px rgba(232,196,106,.55),0 6px 14px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s}
+.langsw button:hover{transform:translateY(-3px) scale(1.06);box-shadow:0 0 0 1.5px #F7E4A8,0 10px 20px rgba(232,196,106,.5)}
+.langsw .miniflag{width:100%;height:100%;animation:rc-wave 2.4s ease-in-out infinite;transform-origin:center}
+.langsw button:nth-child(2) .miniflag{animation-delay:.3s}.langsw button:nth-child(3) .miniflag{animation-delay:.6s}.langsw button:nth-child(4) .miniflag{animation-delay:.9s}
+@keyframes rc-wave{0%,100%{transform:skewX(-6deg) rotate(-3deg)}50%{transform:skewX(6deg) rotate(3deg)}}
+.langlabel{color:#e9d29a!important;font-weight:800;letter-spacing:.24em;text-transform:uppercase;text-shadow:0 0 8px rgba(232,196,106,.4)}
+/* BIGO LIVE band */
+.rc-bigo-band{position:relative;z-index:1;overflow:hidden;border-top:1px solid rgba(232,196,106,.2);border-bottom:1px solid rgba(232,196,106,.2);
+  background:linear-gradient(180deg,rgba(232,196,106,.06),transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.rc-bigo-track{display:flex;gap:44px;white-space:nowrap;width:max-content;animation:rc-march 22s linear infinite;padding-block:11px}
+.rc-bigo-track span{font-family:"Cinzel",Georgia,serif;font-weight:900;font-size:clamp(18px,3vw,30px);letter-spacing:.22em;
+  background:linear-gradient(180deg,#fff6df,#E8C46A 55%,#7a5518);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-flex;align-items:center;gap:44px}
+.rc-bigo-track span::after{content:"\25C6";-webkit-text-fill-color:#7a5518;font-size:13px}
+@keyframes rc-march{to{transform:translateX(-50%)}}
+/* Geschenk-Hebel (ueber dem Player) */
+#rc-fx{position:fixed;inset:0;width:100%;height:100%;z-index:60;pointer-events:none}
+.rc-disp{position:fixed;left:14px;bottom:96px;z-index:61;display:flex;flex-direction:column;align-items:center;gap:6px}
+.rc-disp .m{position:relative;width:120px;height:64px;border-radius:15px;border:1px solid rgba(232,196,106,.3);background:linear-gradient(180deg,#1b1822,#0d0b12);box-shadow:0 14px 30px rgba(0,0,0,.5)}
+.rc-disp .chute{position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:48px;height:15px;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,#F7E4A8,#7a5518);box-shadow:0 0 16px rgba(232,196,106,.45)}
+.rc-disp .face{position:absolute;inset:11px 40px 11px 11px;border-radius:9px;border:1px solid rgba(232,196,106,.25);display:grid;place-items:center;font-size:18px}
+.rc-disp .lever{position:absolute;right:9px;top:50%;transform-origin:50% 100%;transform:translateY(-50%);width:9px;height:36px;border-radius:6px;background:linear-gradient(180deg,#3a3550,#211d2e);transition:transform .18s ease}
+.rc-disp .lever::after{content:"";position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8aa5,#e11d48);box-shadow:0 0 12px rgba(225,29,72,.6)}
+.rc-disp.pull .lever{transform:translateY(-50%) rotate(38deg)}
+.rc-disp .lbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#F7E4A8;font-weight:800}
+.rc-disp .hit{position:absolute;inset:0;background:transparent;border:0;cursor:pointer}
+@media (max-width:560px){.rc-disp{transform:scale(.85);transform-origin:left bottom}}
+@media (prefers-reduced-motion:reduce){.nav .logo .mark,.nav .logo .mark::before,.nav .logo-txt b,.nav .nav-links a,.langsw .miniflag,.rc-bigo-track{animation:none!important}}
+</style>
+<canvas id="rc-fx" aria-hidden="true"></canvas>
+<div class="rc-disp" id="rc-disp"><div class="m"><span class="chute"></span><span class="face">🎁</span><span class="lever"></span><button class="hit" id="rc-lever" aria-label="Hebel ziehen — Geschenke"></button></div><span class="lbl">Zieh am Hebel 🎁</span></div>
+<script>
+(function(){
+  if(window.__rcUp)return; window.__rcUp=1;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var fx=document.getElementById('rc-fx'),ctx=fx.getContext('2d'),DPR=Math.min(devicePixelRatio||1,2);
+  function fit(){fx.width=innerWidth*DPR;fx.height=innerHeight*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);}fit();addEventListener('resize',fit);
+  var P=[],G=['\uD83C\uDF81','\uD83D\uDC8E','\uD83D\uDC51','\u2B50','\uD83E\uDE99','\u2728'],run=false;
+  function burst(x,y,n){for(var i=0;i<(n||20);i++){var a=-Math.PI/2+(Math.random()-.5)*1.2,sp=4+Math.random()*7;
+    P.push({x:x,y:y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp-3,g:.15+Math.random()*.06,life:1,rot:(Math.random()-.5)*.5,vr:(Math.random()-.5)*.25,s:18+Math.random()*16,ch:G[(Math.random()*G.length)|0]});}
+    if(!run){run=true;requestAnimationFrame(tick);}}
+  function tick(){ctx.clearRect(0,0,innerWidth,innerHeight);
+    for(var i=P.length-1;i>=0;i--){var p=P[i];p.vy+=p.g;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.life-=.01;
+      if(p.life<=0||p.y>innerHeight+40){P.splice(i,1);continue;}
+      ctx.save();ctx.globalAlpha=Math.max(0,Math.min(1,p.life));ctx.translate(p.x,p.y);ctx.rotate(p.rot);
+      ctx.font=p.s+'px system-ui,"Apple Color Emoji","Segoe UI Emoji",sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(p.ch,0,0);ctx.restore();}
+    if(P.length)requestAnimationFrame(tick);else{run=false;ctx.clearRect(0,0,innerWidth,innerHeight);}}
+  var disp=document.getElementById('rc-disp');
+  function pull(){disp.classList.add('pull');setTimeout(function(){disp.classList.remove('pull');},220);
+    var r=disp.querySelector('.chute').getBoundingClientRect();burst(r.left+r.width/2,r.top+2,reduce?10:22);}
+  document.getElementById('rc-lever').addEventListener('click',function(e){e.preventDefault();e.stopPropagation();pull();});
+  if(!reduce)setInterval(pull,6000);
+})();
+</script>
 </body>
 </html>
