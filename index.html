@@ -1266,7 +1266,9 @@
 .nav .logo-txt b{background:linear-gradient(110deg,#7d611e,#E8C46A 25%,#fff6df 50%,#E8C46A 75%,#7d611e);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:rc-shim 5s linear infinite;text-shadow:0 2px 0 #9a7826,0 4px 10px rgba(232,196,106,.4);letter-spacing:.14em}
 @keyframes rc-shim{to{background-position:220% 0}}
 .nav .logo-txt i{color:#f2d78c!important;letter-spacing:.5em;font-weight:800;text-shadow:0 0 10px rgba(232,196,106,.5);font-style:normal}
-.nav .nav-links a{color:#ffe6a8!important;text-shadow:0 0 10px rgba(232,196,106,.6);border:1px solid rgba(232,196,106,.3);border-radius:999px;padding:10px 16px;transition:transform .25s,box-shadow .25s,color .25s,background .25s;animation:rc-navglow 3.2s ease-in-out infinite}
+.nav .nav-links a{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;line-height:1;color:#ffe6a8!important;text-shadow:0 0 10px rgba(232,196,106,.6);border:1px solid rgba(232,196,106,.3);border-radius:999px;padding:10px 16px;transition:transform .25s,box-shadow .25s,color .25s,background .25s;animation:rc-navglow 3.2s ease-in-out infinite}
+/* Deutsch/laengere Labels: Pillen kompakter, damit alle 5 in eine Reihe passen & gleich hoch bleiben */
+@media(min-width:1041px) and (max-width:1240px){.nav .nav-links{gap:8px!important}.nav .nav-links a{padding:9px 12px!important;font-size:12.5px!important}}
 @keyframes rc-navglow{0%,100%{text-shadow:0 0 8px rgba(232,196,106,.45)}50%{text-shadow:0 0 16px rgba(247,228,168,.9)}}
 .nav .nav-links a:hover{color:#160f04!important;background:linear-gradient(180deg,#fff4d2,#E8C46A);box-shadow:0 14px 30px rgba(232,196,106,.45);transform:translateY(-2px);text-shadow:none;animation:none}
 .langsw button{position:relative;width:36px;height:36px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1.5px rgba(232,196,106,.55),0 6px 14px rgba(0,0,0,.4);transition:transform .2s,box-shadow .2s}
