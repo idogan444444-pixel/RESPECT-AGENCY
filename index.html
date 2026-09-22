@@ -705,7 +705,7 @@
   </div>
 </header>
 <div class="rc-bigo-band" aria-hidden="true"><div class="rc-bigo-track"><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span><span>BIGO LIVE</span></div></div>
-<div class="rc-tkbar"><button class="rc-tk-btn" id="rc-tk-open" type="button"><span class="ic">♪</span><span class="tx"><b>TikTok Creator?</b><i>Auf TikTok + BIGO LIVE streamen · Willkommensgeschenk 🎁</i></span><span class="ar">▸</span></button></div>
+<div class="rc-tkbar"><button class="rc-tk-btn" id="rc-tk-open" type="button"><span class="ic">♪</span><span class="tx"><b id="rc-tk-l1">TIKTOK STREAMER/IN?</b><i id="rc-tk-l2">AUF TIKTOK + BIGO LIVE STREAMEN</i><em id="rc-tk-l3">🎁 WILLKOMMENSGESCHENK VON RESPECT AJANS</em></span><span class="ar">▸</span></button></div>
 
 
 <main id="top">
@@ -1259,8 +1259,8 @@
 .rc-bigo-track span{font-family:"Cinzel",Georgia,serif;font-weight:900;font-size:clamp(18px,3vw,30px);letter-spacing:.22em;background:linear-gradient(180deg,#fff6df,#E8C46A 55%,#7a5518);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-flex;align-items:center;gap:44px}
 .rc-bigo-track span::after{content:"\25C6";-webkit-text-fill-color:#7a5518;font-size:13px}
 @keyframes rc-march{to{transform:translateX(-50%)}}
-/* CANLI ausblenden */
-#canli{display:none!important}
+/* CANLI komplett raus */
+#canli,a[href="#canli"],.nav-links a[href="#canli"]{display:none!important}
 /* TikTok Button */
 .rc-tkbar{display:flex;justify-content:center;padding:16px}
 .rc-tk-btn{position:relative;display:inline-flex;align-items:center;gap:14px;cursor:pointer;border:0;border-radius:16px;padding:14px 22px;color:#fff;background:linear-gradient(135deg,#050507,#151318);
@@ -1268,22 +1268,25 @@
 @keyframes rc-tkglow{0%,100%{box-shadow:0 0 0 1.5px rgba(37,244,238,.5),0 0 18px rgba(37,244,238,.22),0 0 0 3px rgba(254,44,85,.18),0 16px 40px rgba(0,0,0,.5)}50%{box-shadow:0 0 0 1.5px rgba(37,244,238,.9),0 0 30px rgba(37,244,238,.5),0 0 0 3px rgba(254,44,85,.35),0 16px 40px rgba(0,0,0,.5)}}
 .rc-tk-btn:hover{transform:translateY(-3px) rotateX(8deg)}
 .rc-tk-btn .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:22px;color:#000;background:linear-gradient(135deg,#25F4EE,#FE2C55);box-shadow:0 0 16px rgba(37,244,238,.6)}
-.rc-tk-btn .tx{display:flex;flex-direction:column;text-align:left;line-height:1.2}
-.rc-tk-btn .tx b{font-size:16px;font-weight:800;background:linear-gradient(90deg,#25F4EE,#fff 55%,#FE2C55);-webkit-background-clip:text;background-clip:text;color:transparent}
-.rc-tk-btn .tx i{font-style:normal;font-size:12px;color:#d6dde3;font-weight:600}
-.rc-tk-btn .ar{font-size:18px;color:#25F4EE}
+.rc-tk-btn .tx{display:flex;flex-direction:column;text-align:left;line-height:1.22;gap:2px}
+.rc-tk-btn .tx b{font-size:22px;font-weight:900;letter-spacing:.02em;text-transform:uppercase;background:linear-gradient(90deg,#25F4EE,#fff 55%,#FE2C55);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rc-tk-btn .tx i{font-style:normal;font-size:15px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:#eef4f8}
+.rc-tk-btn .tx em{font-style:normal;font-size:13px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;color:#F7E4A8;text-shadow:0 0 8px rgba(232,196,106,.4)}
+.rc-tk-btn .ar{font-size:22px;color:#25F4EE;font-weight:900}
+@media (max-width:560px){.rc-tk-btn .tx b{font-size:18px}.rc-tk-btn .tx i{font-size:13px}.rc-tk-btn .tx em{font-size:12px}}
 .rc-tk-modal{position:fixed;inset:0;z-index:90;display:grid;place-items:center;background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);padding:20px}
 .rc-tk-modal[hidden]{display:none}
 .rc-tk-card{position:relative;max-width:520px;width:100%;border-radius:22px;padding:26px;color:#fff;background:linear-gradient(180deg,#15141b,#0b0a10);border:1px solid rgba(37,244,238,.3);box-shadow:0 0 0 1px rgba(254,44,85,.22),0 30px 80px rgba(0,0,0,.7)}
 .rc-x{position:absolute;top:12px;right:14px;border:0;background:transparent;color:#9aa3ad;font-size:26px;line-height:1;cursor:pointer}
 .rc-tk-head{display:flex;align-items:center;gap:12px;margin:2px 30px 10px 0}
 .rc-tk-ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:24px;color:#000;background:linear-gradient(135deg,#25F4EE,#FE2C55);box-shadow:0 0 18px rgba(37,244,238,.6)}
-.rc-tk-card h3{margin:0;font-size:20px;font-weight:800;line-height:1.2}
-.rc-tk-card p{color:#cfd6dd;line-height:1.6;font-size:14px}
-.rc-steps{display:grid;gap:12px;margin:14px 0}
-.rc-steps>div{display:flex;gap:12px;align-items:flex-start}
-.rc-steps>div>span{flex:0 0 auto;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-weight:800;color:#000;background:linear-gradient(135deg,#25F4EE,#FE2C55)}
-.rc-steps b{color:#fff}.rc-steps small{display:block;color:#9aa3ad;margin-top:2px;line-height:1.5}
+.rc-tk-card h3{margin:0;font-size:23px;font-weight:900;line-height:1.2;color:#fff}
+.rc-tk-card p{color:#e8eef3;line-height:1.65;font-size:16px}
+.rc-tk-card p b{color:#fff}
+.rc-steps{display:grid;gap:14px;margin:16px 0}
+.rc-steps>div{display:flex;gap:13px;align-items:flex-start}
+.rc-steps>div>span{flex:0 0 auto;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-weight:900;font-size:16px;color:#000;background:linear-gradient(135deg,#25F4EE,#FE2C55)}
+.rc-steps b{color:#fff;font-size:17px;font-weight:800}.rc-steps small{display:block;color:#c3ccd4;margin-top:3px;line-height:1.55;font-size:14px}
 .rc-tk-cta{display:block;text-align:center;margin-top:8px;text-decoration:none;font-weight:800;color:#000;padding:14px 20px;border-radius:999px;background:linear-gradient(135deg,#25F4EE,#FE2C55);box-shadow:0 12px 30px rgba(37,244,238,.35)}
 /* Geschenk-Paket + FX */
 #rc-fx{position:fixed;inset:0;width:100%;height:100%;z-index:60;pointer-events:none}
@@ -1293,18 +1296,31 @@
 @keyframes rc-gp{0%,84%,100%{box-shadow:0 0 0 1.5px rgba(232,196,106,.5),0 14px 30px rgba(0,0,0,.5),0 0 24px rgba(232,196,106,.35)}90%{box-shadow:0 0 0 2px #F7E4A8,0 14px 30px rgba(0,0,0,.5),0 0 42px rgba(247,228,168,.85)}}
 @keyframes rc-gb{0%,82%,100%{transform:translateY(0) rotate(0)}88%{transform:translateY(-7px) rotate(-9deg)}93%{transform:translateY(-4px) rotate(9deg)}}
 @media (max-width:560px){.rc-gift{transform:scale(.82);transform-origin:left bottom}}
-@media (prefers-reduced-motion:reduce){.nav .logo .mark,.nav .logo .mark::before,.nav .logo-txt b,.nav .nav-links a,.langsw .miniflag,.rc-bigo-track,.rc-tk-btn,.rc-gift,.rc-gift span{animation:none!important}}
+/* ===== Seitenweite Premium-Politur (alle Bereiche aufs gleiche Level) ===== */
+html{scroll-behavior:smooth}
+.feat,.quote,.step,.calc,.vipform,.contact{border:1px solid rgba(230,200,129,.20)!important;border-radius:18px!important;
+  box-shadow:0 12px 34px rgba(0,0,0,.38);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s,border-color .45s}
+.feat:hover,.quote:hover,.step:hover,.calc:hover{transform:translateY(-5px);border-color:rgba(230,200,129,.5)!important;box-shadow:0 24px 54px rgba(0,0,0,.52),0 0 0 1px rgba(230,200,129,.18)}
+.lncard{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s,border-color .45s}
+.lncard:hover{transform:translateY(-4px) scale(1.01);border-color:rgba(230,200,129,.5)!important;box-shadow:0 20px 46px rgba(0,0,0,.5)}
+.sec-head h2{background:linear-gradient(180deg,#F2E2B4,#E6C881 58%,#BC9A4E)!important;-webkit-background-clip:text!important;background-clip:text!important;-webkit-text-fill-color:transparent!important;color:transparent!important;filter:drop-shadow(0 2px 12px rgba(230,200,129,.18))}
+.sec-head .eyebrow,.eyebrow{letter-spacing:.24em!important;text-transform:uppercase}
+.finput:focus,.finput:focus-visible{outline:none!important;border-color:#E6C881!important;box-shadow:0 0 0 3px rgba(230,200,129,.28)!important}
+.btn-gold{transition:transform .2s ease,box-shadow .2s ease!important}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(230,200,129,.42)!important}
+a:focus-visible,button:focus-visible{outline:2px solid #E6C881;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.nav .logo .mark,.nav .logo .mark::before,.nav .logo-txt b,.nav .nav-links a,.langsw .miniflag,.rc-bigo-track,.rc-tk-btn,.rc-gift,.rc-gift span{animation:none!important}html{scroll-behavior:auto}}
 </style>
 <canvas id="rc-fx" aria-hidden="true"></canvas>
 <button class="rc-gift" id="rc-gift" type="button" aria-label="Geschenke"><span>🎁</span></button>
 <div class="rc-tk-modal" id="rc-tk-modal" hidden><div class="rc-tk-card" role="dialog" aria-modal="true" aria-label="TikTok Willkommensgeschenk">
 <button class="rc-x" id="rc-tk-close" type="button" aria-label="Schliessen">×</button>
-<div class="rc-tk-head"><span class="rc-tk-ic">♪</span><h3>TikTok Creator? Hol dir dein Willkommensgeschenk</h3></div>
+<div class="rc-tk-head"><span class="rc-tk-ic">♪</span><h3>TikTok Streamer/in? Hol dir dein Willkommensgeschenk</h3></div>
 <p>Stream weiter auf <b>TikTok</b> — und starte parallel auf <b>BIGO LIVE</b> mit RESPECT. Neu bei BIGO über uns? Dann sichern wir dir ein <b>Willkommensgeschenk</b>. 🎁</p>
 <div class="rc-steps">
 <div><span>1</span><div><b>Weiter auf TikTok</b><small>Dein Publikum bleibt — mach genau weiter wie bisher.</small></div></div>
 <div><span>2</span><div><b>Parallel auf BIGO LIVE</b><small>Wir richten alles ein (Setup, Bonus-Plan) und begleiten dich.</small></div></div>
-<div><span>3</span><div><b>Neu über RESPECT = Geschenk</b><small>Als neue:r BIGO-Creator über uns bekommst du ein Willkommensgeschenk.</small></div></div>
+<div><span>3</span><div><b>Neu über RESPECT = Geschenk</b><small>Als neue:r BIGO-Streamer/in über uns bekommst du ein Willkommensgeschenk.</small></div></div>
 </div>
 <a class="rc-tk-cta" href="#iletisim" id="rc-tk-go">Jetzt kostenlos bewerben 🎁</a>
 </div></div>
@@ -1336,6 +1352,12 @@
   m.addEventListener('click',function(e){if(e.target===m)close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
   document.getElementById('rc-tk-go').addEventListener('click',close);
+  // TikTok-Button folgt der Translator-Sprache (tr/de)
+  var L={tr:{l1:"TIKTOK YAYINCISI MISIN?",l2:"TIKTOK + BIGO LIVE'DE YAYIN YAP",l3:"\uD83C\uDF81 RESPECT AJANS'TAN HO\u015E GELD\u0130N HED\u0130YES\u0130"},
+           de:{l1:"TIKTOK STREAMER/IN?",l2:"AUF TIKTOK + BIGO LIVE STREAMEN",l3:"\uD83C\uDF81 WILLKOMMENSGESCHENK VON RESPECT AJANS"}};
+  function setLang(code){var t=L[code]||L.de;var a=document.getElementById('rc-tk-l1'),b=document.getElementById('rc-tk-l2'),c=document.getElementById('rc-tk-l3');if(a)a.textContent=t.l1;if(b)b.textContent=t.l2;if(c)c.textContent=t.l3;}
+  var on=document.querySelector('.langsw button.on');setLang(on?on.getAttribute('data-lang'):'tr');
+  document.querySelectorAll('.langsw button').forEach(function(bb){bb.addEventListener('click',function(){setLang(bb.getAttribute('data-lang'));});});
 })();
 </script>
 </body>
