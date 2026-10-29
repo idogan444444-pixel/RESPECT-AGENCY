@@ -543,6 +543,7 @@
             <label class="sr-only" for="fInsta" data-i18n="phInsta">Instagram</label><input class="finput" id="fInsta" name="instagram" type="text" autocomplete="off" maxlength="40" data-i18n-ph="phInsta" placeholder="Instagram (@kullanıcı)">
             <label class="sr-only" for="fTikTok" data-i18n="phTikTok">TikTok</label><input class="finput" id="fTikTok" name="tiktok" type="text" autocomplete="off" maxlength="40" data-i18n-ph="phTikTok" placeholder="TikTok (@kullanıcı)">
           </div>
+          <label id="fConsentRow" for="fConsent" style="display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.45;opacity:.88;margin:2px 0 10px;text-align:left;cursor:pointer"><input type="checkbox" id="fConsent" name="consent" required aria-required="true" style="flex:0 0 auto;width:18px;height:18px;margin-top:2px;cursor:pointer"> <span>Başvuru amacıyla kişisel verilerimin (ad, telefon, sosyal medya) işlenmesini kabul ediyorum. · Ich stimme der Verarbeitung meiner Daten (Name, Telefon, Social-Media) zur Bewerbung zu — <button type="button" class="legal-link" data-modal="datenschutz">Datenschutz / Gizlilik</button>.</span></label>
           <button class="btn btn-primary" type="submit" data-i18n="fSubmit">Hemen Başvur</button>
           <p class="fnote" data-i18n="fNote">Gönder'e bastığında bilgilerinle WhatsApp açılır — saniyeler içinde dönüyoruz.</p>
           <p class="fnote">18 yaşından küçüksen başvuru için ebeveyn/yasal vasi onayı gereklidir. · Minderjährige benötigen die Zustimmung der Eltern/gesetzlichen Vertreter.</p>
@@ -739,6 +740,8 @@
         var name=g('fName'),phone=g('fPhone'),insta=g('fInsta'),tk=g('fTikTok');
         if(!name){var n=document.getElementById('fName');if(n)n.focus();return;}
         if(!phone){var p=document.getElementById('fPhone');if(p)p.focus();return;}
+        var cons=document.getElementById('fConsent');
+        if(cons&&!cons.checked){var cr=document.getElementById('fConsentRow');if(cr){cr.style.color='#ff6b6b';cr.style.opacity='1';}cons.focus();return;}
         var lines=['RESPECT Ajans — Yayinci basvurusu','','Ad: '+name,'Tel: '+phone];
         if(insta)lines.push('Instagram: '+insta);
         if(tk)lines.push('TikTok: '+tk);
